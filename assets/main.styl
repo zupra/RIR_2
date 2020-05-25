@@ -1,0 +1,90 @@
+*
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+@import 'font_Gilroy';
+@import 'vars';
+
+html
+  min-width: 760px;
+  // font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue' Arial, sans-serif;
+  font-family: 'Gilroy', sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: $text;
+  background: #F7F7F7;
+
+.wrap
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1em;
+
+.img_w
+  display: inline-block;
+  width: 100%;
+
+.H
+  color: $header;
+  font-weight: 700;
+
+.subText
+  font-size: 18px;
+  line-height: 30px;
+
+btn()
+  color: #FFF;
+  border-radius: 5px;
+  font-weight: 800;
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+
+.btn
+  btn();
+  padding: 1em 2em;
+  background: $blue_l;
+
+  &:hover
+    box-shadow: 0px 2px 11px rgba(45, 113, 247, 0.2), 0px 1px 10px rgba(45, 113, 247, 0.15), 0px 1px 11px rgba(45, 113, 247, 0.8);
+
+.btn_lite
+  btn();
+  padding: 1em 2em;
+  border: 1px solid #FFF;
+
+  &:hover
+    background: #FFF;
+    color: $blue_l;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 1px 10px rgba(0, 0, 0, 0.3);
+
+/*
+.link
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: $blue_l;
+  font-weight: bold;
+
+  &:after
+    content: '';
+    display: inline-block;
+    margin-left: 1em;
+    width: 15px;
+    height: 15px;
+    background: url('~static/icon/link_1.svg') no-repeat center;
+
+  &:hover:after
+    background: url('~static/icon/link_2.svg') no-repeat center;
+
+*/
+.icon
+  circle(60px);
+  background-color: #FFF;
+  cursor: pointer;
+
+@import 'anim';
+@import '__@Utilities';
