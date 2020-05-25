@@ -1,30 +1,24 @@
 <template lang="pug">
-
-#Form.Form.flex
-  .Form_wrap
-    h2.center Присоединиться 
-      br
-      | к проекту «Умные города 
-      br
-      | Росатома»
-
-    p.subText.center.mb-4 Мы рады новым партнерам. Наша платформа позволяет интегрировать ваши готовые цифровые решения. Хотите участвовать — напишите нам.  
-
-    label Имя и фамилия
-      input
-
-
-    .flex.my-2
-      label.flex_1 Ваш город
-        input
-      | &emsp; &nbsp;
-      label.flex_1 Эл. почта или телефон
-        input
-
-    label Комментарий
-      textarea
-
-    button.mt-3 Отправить
+section.flex.feedbackform
+  .wrap.flex.x_sb.form_wrapper
+    #Form.Form.flex
+      .Form_wrap
+        h2 Обратная связь
+        p.subText.mb-4 Мы рады новым идеям И предложениям по улучшению сервисов.
+          | Чем больше неравнодушных жителей, тем активней будет развиваться
+          | наш «Умный город Росатома – Глазов»
+        label Имя и фамилия
+          input
+        .flex.my-2
+          label.flex_1 Место работы
+            input
+          | &emsp; &nbsp;
+          label.flex_1 Эл. почта или телефон
+            input
+        label Комментарий
+          textarea
+        button.mt-3 Отправить
+    img.feedbackform__image(src="~/static/img/feedback.png")
 
 </template>
 
@@ -33,15 +27,21 @@ export default {}
 </script>
 
 <style lang="stylus">
-
+.form_wrapper
+  width 100%
+.feedbackform
+  background: linear-gradient(153.94deg, #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%);
+  &__image
+    width 472px
+    height 484px
+    margin-top: 185px
 .Form
-  // background: #13264D url("~static/img/bg_footer.png") no-repeat center/cover;
+
   color #FFF
   min-height 100vh
-  padding 2em 0
+  padding-top: 68px
   &_wrap
     width 555px
-    margin auto
 
 
   h2
@@ -92,4 +92,17 @@ label
 
 select
   background #FFF url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='12'><polygon points='0,0 12,0 6,12' fill='gainsboro'/></svg>") right no-repeat
+
+@media screen and (max-width: 1080px)
+  .feedbackform__image
+    display none
+  .form_wrapper
+    justify-content center
+  h2
+    text-align center
+  .subText
+    text-align center
+  .Form_wrap
+    width 100%
+    max-width 617px
 </style>
