@@ -1,14 +1,11 @@
 <template lang="pug">
 .Page
   Intro
-
   .wrap
     //- Возможности
     Capatibilities
     .BR
-    //- Базовые модули
-    BaseModules
-    .BR
+    ImgGrid
     //- Дополнительные модули
     AdditionalModules
   .BR
@@ -26,10 +23,10 @@
 <script>
 //
 
+import ImgGrid from '~/components/ImgGrid.vue'
 import Intro from '~/components/Intro.vue'
 import Form from '~/components/Form.vue'
 import Footer from '~/components/Footer.vue'
-import BaseModules from '~/components/BaseModules.vue'
 import AdditionalModules from '~/components/AdditionalModules.vue'
 import News from '~/components/News.vue'
 
@@ -38,10 +35,10 @@ import Capatibilities from '~/components/Capatibilities.vue'
 export default {
   components: {
     Intro,
+    ImgGrid,
     Capatibilities,
     Form,
     Footer,
-    BaseModules,
     AdditionalModules,
     News
   }
