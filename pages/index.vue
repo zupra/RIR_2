@@ -1,15 +1,13 @@
 <template lang="pug">
 .Page
   Intro
+
+  // Картиночки
+  ImgGrid
+  
   .wrap
-    //- Возможности
-    Capatibilities
-    .BR
-    ImgGrid
-    //- Дополнительные модули
+    // Дополнительные модули
     AdditionalModules
-  .BR
-  .wrap
     .BR
     // Новости
     News
@@ -30,13 +28,10 @@ import Footer from '~/components/Footer.vue'
 import AdditionalModules from '~/components/AdditionalModules.vue'
 import News from '~/components/News.vue'
 
-import Capatibilities from '~/components/Capatibilities.vue'
-
 export default {
   components: {
     Intro,
     ImgGrid,
-    Capatibilities,
     Form,
     Footer,
     AdditionalModules,
