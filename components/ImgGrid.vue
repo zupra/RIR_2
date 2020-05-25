@@ -1,13 +1,67 @@
 <template lang="pug">
 section.ImgGrid
-  figure(
-    v-for="_,idx in Array(6)"
-    :key="idx"
-  )
+  figure
     figcaption
-      h3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam cum voluptate, dolorem sapiente consequuntur molestias ipsa at. Dolores esse laboriosam quibusdam vitae quasi explicabo, voluptatum perspiciatis, dolorum odit eveniet eum.
+      h2.text_x3.mb-3  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      p.subText Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam cum voluptate, dolorem sapiente consequuntur molestias ipsa at. Dolores esse laboriosam quibusdam vitae quasi explicabo, voluptatum perspiciatis, dolorum odit eveniet eum.
+      .BR
+      .btn Перейти
     .picture
+      img(src='~/static/gifs/1.gif')
+
+
+  figure
+    figcaption
+      h2.text_x3.mb-3  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      p.subText Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam cum voluptate, dolorem sapiente consequuntur molestias ipsa at. Dolores esse laboriosam quibusdam vitae quasi explicabo, voluptatum perspiciatis, dolorum odit eveniet eum.
+      .BR
+      .btn Перейти
+    .picture
+      img(src='~/static/gifs/2.gif')
+
+
+
+  figure
+    figcaption
+      h2.text_x3.mb-3  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      p.subText Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam cum voluptate, dolorem sapiente consequuntur molestias ipsa at. Dolores esse laboriosam quibusdam vitae quasi explicabo, voluptatum perspiciatis, dolorum odit eveniet eum.
+      .BR
+      .btn Перейти
+    .picture
+      img(src='~/static/gifs/1.gif')
+
+
+  figure
+    figcaption
+      h2.text_x3.mb-3  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      p.subText Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam cum voluptate, dolorem sapiente consequuntur molestias ipsa at. Dolores esse laboriosam quibusdam vitae quasi explicabo, voluptatum perspiciatis, dolorum odit eveniet eum.
+      .BR
+      .btn Перейти
+    .picture
+      img(src='~/static/gifs/2.gif')
+
+
+
+
+
+  figure
+    figcaption
+      h2.text_x3.mb-3  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      p.subText Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam cum voluptate, dolorem sapiente consequuntur molestias ipsa at. Dolores esse laboriosam quibusdam vitae quasi explicabo, voluptatum perspiciatis, dolorum odit eveniet eum.
+      .BR
+      .btn Перейти
+    .picture
+      img(src='~/static/gifs/1.gif')
+
+
+  figure
+    figcaption
+      h2.text_x3.mb-3  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      p.subText Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam cum voluptate, dolorem sapiente consequuntur molestias ipsa at. Dolores esse laboriosam quibusdam vitae quasi explicabo, voluptatum perspiciatis, dolorum odit eveniet eum.
+      .BR
+      .btn Перейти
+    .picture
+      img(src='~/static/gifs/2.gif')
 
 
 </template>
@@ -21,8 +75,8 @@ export default {}
 
 
 .picture
-  circle(300px)
-  background #CCC
+  // circle(300px)
+  // background #CCC
 
 figure
   margin 4vh 0
