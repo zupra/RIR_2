@@ -16,7 +16,7 @@
               a(href="#").menu-link Обратная связь
             li.menu-item
               a(href="#").registration-link Зарегистрироваться
-  .wrap
+  .wrap.flex.x_sb
     .content
       a(href="#").smart-cities-link Умные города Росатома
       h1.intro__city-name Заречный
@@ -29,9 +29,19 @@
         div.head-of-city__name
           h3 Олег Климанов
           p глава города Заречный
+    .images.flex_1
+      .flex.x_sb
+        img.upper-left-img(src="~/static/img/intro/atom.png")
+        img.upper-right-img(src="~/static/img/intro/balet.png")
+      .flex.x_center
+        img.middle-center-img(src="~/static/img/intro/hockey.png")
+      .flex.x_sb.lower-img-container
+        div.lower-left-img
+          img(src="~/static/img/intro/los.png")
+        img.lower-right-img(src="~/static/img/intro/gerb.png")
   footer.intro__footer
     .wrap.flex.y_center.x_sb
-      img(src="~/static/img/intro/animals.png")
+      img(src="~/static/img/intro/los.gif")
       .flex
         div.results__item
           h2 5 000
@@ -86,7 +96,7 @@
   border 0
   text-decoration none
 .content
-  margin-top: 32px
+  margin-top: 66px
   position: relative;
   z-index 3
 .content__text
@@ -125,8 +135,10 @@
       font-size: 18px;
       line-height: 22px;
 .intro__footer
+  position relative
+  z-index 10
   margin-top: 72px
-  padding 51px 0 38px 0
+  padding 23px 0 14px 0
   background-color: #107C9F
 .results__item
   max-width 210px
@@ -141,6 +153,30 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 24px;
+.images
+  margin-top: 32px
+.upper-left-img
+  margin-left: -80px
+  circle(244px)
+.upper-right-img
+  margin-right: 30px
+  circle(198px)
+.middle-center-img
+  margin-top: -80px
+.lower-img-container
+  position relative
+.lower-left-img
+  position absolute
+  top: -25px
+  width 307px
+  height 303px
+  border-radius 50%
+  background-color #ADEEB1
+.lower-right-img
+  top -130px
+  right -95px
+  position: absolute;
+  circle(314px)
 .Intro
   min-height 100vh
   position relative
