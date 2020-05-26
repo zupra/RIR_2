@@ -2,17 +2,12 @@
 .Page
   Intro
 
+  // Картиночки
+  ImgGrid
+  
   .wrap
-    //- Возможности
-    Capatibilities
-    .BR
-    //- Базовые модули
-    BaseModules
-    .BR
-    //- Дополнительные модули
+    // Дополнительные модули
     AdditionalModules
-  .BR
-  .wrap
     .BR
     // Новости
     News
@@ -26,22 +21,19 @@
 <script>
 //
 
+import ImgGrid from '~/components/ImgGrid.vue'
 import Intro from '~/components/Intro.vue'
 import Form from '~/components/Form.vue'
 import Footer from '~/components/Footer.vue'
-import BaseModules from '~/components/BaseModules.vue'
 import AdditionalModules from '~/components/AdditionalModules.vue'
 import News from '~/components/News.vue'
-
-import Capatibilities from '~/components/Capatibilities.vue'
 
 export default {
   components: {
     Intro,
-    Capatibilities,
+    ImgGrid,
     Form,
     Footer,
-    BaseModules,
     AdditionalModules,
     News
   }
