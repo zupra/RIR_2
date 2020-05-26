@@ -4,17 +4,23 @@
 
   .flex_wr.x_sb
     div
-      h2 При поддержке
-      .BR
-      img(src='~static/icon/footer_1.png')
-      img.ml-4(src='~static/icon/footer_2.png')
+      h3.text_x1.mb_2 При поддержке
+      br
+      .my-3
+        img(src='~static/icon/f_1.png')
+        img.ml-4(src='~static/icon/f_2.png')
+      div
+        img(src='~static/icon/footer_1.png')
+        img.ml-4(src='~static/icon/footer_2.png')
 
 
     div.bold
     
-      .text_x2.my-1 О проекте
-      .text_x2.my-1 Регламент сервиса
-      .text_x2.my-1 Пользовательское соглашение
+      .text_x2 О проекте
+      .text_x2.my-4 Регламент сервиса
+      .text_x2 Пользовательское 
+        br
+        | соглашение
 
 
     div
