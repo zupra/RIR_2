@@ -1,10 +1,11 @@
 <template lang="pug">
 .Page
-  Intro
+  Intro2
+  // Intro
 
   // Картиночки
   ImgGrid
-  
+
   .wrap
     // Дополнительные модули
     AdditionalModules
@@ -23,6 +24,7 @@
 
 import ImgGrid from '~/components/ImgGrid.vue'
 import Intro from '~/components/Intro.vue'
+import Intro2 from '~/components/Intro2.vue'
 import Form from '~/components/Form.vue'
 import Footer from '~/components/Footer.vue'
 import AdditionalModules from '~/components/AdditionalModules.vue'
@@ -30,6 +32,7 @@ import News from '~/components/News.vue'
 
 export default {
   components: {
+    Intro2,
     Intro,
     ImgGrid,
     Form,

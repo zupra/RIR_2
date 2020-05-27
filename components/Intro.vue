@@ -6,9 +6,10 @@
       img(
         src="~static/icon/LOGO.png"
       )
-      .upper.ml-3 умные города
+      .upper.ml-3 Умные города
         br
         | Росатома
+      img(:src="require(`~/static/img/intro/${pageVars.header.cityLogoSrc}.png`)")
     .flex.y_center
       .upper.bold(
         v-for="It in ['ГОРОДСКИЕ СЕРВИСЫ', 'Новости', 'Обратная связь']"
@@ -16,43 +17,39 @@
         | &emsp; &emsp;
       .registration-link Зарегистрироваться
 
-
   client-only
     swiper.swiper(
       :options="swiperOption"
     )
       swiper-slide
-        .wrap.flex.x_sb.slide-1
+        .wrap.flex.slide-1
           .content
             a(href="#").smart-cities-link Умные города Росатома
-            h1.intro__city-name Заречный
+            h1.intro__city-name {{ pageVars.content.cityTitle }}
             .content__text
-              p Уважаемые зареченцы!
-              p Перед вами портал «Умный город Росатома — Заречный».
-              p Это сервисы для взаимодействия с жителей с властью и городскими службами. Сейчас портал работает в пилотном режиме, и нам важно ваше мнение. С вашей помощью количество и качество сервисов будет расти, а их возможности – расширяться!
+              p {{ pageVars.content.text1 }}
+              p {{ pageVars.content.text2 }}
             .head-of-city.flex.x_start.y_center
-              img.head-of-city__photo(src="~/static/img/intro/head-of-city.png")
+              img.head-of-city__photo(:src="require(`~/static/img/intro/${pageVars.content.headOfCityPhoto}.png`)")
               .head-of-city__name
-                h3 Олег Климанов
-                p глава города Заречный
-          .images.flex_1
-            .flex.x_sb
-              img.upper-left-img(src="~/static/img/intro/atom.png")
-              img.upper-right-img(src="~/static/img/intro/balet.png")
-            .flex.x_center
-              img.middle-center-img(src="~/static/img/intro/hockey.png")
-            .flex.x_sb.lower-img-container
-              .lower-left-img
-                img(src="~/static/img/intro/los.png")
-              img.lower-right-img(src="~/static/img/intro/gerb.png")
-        
-        
-      swiper-slide  
+                h3 {{ pageVars.content.headOfCityName }}
+                p {{ pageVars.content.headOfCityOccupation }}
+          .images
+            .flex
+              div.left-image.flex.x_center.y_center
+                img(:src="require(`~/static/img/intro/${pageVars.images.bigCircle}.png`)")
+              div.right-images
+                div.upper-right-img.flex.x_center.y_center
+                  img(:src="require(`~/static/img/intro/${pageVars.images.rightUpCircle}.png`)")
+                div.lower-right-img.flex.x_center.y_center
+                  img(:src="require(`~/static/img/intro/${pageVars.images.rightBottomCircle}.png`)")
+      swiper-slide
         .wrap.flex.x_sb.slide-2
           .content
-            h1.intro__city-name Изучай город
+            h1.intro__city-name(v-if="pageVars.content.slogan") {{ pageVars.content.slogan }}
+            h1.intro__city-name(v-else) Изучай город
             .content__text
-              p Сейчас в пилотном режиме для горожан доступны следующие сервисы: решение городских проблем онлайн, учереждения, полиция и депутатские округа
+              p {{ pageVars.content.exploreCityText }}
             a(href="#").registration-link Перейти к сервисам
           .images.flex
             img(src="~/static/img/intro/los-with-city.png")
@@ -60,7 +57,6 @@
               img.image-group__item(src="~/static/img/intro/tool.png")
               img.image-group__item(src="~/static/img/intro/swimmer.png")
               img.image-group__item(src="~/static/img/intro/mother.png")
-      
       swiper-slide
         .wrap.flex.x_sb.slide-3
           .content
@@ -84,19 +80,18 @@
       .swiper-pagination(
         slot="pagination"
       )
-
-  .footer
+  .footer(style="display: none")
     .wrap.flex.y_center.x_sb
-      img(src="~/static/img/intro/los.gif")
+      img(:src="require(`~/static/img/intro/${pageVars.footer.gifSrc}.gif`)")
       .flex
         .footer_item
-          h2 5 000
+          h2 {{ pageVars.footer.howManyUsers }}
           p Зарегистрированных пользователей
         .footer_item
-          h2 90
+          h2 {{ pageVars.footer.howManyCompanies }}
           p Организаций и учереждений
         .footer_item
-          h2 30
+          h2 {{ pageVars.footer.howManyCategories }}
           p Категорий обращений
 
 
@@ -107,6 +102,33 @@ export default {
   components: {},
   data() {
     return {
+      pageVars: {
+        header: {
+          cityLogoSrc: 'zarechnii/city_logo-zarechnii'
+        },
+        content: {
+          cityTitle: 'Заречный',
+          text1: 'Уважаемые зареченцы!',
+          text2:
+            'Перед вами портал «Умный город Росатома — Заречный». Это сервисы для взаимодействия с жителей с властью и городскими службами. Сейчас портал работает в пилотном режиме, и нам важно ваше мнение. С вашей помощью количество и качество сервисов будет расти, а их возможности – расширяться!',
+          headOfCityName: 'Олег Климанов',
+          headOfCityOccupation: 'глава города Заречный',
+          headOfCityPhoto: 'zarechnii/head-of-city',
+          slogan: 'Открой для себя',
+          exploreCityText: 'Сейчас в пилотном режиме для горожан доступны следующие сервисы: решение городских проблем онлайн, учереждения, полиция и депутатские округа'
+        },
+        images: {
+          bigCircle: 'zarechnii/zarechnii-big-circle-logo',
+          rightUpCircle: 'zarechnii/zarechnii-react',
+          rightBottomCircle: 'zarechnii/zarechnii-hockey',
+        },
+        footer: {
+          gifSrc: 'zarechnii/Zarechny',
+          howManyUsers: '5 000',
+          howManyCompanies: '90',
+          howManyCategories: '30'
+        }
+      },
       swiperOption: {
         // effect: 'fade',
         loop: true,
@@ -227,36 +249,27 @@ export default {
 
 
 
-.images
-  margin-top: 32px
 
-.upper-left-img
-  margin-left: -80px
-  circle(244px)
 
-.upper-right-img
-  margin-right: 30px
-  circle(198px)
 
-.middle-center-img
-  margin-top: -80px
+.slide-1
+  & .images
+    margin-left: 52px
+    position relative
+  & .left-image
+    circle(366px)
+    margin-top 100px
+    background-color: #F7F7F7
+  & .upper-right-img
+    circle(214px)
+    background-color #0BBBEF;
+  & .lower-right-img
+    position: absolute;
+    bottom: -20px;
+    right: -130px;
+    circle(250px)
+    background-color #FFD35F;
 
-.lower-img-container
-  position relative
-
-.lower-left-img
-  position absolute
-  top: -25px
-  width 307px
-  height 303px
-  border-radius 50%
-  background-color #ADEEB1
-
-.lower-right-img
-  top -130px
-  right -95px
-  position: absolute;
-  circle(314px)
 
 .slide-2
   .content
