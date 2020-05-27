@@ -23,7 +23,7 @@ section.ImgGrid
         .BR
         .btn Перейти
       .picture
-        img(src='~/static/gifs/1.gif')
+        img(src='~/static/gifs/2.gif')
 
     figure
       figcaption
@@ -32,7 +32,7 @@ section.ImgGrid
         .BR
         .btn Перейти
       .picture
-        img(src='~/static/gifs/2.gif')
+        img(src='~/static/gifs/3.gif')
 
     figure
       figcaption
@@ -41,7 +41,7 @@ section.ImgGrid
         .BR
         .btn Перейти
       .picture
-        img(src='~/static/gifs/1.gif')
+        img(src='~/static/gifs/4.gif')
 
     figure
       figcaption
@@ -50,7 +50,7 @@ section.ImgGrid
         .BR
         .btn Перейти
       .picture
-        img(src='~/static/gifs/2.gif')
+        img(src='~/static/gifs/5.gif')
 
 
 

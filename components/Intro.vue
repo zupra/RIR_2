@@ -110,7 +110,7 @@ export default {
       swiperOption: {
         // effect: 'fade',
         loop: true,
-        mousewheel: true,
+        // mousewheel: true,
         direction: 'vertical',
         // autoplay: {
         //   delay: 3000,

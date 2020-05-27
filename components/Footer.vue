@@ -9,9 +9,10 @@
       .my-3
         img(src='~static/icon/f_1.png')
         img.ml-4(src='~static/icon/f_2.png')
-      div
-        img(src='~static/icon/footer_1.png')
-        img.ml-4(src='~static/icon/footer_2.png')
+      br
+      .flex.y_center
+        img(src='~static/icon/footer_1.svg')
+        img.ml-4(src='~static/icon/footer_2.svg')
 
 
     div.bold
