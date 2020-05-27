@@ -27,12 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    { src: './plugins/vue-agile.js', mode: 'client' },
-    // { src: './plugins/vue-carousel.js', mode: 'client' },
-    { src: './plugins/vue-awesome-swiper.js', mode: 'client' }
-    // 'vue-fullpage.js'
-  ],
+  plugins: [{ src: './plugins/vue-awesome-swiper.js', mode: 'client' }],
   /*
    ** Nuxt.js dev-modules
    */
