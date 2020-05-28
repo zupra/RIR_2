@@ -91,7 +91,7 @@ section.Intro(:class="page.colorThemeClasses.section")
 
 <script>
 export default {
-  name: 'Intro2',
+  name: "Intro2",
   data() {
     return {
       headerLinks: ['ГОРОДСКИЕ СЕРВИСЫ', 'Новости', 'Обратная связь'],
@@ -106,8 +106,7 @@ export default {
         headerCityLogo: 'zarechnii/city_logo-zarechnii.png',
         cityName: 'Заречный',
         helloText: 'Уважаемые зареченцы!',
-        helloTextMain:
-          'Перед вами портал «Умный город Росатома — Заречный». Это сервисы для взаимодействия с жителей с властью и городскими службами. Сейчас портал работает в пилотном режиме, и нам важно ваше мнение. С вашей помощью количество и качество сервисов будет расти, а их возможности – расширяться!',
+        helloTextMain: 'Перед вами портал «Умный город Росатома — Заречный». Это сервисы для взаимодействия с жителей с властью и городскими службами. Сейчас портал работает в пилотном режиме, и нам важно ваше мнение. С вашей помощью количество и качество сервисов будет расти, а их возможности – расширяться!',
         headOfCityPhoto: 'zarechnii/head-of-city.png',
         headOfCityName: 'Олег Климанов',
         headOfCityOccupation: 'глава города Заречный',
@@ -123,7 +122,7 @@ export default {
         footerGif: 'zarechnii/Zarechny.gif',
         howManyUsers: '5 000',
         howManyCompanies: '90',
-        howManyCategories: '30'
+        howManyCategories: '30',
       },
       swiperOption: {
         // effect: 'fade',
@@ -194,36 +193,36 @@ export default {
     &-title
       font-size 18px
       font-weight 400
-    .nav-item:not(:first-child)
+    & .nav-item:not(:first-child)
       margin-left: 41px
   &__content
     flex 1
     overflow-y hidden
-    .swiper-container
+    & .swiper-container
       height 100%
-     .swiper-slide-active
+    &  .swiper-slide-active
       height 100%!important
-    .slide1
+    & .slide1
       position relative
       height 100%
-      .Intro__content-city-name
+      & .Intro__content-city-name
         margin-top: 16px
         margin-bottom: 0;
         font-weight: bold;
         font-size: 70px;
         line-height: 85px;
-      .content
+      & .content
         max-width 556px
-      .Intro__content-hello-text
+      & .Intro__content-hello-text
         font-size: 18px;
         line-height: 30px;
         &:first-child
           margin-top: 13px
-      .Intro__content-head-of-city
+      & .Intro__content-head-of-city
           margin-top: 20px
-          .head-of-city__photo
+          & .head-of-city__photo
             circle(96px)
-          .head-of-city__name
+          & .head-of-city__name
             margin-left: 20px
             h3
               font-weight: bold;
@@ -233,77 +232,77 @@ export default {
               font-weight: normal;
               font-size: 18px;
               line-height: 22px;
-      .images
+      & .images
         height 100%
         position absolute
         right -75px
-      .right-side-images
+      & .right-side-images
         position: relative;
         margin-right: -17px
-      .left-image
+      & .left-image
         circle(366px)
-      .right-image
+      & .right-image
         circle(214px)
-      .bottom-image
+      & .bottom-image
         circle(250px)
-    .slide2
+    & .slide2
       height 100%
-      .content
+      & .content
         max-width 467px
-      .Intro__content-explore-title
+      & .Intro__content-explore-title
         font-weight: bold;
         font-size: 70px;
         line-height: 85px;
         margin-bottom: 0
-      .Intro__content-explore-text
+      & .Intro__content-explore-text
         margin-top: 27px
         font-size: 18px;
         line-height: 30px;
         margin-bottom: 22px
-      .registration-link
+      & .registration-link
         margin-left 0
-      .images
+      & .images
         padding-left: 52px
         flex: 1
         position: relative;
-      .images__group
+      & .images__group
         position: absolute;
         bottom: 80px
         right 0
-      .images__group-item
+      & .images__group-item
         z-index 3
-      .images-group__item:last-child
+      & .images-group__item:last-child
         margin-left: -55px
         z-index 1
-    .slide3
+    & .slide3
       height 100%
-      .link
+      & .link
         margin-top: 16px
-      .content
+      & .content
         margin-top: 76px
         max-width 556px
-      .Intro__content-develop-title
+      & .Intro__content-develop-title
         margin-top: 34px
         font-weight: bold;
         font-size: 70px;
         line-height: 67px;
-      .Intro__content-develop-text
+      & .Intro__content-develop-text
         margin-top: 26px
         font-size: 18px;
         line-height: 30px;
         margin-bottom: 15px
-      .registration-link
+      & .registration-link
         margin-left: 0
-      .problems-container
+      & .problems-container
         position relative
-      .solve-problems__item
+      & .solve-problems__item
         position: relative;
         z-index 11
         max-width 280px
         padding: 21px 21px 53px 21px
         background: linear-gradient(52.4deg, #2D71F7 0%, #72CDFF 96.19%);
         border-radius 5px
-      .shadow-1
+      & .shadow-1
         position absolute
         width: 100%;
         height: 100%;
@@ -313,7 +312,7 @@ export default {
         z-index 4
         background: linear-gradient(219.75deg, #0266B0 0%, #01468D 85.89%);
         box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
-      .shadow-2
+      & .shadow-2
         position absolute
         top: 42px
         left: 42px
@@ -323,7 +322,7 @@ export default {
         border-radius: 5px;
         background: linear-gradient(52.4deg, #2D71F7 0%, #CE94F8 96.19%);
         box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
-      .shadow-3
+      & .shadow-3
         position absolute
         top: 63px
         left: 63px
@@ -333,20 +332,20 @@ export default {
         background: linear-gradient(52.4deg, #54C167 0%, #72CDFF 96.19%);
         box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
         border-radius: 5px;
-      .problem-text
+      & .problem-text
         margin-top: 18px
         font-size: 14px;
         line-height: 20px;
   &__footer
     padding 23px 0 14px 0
-    .Intro__footer-achievment
+    & .Intro__footer-achievment
       max-width 250px
-      .achievment-number
+      & .achievment-number
         font-weight 800
         font-size 60px
         line-height 74px
         margin-bottom: 0
-      .achievment-title
+      & .achievment-title
         font-weight bold
         font-size 20px
         line-height 24px
