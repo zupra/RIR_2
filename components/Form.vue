@@ -1,5 +1,5 @@
 <template lang="pug">
-section.Form.flex
+section#Form.Form.flex
   
   .wrap.flex.x_sb.y_center
     .Form_wrap

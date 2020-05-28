@@ -27,7 +27,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: './plugins/vue-awesome-swiper.js', mode: 'client' }],
+  plugins: [
+    { src: './plugins/vue-awesome-swiper.js', mode: 'client' },
+    './plugins/vue-scrollto.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -50,7 +53,11 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // https://github.com/nicolasbeauvais/vue-social-sharing
-    'vue-social-sharing/nuxt'
+    'vue-social-sharing/nuxt',
+
+    // https://vue-scrollto.netlify.app/docs/
+    'vue-scrollto/nuxt'
+    // ['vue-scrollto/nuxt', { duration: 700 }]
   ],
   /*
    ** Axios module configuration
