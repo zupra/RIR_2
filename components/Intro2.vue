@@ -1,5 +1,5 @@
 <template lang="pug">
-section.Intro(:class="page.colorThemeClasses.section")
+section.Intro(:class="city.colorThemeClasses.section")
   header.Intro__header
     .wrap.flex.x_sb
       .intro__header-left.flex.y_center
@@ -7,14 +7,14 @@ section.Intro(:class="page.colorThemeClasses.section")
         p.upper.ml-4.intro__header-title Умные города
           br
           | Росатома
-        img.ml-2(:src="require(`~/static/img/intro/${page.headerCityLogo}`)")
+        img.ml-2(:src="require(`~/static/img/intro/${city.headerCityLogo}`)")
       nav.intro__header-right.flex.y_center
         template(
           v-for="item in ['ГОРОДСКИЕ СЕРВИСЫ', 'Новости', 'Обратная связь']"
         )
           a.upper.nav-item(
             v-scroll-to="'#Form'"
-            src="#" 
+            src="#"
           ) {{ item }}
         .registration-link Зарегистрироваться
   .Intro__content
@@ -27,37 +27,40 @@ section.Intro(:class="page.colorThemeClasses.section")
             .content.flex_col.x_center
               div
                 a(href="#").smart-cities-link Умные города Росатома
-              h2.Intro__content-city-name {{ page.cityName }}
-              p.Intro__content-hello-text {{ page.helloText }}
-              p.Intro__content-hello-text {{ page.helloTextMain }}
+              h2.Intro__content-city-name {{ city.cityName }}
+              p.Intro__content-hello-text {{ city.helloText }}
+              p.Intro__content-hello-text {{ city.helloTextMain }}
               .Intro__content-head-of-city.flex.x_start.y_center
-                img.head-of-city__photo(:src="require(`~/static/img/intro/${page.headOfCityPhoto}`)")
+                img.head-of-city__photo(:src="require(`~/static/img/intro/${city.headOfCityPhoto}`)")
                 .head-of-city__name
-                  h3 {{ page.headOfCityName }}
-                  p {{ page.headOfCityOccupation }}
+                  h3 {{ city.headOfCityName }}
+                  p {{ city.headOfCityOccupation }}
             .images.flex
               div.flex.y_center
-                div.left-image.flex.x_center.y_center(:class="page.colorThemeClasses.leftCircleImage")
-                  img(:src="require(`~/static/img/intro/${page.firstSlideLeftBigCircleImage}`)")
+                div.left-image.flex.x_center.y_center(:class="city.colorThemeClasses.leftCircleImage")
+                  img(:src="require(`~/static/img/intro/${city.firstSlideLeftBigCircleImage}`)")
               div.flex_col.x_sa
-                div.right-image.flex.x_center.y_center(:class="page.colorThemeClasses.rightCircleImage")
-                  img(:src="require(`~/static/img/intro/${page.secondUpperImage}`)")
-                div.bottom-image.flex.x_center.y_center(:class="page.colorThemeClasses.bottomCircleImage")
-                  img(:src="require(`~/static/img/intro/${page.thirdLowerImage}`)")
+                div.right-image.flex.x_center.y_center(:class="city.colorThemeClasses.rightCircleImage")
+                  img(:src="require(`~/static/img/intro/${city.secondUpperImage}`)")
+                div.bottom-image.flex.x_center.y_center(:class="city.colorThemeClasses.bottomCircleImage")
+                  img(:src="require(`~/static/img/intro/${city.thirdLowerImage}`)")
         swiper-slide
           .wrap.slide2.flex
             .content.flex_col.x_center
-              h2.Intro__content-explore-title(v-if="page.slogan") {{ page.slogan }}
-              h2.Intro__content-explore-title(v-if="page.slogan2") {{ page.slogan2 }}
+              h2.Intro__content-explore-title(v-if="city.slogan") {{ city.slogan }}
+              h2.Intro__content-explore-title(v-if="city.slogan2") {{ city.slogan2 }}
               h2.Intro__content-explore-title(v-else) Изучай город
-              p.Intro__content-explore-text {{ page.exploreText }}
+              p.Intro__content-explore-text {{ city.exploreText }}
               div.flex
                 .registration-link Перейти к сервисам
-            .images.flex.y_end.x_sa
-              img(:src="require(`~/static/img/intro/${page.secondSlideBigImage}`)" :class="page.contur")
-              div.images__group.flex
+            .images.flex.y_end.x_sa(:class="city.slide2PositionOptions")
+              img(:src="require(`~/static/img/intro/${city.secondSlideBigImage}`)"
+                :class="city.contur")
+              div.images__group.flex(v-if="city.secondSlideGraphicBalls")
                 img.images-group__item(src="~/static/img/intro/tool.png")
                 img.images-group__item(src="~/static/img/intro/swimmer.png")
+              div.images__interesting-place.flex.y_center.x_center(v-if="city.slide2InterestingPlace" :class="city.slide2InterestingPlaceStyle")
+                img(:src="require(`~/static/img/intro/${city.slide2InterestingPlace}`)")
         swiper-slide
           .wrap.flex.x_sb.slide3
             .content.flex_col.x_center
@@ -80,18 +83,18 @@ section.Intro(:class="page.colorThemeClasses.section")
         .swiper-pagination(
           slot="pagination"
         )
-  footer.Intro__footer(:class="page.colorThemeClasses.footer")
+  footer.Intro__footer(:class="city.colorThemeClasses.footer")
     .wrap.flex.y_center.x_sb
-      img(:src="require(`~/static/img/intro/${page.footerGif}`)")
+      img(:src="require(`~/static/img/intro/${city.footerGif}`)")
       .flex
         .Intro__footer-achievment
-          h2.achievment-number {{ page.howManyUsers }}
+          h2.achievment-number {{ city.howManyUsers }}
           p.achievment-title Зарегистрированных пользователей
         .Intro__footer-achievment
-          h2.achievment-number {{ page.howManyCompanies }}
+          h2.achievment-number {{ city.howManyCompanies }}
           p.achievment-title Организаций и учереждений
         .Intro__footer-achievment
-          h2.achievment-number {{ page.howManyCategories }}
+          h2.achievment-number {{ city.howManyCategories }}
           p.achievment-title Категорий обращений
 </template>
 
@@ -101,36 +104,6 @@ export default {
   data() {
     return {
       // headerLinks: ['ГОРОДСКИЕ СЕРВИСЫ', 'Новости', 'Обратная связь'],
-      page: {
-        colorThemeClasses: {
-          section: 'section-color-theme_zarechnii',
-          leftCircleImage: 'left-circle-image-color-theme_zarechnii',
-          rightCircleImage: 'right-circle-image-color-theme_zarechnii',
-          bottomCircleImage: 'bottom-circle-image-color-theme_zarechnii',
-          footer: 'footer-color-theme_zarechnii'
-        },
-        headerCityLogo: 'zarechnii/city_logo-zarechnii.png',
-        cityName: 'Заречный',
-        helloText: 'Уважаемые зареченцы!',
-        helloTextMain:
-          'Перед вами портал «Умный город Росатома — Заречный». Это сервисы для взаимодействия с жителей с властью и городскими службами. Сейчас портал работает в пилотном режиме, и нам важно ваше мнение. С вашей помощью количество и качество сервисов будет расти, а их возможности – расширяться!',
-        headOfCityPhoto: 'zarechnii/head-of-city.png',
-        headOfCityName: 'Олег Климанов',
-        headOfCityOccupation: 'глава города Заречный',
-        firstSlideLeftBigCircleImage: 'zarechnii/zarechnii-big-circle-logo.png',
-        secondUpperImage: 'zarechnii/zarechnii-react.png',
-        thirdLowerImage: 'zarechnii/zarechnii-hockey.png',
-        slogan: 'Открой',
-        slogan2: 'для себя',
-        exploreText:
-          'Сейчас в пилотном режиме для горожан доступны следующие сервисы: решение городских проблем онлайн, учереждения, полиция и депутатские округа',
-        secondSlideBigImage: 'zarechnii/los-with-city.png',
-        contur: 'los-contur',
-        footerGif: 'zarechnii/Zarechny.gif',
-        howManyUsers: '5 000',
-        howManyCompanies: '90',
-        howManyCategories: '30'
-      },
       swiperOption: {
         // effect: 'fade',
         loop: true,
@@ -147,14 +120,23 @@ export default {
         }
       }
     }
-  }
+  },
+  created() {
+    console.log(this.$store.getters.GET_CITY);
+  },
+  computed: {
+    city() {
+      return this.$store.getters.GET_CITY;
+    }
+  },
 }
 </script>
 
 <style lang="stylus" scoped>
 /*Заречный*/
 .section-color-theme_zarechnii
-  background: linear-gradient(156.35deg, #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%)
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
+  #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%)
 .footer-color-theme_zarechnii
   background-color: #107C9F
 .left-circle-image-color-theme_zarechnii
@@ -166,6 +148,148 @@ export default {
 .los-contur
   -webkit-filter: drop-shadow(3px 5px 5px #000);
   filter: drop-shadow(10px 15px 0px #51BBB7);
+/*Саров*/
+.section-color-theme_sarov
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(153.62deg,
+  #4F21B4 0.82%, #6567DF 52.47%, #9489E0 100%)!important;
+.footer-color-theme_sarov
+  background: #4E4084;
+.left-circle-image-color-theme_sarov
+  background-color: #F7F7F7
+.right-circle-image-color-theme_sarov
+  background-color: #6B31ED
+.bottom-circle-image-color-theme_sarov
+  background-color: #6759D1
+/*Лесной*/
+.section-color-theme_lesnoi
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(158.16deg,
+  #558E4C 3.22%, #EBF0CE 116.48%)!important
+.footer-color-theme_lesnoi
+  background: #558E4C;
+.left-circle-image-color-theme_lesnoi
+  background-color: #EBF0CE
+.right-circle-image-color-theme_lesnoi
+  background-color: #4392A7
+.bottom-circle-image-color-theme_lesnoi
+  background-color: #D05C38
+.slide2-contur_lesnoi
+  -webkit-filter: drop-shadow(3px 5px 5px #EBF0CE);
+  filter: drop-shadow(10px 15px 0px #EBF0CE);
+.slide2-position-options_lesnoi
+  align-items center!important
+/*Глазов*/
+.section-color-theme_glazov
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(336.17deg,
+  #9EDCF5 0%, #80BFFF 100%)!important;
+.footer-color-theme_glazov
+  background: #3F96D8;
+.left-circle-image-color-theme_glazov
+  background-color: #F7F7F7
+.right-circle-image-color-theme_glazov
+  background-color: #3F96D8
+.bottom-circle-image-color-theme_glazov
+  background-color: #FFEA7D
+.slide2-position-options_glazov
+  align-items center!important
+/*Зеленогорск*/
+.section-color-theme_zelenogorsk
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
+  #21547B 0%, #3DC7CF 0.01%, #B2C963 100%)!important;
+.footer-color-theme_zelenogorsk
+  background: #21547B;
+.left-circle-image-color-theme_zelenogorsk
+  background-color: #F7F7F7
+.right-circle-image-color-theme_zelenogorsk
+  background-color: #21547B
+.bottom-circle-image-color-theme_zelenogorsk
+  background-color: #3D90CF
+.slide2-interesting-place
+  background: #E6EDFF;
+  border: 3px solid #C9F05E;
+/*Новоуральск*/
+.section-color-theme_novouralsk
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(158.16deg,
+  #3023AE 3.22%, #53A0FD 116.48%)!important;
+.footer-color-theme_novouralsk
+  background: #3023AE;
+.left-circle-image-color-theme_novouralsk
+  background-color: #F7F7F7
+.right-circle-image-color-theme_novouralsk
+  background-color: #3023AE
+.bottom-circle-image-color-theme_novouralsk
+  background-color: #01B4B0
+/*Озерск*/
+.section-color-theme_ozersk
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(157.99deg,
+  #0B4FFE 3.22%, #53A0FD 116.48%)!important;
+.footer-color-theme_ozersk
+  background: #0B4FFE;
+.left-circle-image-color-theme_ozersk
+  background-color: #F7F7F7
+.right-circle-image-color-theme_ozersk
+  background-color: #0B4FFE
+.bottom-circle-image-color-theme_ozersk
+  background-color: #FFEA7D
+/*Северск*/
+.section-color-theme_seversk
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
+  #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%)!important;
+.footer-color-theme_seversk
+  background: #005CA9;
+.left-circle-image-color-theme_seversk
+  background-color: #00579C
+.right-circle-image-color-theme_seversk
+  background-color: #5B18F7
+.bottom-circle-image-color-theme_seversk
+  background-color: #0BD7BB
+/*Заречный свердловская обл.*/
+.section-color-theme_zarechnii-sverdl
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
+  #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%)!important;
+.footer-color-theme_zarechnii-sverdl
+  background: #005CA9;
+.left-circle-image-color-theme_zarechnii-sverdl
+  background-color: #FEFEFE
+.right-circle-image-color-theme_zarechnii-sverdl
+  background-color: #005CA9
+.bottom-circle-image-color-theme_zarechnii-sverdl
+  background-color: #FFEA7D
+/*Снежинск*/
+.section-color-theme_snezhinsk
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
+  #005CA9 0%, #3D90CF 100%)!important;
+.footer-color-theme_snezhinsk
+  background: #005CA9;
+.left-circle-image-color-theme_snezhinsk
+  background-color: #FFFFFF
+.right-circle-image-color-theme_snezhinsk
+  background-color: #005CA9
+.bottom-circle-image-color-theme_snezhinsk
+  background-color: #FEFEFE
+/*Железногорск*/
+.section-color-theme_zheleznogorsk
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
+  #005CA9 0%, #3D90CF 100%)!important;
+.footer-color-theme_zheleznogorsk
+  background: #005CA9;
+.left-circle-image-color-theme_zheleznogorsk
+  background-color: #FFFFFF
+.right-circle-image-color-theme_zheleznogorsk
+  background-color: #005CA9
+.bottom-circle-image-color-theme_zheleznogorsk
+  background-color: #FFFFFF
+/*Трехгорный*/
+.section-color-theme_trehgornii
+  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
+  #5CA647 0%, #5CA647 0.01%, #61A849 30.33%, #A0DA59 100%)!important;
+.footer-color-theme_trehgornii
+  background: #767A7A;
+.left-circle-image-color-theme_trehgornii
+  background-color: #EFF4F8
+.right-circle-image-color-theme_trehgornii
+  background-color: #006AB4
+.bottom-circle-image-color-theme_trehgornii
+  background-color: #EFF4F8
 
 .registration-link
   margin-left: 46px
@@ -281,6 +405,13 @@ export default {
       & .images-group__item:last-child
         margin-left: -55px
         z-index 1
+      & .images__interesting-place
+        position: absolute;
+        width 210px;
+        height 210px;
+        border-radius 50%
+        top: 46px;
+        right: 35px;
     & .slide3
       height 100%
       & .link
