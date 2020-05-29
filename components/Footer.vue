@@ -1,25 +1,22 @@
 <template lang="pug">
-
 .Footer.wrap
-
   .flex_wr.x_sb
     div
       h3.text_x1.mb_2 При поддержке
       br
-      .my-3
-        img(src='~static/icon/f_1.png')
-        img.ml-4(src='~static/icon/f_2.png')
+      .my-3.flex.y_center
+        img(:src="require(`~/static/img/intro/${city.city}/footer-gerb_${city.city}.png`)")
+        img.ml-4(:src="require(`~/static/img/intro/${city.city}/footer-city-logo_${city.city}.png`)" v-if="city.footerCityLogo")
+        img.ml-4(src='~static/icon/footer_1.svg' v-else)
       br
       .flex.y_center
-        img(src='~static/icon/footer_1.svg')
-        img.ml-4(src='~static/icon/footer_2.svg')
-
-
+        img(src='~static/icon/footer_1.svg' v-if="city.footerCityLogo" style="margin-right: 2em")
+        img(src='~static/icon/footer_2.svg')
     div.bold
-    
+
       .text_x2 О проекте
       .text_x2.my-4 Регламент сервиса
-      .text_x2 Пользовательское 
+      .text_x2 Пользовательское
         br
         | соглашение
 
@@ -34,7 +31,7 @@
           description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
           quote="The hot reload is so fast it\'s near instant. - Evan You"
           hashtags="vuejs,vite"
-        ) 
+        )
           .icon.vk
         ShareNetwork(
           network="facebook"
@@ -43,23 +40,26 @@
           description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
           quote="The hot reload is so fast it\'s near instant. - Evan You"
           hashtags="vuejs,vite"
-        ) 
+        )
           .icon.fb
         .icon.yt
         .icon.inst
 
       .BR
       .btn Сообщить о проблеме
-  
-  
-  
 
 
 
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    city() {
+      return this.$store.getters.GET_CITY;
+    }
+  }
+}
 </script>
 
 <style lang="stylus">

@@ -7,7 +7,10 @@ section.Intro(:class="city.colorThemeClasses.section")
         p.upper.ml-4.intro__header-title Умные города
           br
           | Росатома
-        img.ml-2(:src="require(`~/static/img/intro/${city.headerCityLogo}`)")
+        img.ml-2(v-if="city.headerCityLogo"
+          :src="require(`~/static/img/intro/${city.city}/city-logo_${city.city}.png`)")
+        div(v-else).ml-4.flex.y_center.alternative-header-logo
+          p.upper {{ city.cityName }}
       nav.intro__header-right.flex.y_center
         template(
           v-for="item in ['ГОРОДСКИЕ СЕРВИСЫ', 'Новости', 'Обратная связь']"
@@ -31,36 +34,36 @@ section.Intro(:class="city.colorThemeClasses.section")
               p.Intro__content-hello-text {{ city.helloText }}
               p.Intro__content-hello-text {{ city.helloTextMain }}
               .Intro__content-head-of-city.flex.x_start.y_center
-                img.head-of-city__photo(:src="require(`~/static/img/intro/${city.headOfCityPhoto}`)")
+                img.head-of-city__photo(:src="require(`~/static/img/intro/${city.city}/head-of-city_${city.city}.png`)")
                 .head-of-city__name
                   h3 {{ city.headOfCityName }}
                   p {{ city.headOfCityOccupation }}
             .images.flex
               div.flex.y_center
                 div.left-image.flex.x_center.y_center(:class="city.colorThemeClasses.leftCircleImage")
-                  img(:src="require(`~/static/img/intro/${city.firstSlideLeftBigCircleImage}`)")
+                  img(:src="require(`~/static/img/intro/${city.city}/slide1-left_${city.city}.png`)")
               div.flex_col.x_sa
                 div.right-image.flex.x_center.y_center(:class="city.colorThemeClasses.rightCircleImage")
-                  img(:src="require(`~/static/img/intro/${city.secondUpperImage}`)")
+                  img(:src="require(`~/static/img/intro/${city.city}/slide1-upper_${city.city}.png`)")
                 div.bottom-image.flex.x_center.y_center(:class="city.colorThemeClasses.bottomCircleImage")
-                  img(:src="require(`~/static/img/intro/${city.thirdLowerImage}`)")
+                  img(:src="require(`~/static/img/intro/${city.city}/slide1-bottom_${city.city}.png`)")
         swiper-slide
           .wrap.slide2.flex
             .content.flex_col.x_center
               h2.Intro__content-explore-title(v-if="city.slogan") {{ city.slogan }}
               h2.Intro__content-explore-title(v-if="city.slogan2") {{ city.slogan2 }}
               h2.Intro__content-explore-title(v-else) Изучай город
-              p.Intro__content-explore-text {{ city.exploreText }}
+              p.Intro__content-explore-text Сейчас в пилотном режиме для горожан доступны следующие сервисы: решение городских проблем онлайн, учереждения, полиция и депутатские округа
               div.flex
                 .registration-link Перейти к сервисам
             .images.flex.y_end.x_sa(:class="city.slide2PositionOptions")
-              img(:src="require(`~/static/img/intro/${city.secondSlideBigImage}`)"
+              img(:src="require(`~/static/img/intro/${city.city}/slide2_${city.city}.png`)"
                 :class="city.contur")
               div.images__group.flex(v-if="city.secondSlideGraphicBalls")
                 img.images-group__item(src="~/static/img/intro/tool.png")
                 img.images-group__item(src="~/static/img/intro/swimmer.png")
               div.images__interesting-place.flex.y_center.x_center(v-if="city.slide2InterestingPlace" :class="city.slide2InterestingPlaceStyle")
-                img(:src="require(`~/static/img/intro/${city.slide2InterestingPlace}`)")
+                img(:src="require(`~/static/img/intro/${city.city}/slide2-1_${city.city}.png`)")
         swiper-slide
           .wrap.flex.x_sb.slide3
             .content.flex_col.x_center
@@ -85,7 +88,7 @@ section.Intro(:class="city.colorThemeClasses.section")
         )
   footer.Intro__footer(:class="city.colorThemeClasses.footer")
     .wrap.flex.y_center.x_sb
-      img(:src="require(`~/static/img/intro/${city.footerGif}`)")
+      img(:src="require(`~/static/img/intro/${city.city}/messenger_${city.city}.gif`)")
       .flex
         .Intro__footer-achievment
           h2.achievment-number {{ city.howManyUsers }}
@@ -121,9 +124,6 @@ export default {
       }
     }
   },
-  created() {
-    console.log(this.$store.getters.GET_CITY);
-  },
   computed: {
     city() {
       return this.$store.getters.GET_CITY;
@@ -133,164 +133,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-/*Заречный*/
-.section-color-theme_zarechnii
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
-  #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%)
-.footer-color-theme_zarechnii
-  background-color: #107C9F
-.left-circle-image-color-theme_zarechnii
-  background-color: #F7F7F7
-.right-circle-image-color-theme_zarechnii
-  background-color: #0BBBEF
-.bottom-circle-image-color-theme_zarechnii
-  background-color: #FFD35F
-.los-contur
-  -webkit-filter: drop-shadow(3px 5px 5px #000);
-  filter: drop-shadow(10px 15px 0px #51BBB7);
-/*Саров*/
-.section-color-theme_sarov
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(153.62deg,
-  #4F21B4 0.82%, #6567DF 52.47%, #9489E0 100%)!important;
-.footer-color-theme_sarov
-  background: #4E4084;
-.left-circle-image-color-theme_sarov
-  background-color: #F7F7F7
-.right-circle-image-color-theme_sarov
-  background-color: #6B31ED
-.bottom-circle-image-color-theme_sarov
-  background-color: #6759D1
-/*Лесной*/
-.section-color-theme_lesnoi
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(158.16deg,
-  #558E4C 3.22%, #EBF0CE 116.48%)!important
-.footer-color-theme_lesnoi
-  background: #558E4C;
-.left-circle-image-color-theme_lesnoi
-  background-color: #EBF0CE
-.right-circle-image-color-theme_lesnoi
-  background-color: #4392A7
-.bottom-circle-image-color-theme_lesnoi
-  background-color: #D05C38
-.slide2-contur_lesnoi
-  -webkit-filter: drop-shadow(3px 5px 5px #EBF0CE);
-  filter: drop-shadow(10px 15px 0px #EBF0CE);
-.slide2-position-options_lesnoi
-  align-items center!important
-/*Глазов*/
-.section-color-theme_glazov
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(336.17deg,
-  #9EDCF5 0%, #80BFFF 100%)!important;
-.footer-color-theme_glazov
-  background: #3F96D8;
-.left-circle-image-color-theme_glazov
-  background-color: #F7F7F7
-.right-circle-image-color-theme_glazov
-  background-color: #3F96D8
-.bottom-circle-image-color-theme_glazov
-  background-color: #FFEA7D
-.slide2-position-options_glazov
-  align-items center!important
-/*Зеленогорск*/
-.section-color-theme_zelenogorsk
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
-  #21547B 0%, #3DC7CF 0.01%, #B2C963 100%)!important;
-.footer-color-theme_zelenogorsk
-  background: #21547B;
-.left-circle-image-color-theme_zelenogorsk
-  background-color: #F7F7F7
-.right-circle-image-color-theme_zelenogorsk
-  background-color: #21547B
-.bottom-circle-image-color-theme_zelenogorsk
-  background-color: #3D90CF
-.slide2-interesting-place
-  background: #E6EDFF;
-  border: 3px solid #C9F05E;
-/*Новоуральск*/
-.section-color-theme_novouralsk
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(158.16deg,
-  #3023AE 3.22%, #53A0FD 116.48%)!important;
-.footer-color-theme_novouralsk
-  background: #3023AE;
-.left-circle-image-color-theme_novouralsk
-  background-color: #F7F7F7
-.right-circle-image-color-theme_novouralsk
-  background-color: #3023AE
-.bottom-circle-image-color-theme_novouralsk
-  background-color: #01B4B0
-/*Озерск*/
-.section-color-theme_ozersk
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(157.99deg,
-  #0B4FFE 3.22%, #53A0FD 116.48%)!important;
-.footer-color-theme_ozersk
-  background: #0B4FFE;
-.left-circle-image-color-theme_ozersk
-  background-color: #F7F7F7
-.right-circle-image-color-theme_ozersk
-  background-color: #0B4FFE
-.bottom-circle-image-color-theme_ozersk
-  background-color: #FFEA7D
-/*Северск*/
-.section-color-theme_seversk
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
-  #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%)!important;
-.footer-color-theme_seversk
-  background: #005CA9;
-.left-circle-image-color-theme_seversk
-  background-color: #00579C
-.right-circle-image-color-theme_seversk
-  background-color: #5B18F7
-.bottom-circle-image-color-theme_seversk
-  background-color: #0BD7BB
-/*Заречный свердловская обл.*/
-.section-color-theme_zarechnii-sverdl
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
-  #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%)!important;
-.footer-color-theme_zarechnii-sverdl
-  background: #005CA9;
-.left-circle-image-color-theme_zarechnii-sverdl
-  background-color: #FEFEFE
-.right-circle-image-color-theme_zarechnii-sverdl
-  background-color: #005CA9
-.bottom-circle-image-color-theme_zarechnii-sverdl
-  background-color: #FFEA7D
-/*Снежинск*/
-.section-color-theme_snezhinsk
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
-  #005CA9 0%, #3D90CF 100%)!important;
-.footer-color-theme_snezhinsk
-  background: #005CA9;
-.left-circle-image-color-theme_snezhinsk
-  background-color: #FFFFFF
-.right-circle-image-color-theme_snezhinsk
-  background-color: #005CA9
-.bottom-circle-image-color-theme_snezhinsk
-  background-color: #FEFEFE
-/*Железногорск*/
-.section-color-theme_zheleznogorsk
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
-  #005CA9 0%, #3D90CF 100%)!important;
-.footer-color-theme_zheleznogorsk
-  background: #005CA9;
-.left-circle-image-color-theme_zheleznogorsk
-  background-color: #FFFFFF
-.right-circle-image-color-theme_zheleznogorsk
-  background-color: #005CA9
-.bottom-circle-image-color-theme_zheleznogorsk
-  background-color: #FFFFFF
-/*Трехгорный*/
-.section-color-theme_trehgornii
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
-  #5CA647 0%, #5CA647 0.01%, #61A849 30.33%, #A0DA59 100%)!important;
-.footer-color-theme_trehgornii
-  background: #767A7A;
-.left-circle-image-color-theme_trehgornii
-  background-color: #EFF4F8
-.right-circle-image-color-theme_trehgornii
-  background-color: #006AB4
-.bottom-circle-image-color-theme_trehgornii
-  background-color: #EFF4F8
 
+
+.alternative-header-logo
+  height 100%
+  border-left 1px solid #ffffff
+  padding-left: 26px
 .registration-link
   margin-left: 46px
   background #FFF
@@ -410,6 +258,7 @@ export default {
         width 210px;
         height 210px;
         border-radius 50%
+        background-color #E6EDFF
         top: 46px;
         right: 35px;
     & .slide3
