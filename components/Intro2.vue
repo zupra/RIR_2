@@ -57,7 +57,7 @@ section.Intro(:class="city.colorThemeClasses.section")
               div.flex
                 .registration-link Перейти к сервисам
             .images.flex.y_end.x_sa(:class="city.slide2PositionOptions")
-              img(:src="require(`~/static/img/intro/${city.city}/slide2_${city.city}.png`)"
+              img.slide2-main-img(:src="require(`~/static/img/intro/${city.city}/slide2_${city.city}.png`)"
                 :class="city.contur")
               div.images__group.flex(v-if="city.secondSlideGraphicBalls")
                 img.images-group__item(src="~/static/img/intro/tool.png")
@@ -108,10 +108,12 @@ export default {
     return {
       // headerLinks: ['ГОРОДСКИЕ СЕРВИСЫ', 'Новости', 'Обратная связь'],
       swiperOption: {
-        // effect: 'fade',
-        loop: true,
+        effect: 'fade',
+        loop: false,
         mousewheel: true,
         direction: 'vertical',
+        freeModeSticky: true,
+        freeMode: true,
         // autoplay: {
         //   delay: 3000,
         //   disableOnInteraction: false
@@ -133,7 +135,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
+.swiper-slide:not(.swiper-slide-active){
+  opacity: 0 !important;
+}
 
 .alternative-header-logo
   height 100%
@@ -220,10 +224,16 @@ export default {
         margin-right: -17px
       & .left-image
         circle(366px)
+        -webkit-animation: shakeLeft 2.7s linear alternate infinite;
+        animation: shakeLeft 2.7s linear alternate infinite;
       & .right-image
         circle(214px)
+        -webkit-animation: shakeRight 4s linear alternate infinite;
+        animation: shakeRight 4s linear alternate infinite;
       & .bottom-image
         circle(250px)
+        -webkit-animation: shakeBottom 2s linear alternate infinite;
+        animation: shakeBottom 2s linear alternate infinite;
     & .slide2
       height 100%
       & .content
@@ -294,15 +304,15 @@ export default {
         width: 100%;
         height: 100%;
         border-radius: 5px;
-        top: 21px
-        left: 21px
+        top: 0
+        left: 0
         z-index 4
         background: linear-gradient(219.75deg, #0266B0 0%, #01468D 85.89%);
         box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
       & .shadow-2
         position absolute
-        top: 42px
-        left: 42px
+        top: 0
+        left: 0
         width: 100%;
         height: 100%;
         z-index 3
@@ -311,8 +321,8 @@ export default {
         box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
       & .shadow-3
         position absolute
-        top: 63px
-        left: 63px
+        top: 0
+        left: 0
         width: 100%;
         height: 100%;
         z-index 2
@@ -336,4 +346,41 @@ export default {
         font-weight bold
         font-size 20px
         line-height 24px
+@-webkit-keyframes shakeLeft
+    100%
+      transform translate(8px, 8px)
+@-webkit-keyframes shakeRight
+  100%
+    transform translate(6px, 6px)
+@-webkit-keyframes shakeBottom
+  100%
+    transform translateY(4px)
+.swiper-slide-active
+  position: relative!important;
+  z-index 100
+.swiper-slide-active .shadow-1
+  transform translate(21px, 21px)
+  transition all .8s ease-out
+.swiper-slide-active .shadow-2
+  transform translate(42px, 42px)
+  transition all .8s ease-out
+.swiper-slide-active .shadow-3
+  transform translate(63px, 63px)
+  transition all .8s ease-out
+.swiper-slide-active  .slide2-main-img
+  opacity: 1
+  transform: translateX(10px);
+  transition all 1.2s ease-out
+  animation: showImage 1.2s ease-out
+@-webkit-keyframes showImage
+  0%
+    opacity 0
+  25%
+    opacity .25
+  50%
+    opacity .5
+  75%
+    opacity .75
+  100%
+    opacity 1
 </style>

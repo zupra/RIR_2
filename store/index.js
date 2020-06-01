@@ -283,7 +283,7 @@ export const state = () => ({
 });
 
 export const getters = {
-  GET_CITY: state => state.glazov,
+  GET_CITY: state => state.zarechnii,
 };
 
 export const mutations = {
