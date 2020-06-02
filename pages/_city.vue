@@ -1,6 +1,6 @@
 <template lang="pug">
 .Page
-  Intro2(
+  Intro(
     :cityName="$route.params.city"
   )
 
@@ -24,7 +24,6 @@
 
 <script>
 import Intro from '~/components/Intro.vue'
-import Intro2 from '~/components/Intro2.vue'
 //
 import ImgGrid from '~/components/ImgGrid.vue'
 import AdditionalModules from '~/components/AdditionalModules.vue'
@@ -37,7 +36,6 @@ export default {
     return Object.keys(store.state).some((city) => city === params.city)
   },
   components: {
-    Intro2,
     Intro,
     ImgGrid,
     Form,

@@ -5,6 +5,7 @@
     N-link.H.flex.text_x3.mb-2(
       v-for="city in ARR"
       :to="city"
+      :key="city.index"
     ) {{city}}
 </template>
 
