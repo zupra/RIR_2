@@ -4,13 +4,26 @@
     div
       h3.text_x1.mb_2 При поддержке
       br
+      // TODO !!!
       .my-3.flex.y_center
-        img(:src="require(`~/static/img/intro/${city.city}/footer-gerb_${city.city}.png`)")
-        img.ml-4(:src="require(`~/static/img/intro/${city.city}/footer-city-logo_${city.city}.png`)" v-if="city.footerCityLogo")
-        img.ml-4(src='~static/icon/footer_1.svg' v-else)
+        img(
+          :src="require(`~/static/img/intro/${city.city}/footer-gerb_${city.city}.png`)"
+        )
+        img.ml-4(
+          v-if="city.footerCityLogo"
+          :src="require(`~/static/img/intro/${city.city}/footer-city-logo_${city.city}.png`)" 
+        )
+        img.ml-4(
+          v-else
+          src='~static/icon/footer_1.svg' 
+        )
       br
       .flex.y_center
-        img(src='~static/icon/footer_1.svg' v-if="city.footerCityLogo" style="margin-right: 2em")
+        img(
+          v-if="city.footerCityLogo" 
+          src='~static/icon/footer_1.svg' 
+          style="margin-right: 2em"
+        )
         img(src='~static/icon/footer_2.svg')
     div.bold
 
@@ -54,9 +67,15 @@
 
 <script>
 export default {
+  props: {
+    cityName: {
+      type: String,
+      required: true
+    }
+  },
   computed: {
     city() {
-      return this.$store.getters.GET_CITY;
+      return this.$store.state[this.cityName]
     }
   }
 }

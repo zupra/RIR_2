@@ -26,9 +26,15 @@ section#Form.Form.flex.y_center(:class="city.colorThemeClasses.formColor")
 
 <script>
 export default {
+  props: {
+    cityName: {
+      type: String,
+      required: true
+    }
+  },
   computed: {
     city() {
-      return this.$store.getters.GET_CITY;
+      return this.$store.state[this.cityName]
     }
   }
 }

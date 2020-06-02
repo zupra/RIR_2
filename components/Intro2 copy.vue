@@ -104,12 +104,6 @@ section.Intro(:class="city.colorThemeClasses.section")
 <script>
 export default {
   name: 'Intro2',
-  props: {
-    cityName: {
-      type: String,
-      required: true
-    }
-  },
   data() {
     return {
       // headerLinks: ['ГОРОДСКИЕ СЕРВИСЫ', 'Новости', 'Обратная связь'],
@@ -134,9 +128,9 @@ export default {
   },
   computed: {
     city() {
-      return this.$store.state[this.cityName]
+      return this.$store.getters.GET_CITY;
     }
-  }
+  },
 }
 </script>
 
