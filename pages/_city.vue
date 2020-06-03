@@ -13,7 +13,7 @@
     // Новости
     News
     .BR
-  // Форма обратной связи
+    // Форма обратной связи
   Form(
     :cityName="$route.params.city"
   )
@@ -51,6 +51,7 @@ export default {
 </script>
 
 <style lang="stylus">
+
 h2
   margin-bottom .7em
 .BR

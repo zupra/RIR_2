@@ -20,12 +20,41 @@ section#Form.Form.flex.y_center(:class="city.colorThemeClasses.formColor")
           button.mt-5 Отправить
 
       .feedbackform__image
-        img(src="~/static/img/feedback.png")
+        img.animate-me.no-show(src="~/static/img/feedback.png")
 
 </template>
 
 <script>
 export default {
+  mounted() {
+    const images = document.querySelectorAll('.animate-me');
+
+    const config = {
+      rootMargin: '10px 20px 70px 40px',
+      threshold: [0, 0.25, 0.5, 0.75, 1]
+    };
+
+    let observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0.25) {
+          entry.target.classList.replace('no-show', 'first-show');
+        }
+        if (entry.intersectionRatio > 0.5) {
+          entry.target.classList.replace('first-show', 'second-show');
+        }
+        if (entry.intersectionRatio > 0.75) {
+          entry.target.classList.replace('second-show', 'show');
+        }
+        else {
+          entry.target.classList.replace('show' || 'second-show' || 'first-show', 'no-show');
+        }
+      });
+    }, config);
+
+    images.forEach(image => {
+      observer.observe(image);
+    });
+  },
   props: {
     cityName: {
       type: String,
@@ -41,6 +70,19 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.no-show
+  opacity 0
+  transition all 1s linear
+.first-show
+  opacity 0.25
+  transition all 1s linear
+.second-show
+  opacity 0.5
+  transition all 1s linear
+.show
+  opacity 1
+  transition all 1s linear
+
 .form__cover
   width 100%
 .Form

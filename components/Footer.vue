@@ -11,17 +11,17 @@
         )
         img.ml-4(
           v-if="city.footerCityLogo"
-          :src="require(`~/static/img/intro/${city.city}/footer-city-logo_${city.city}.png`)" 
+          :src="require(`~/static/img/intro/${city.city}/footer-city-logo_${city.city}.png`)"
         )
         img.ml-4(
           v-else
-          src='~static/icon/footer_1.svg' 
+          src='~static/icon/footer_1.svg'
         )
       br
       .flex.y_center
         img(
-          v-if="city.footerCityLogo" 
-          src='~static/icon/footer_1.svg' 
+          v-if="city.footerCityLogo"
+          src='~static/icon/footer_1.svg'
           style="margin-right: 2em"
         )
         img(src='~static/icon/footer_2.svg')
