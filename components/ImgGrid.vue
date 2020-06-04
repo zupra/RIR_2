@@ -17,10 +17,6 @@ section.ImgGrid
         p.subText Оставляйте заявки по решению городских проблем: залатать яму, отремонтировать детскую площадку, убрать свалку или пожаловаться на незаконную стройку. Отслеживайте статус обращений онлайн.
         .BR
         .btn Перейти
-        vue-lottie(ref="lottie" loop autoplay :data="animationData" renderer="html"
-          :height="400" :width="400")
-        vue-lottie(ref="lottie" loop autoplay :data="socialNetwork" renderer="html"
-          :height="400" :width="400")
       .picture
         img(src='~/static/gifs/2.gif' class="animate-me no-scale")
 
@@ -53,9 +49,7 @@ section.ImgGrid
 </template>
 
 <script>
-  import vueLottie from 'vue-lottie-ssr'
-  import animationData from '~/static/animations/pinjump.json'
-  import socialNetwork from '~/static/animations/pinjump.json'
+
 const DATA = [
   {
     id: 1,
@@ -90,18 +84,16 @@ export default {
   data() {
     return {
       list: DATA,
-      speed: 1,
-      animationData,
-      socialNetwork
     }
   },
   computed: {
-    lottie () {
-      return this.$refs.lottie
-    }
+
   },
   components: {
-    vueLottie,
+
+  },
+  methods: {
+
   }
 }
 </script>
