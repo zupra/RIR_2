@@ -83,8 +83,17 @@ export default {
   },
   data() {
     return {
-      list: DATA
+      list: DATA,
     }
+  },
+  computed: {
+
+  },
+  components: {
+
+  },
+  methods: {
+
   }
 }
 </script>
