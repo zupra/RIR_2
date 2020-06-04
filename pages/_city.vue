@@ -17,7 +17,7 @@
   Form(
     :cityName="$route.params.city"
   )
-  Footer(
+  Footer(v-prlx="{ preserveInitialPosition: false, limit: { min: -600, max: 200 }}"
     :cityName="$route.params.city"
   )
 </template>

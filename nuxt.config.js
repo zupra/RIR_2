@@ -29,7 +29,8 @@ export default {
    */
   plugins: [
     { src: './plugins/vue-awesome-swiper.js', mode: 'client' },
-    './plugins/vue-scrollto.js'
+    './plugins/vue-scrollto.js',
+    './plugins/vue-parallax.js'
   ],
   /*
    ** Nuxt.js dev-modules
