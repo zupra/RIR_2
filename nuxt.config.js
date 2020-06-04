@@ -72,64 +72,11 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    transpile: ['vue-clamp', 'resize-detector'],
     extend(config, ctx) {}
-  },
+  }
 
   /*
    ** Router configuration
    */
-
-  /*
-  router: {
-    scrollBehavior(to) {
-      if (to.hash) {
-        return window.scrollTo({
-          top: document.querySelector(to.hash).offsetTop + window.innerHeight,
-          behavior: 'smooth'
-        })
-      }
-      return window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-  }
-  */
-  // https://www.npmjs.com/package/vue-scrollto
-  // https://vue-scrollto.netlify.app/docs/#nuxt-js
-
-  // https://www.npmjs.com/package/vue2-smooth-scroll
-
-  // https://toor.co/blog/nuxtjs-smooth-scrolling-with-hash-links/
-  router: {
-    scrollBehavior: async (to, from, savedPosition) => {
-      if (savedPosition) {
-        return savedPosition
-      }
-
-      const findEl = (hash, x) => {
-        return (
-          document.querySelector(hash) ||
-          new Promise((resolve, reject) => {
-            if (x > 50) {
-              return resolve()
-            }
-            setTimeout(() => {
-              resolve(findEl(hash, ++x || 1))
-            }, 100)
-          })
-        )
-      }
-
-      if (to.hash) {
-        const el = await findEl(to.hash)
-        if ('scrollBehavior' in document.documentElement.style) {
-          return window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
-        } else {
-          return window.scrollTo(0, el.offsetTop)
-        }
-      }
-
-      // location.href = location.origin
-
-      return { x: 0, y: 0 }
-    }
-  }
 }
