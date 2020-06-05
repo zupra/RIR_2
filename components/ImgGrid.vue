@@ -47,7 +47,7 @@ section.ImgGrid
             renderer="canvas"
             :animationData="animation_2"
           )
-          
+
 
     figure
       figcaption
@@ -73,12 +73,12 @@ section.ImgGrid
         .btn Перейти
       picture
         img(src='~/static/gifs/4.gif' class="animate-me no-scale")
-        //- 
-        Lottie(
-          style="width:800px"
-          renderer="canvas"
-          :animationData="animation_4"
-        )
+        //-
+          Lottie(
+            style="width:800px"
+            renderer="canvas"
+            :animationData="animation_4"
+          )
 
     figure
       figcaption
@@ -87,14 +87,9 @@ section.ImgGrid
         .BR
         .btn Перейти
       picture
-        img(src='~/static/gifs/5.gif' class="animate-me no-scale")
-        //- 
-          vue-lottie(
-            loop
-            autoplay
-            :data="animation_5"
-            :width="800"
-          )
+        //img(src='~/static/gifs/5.gif' class="animate-me no-scale")
+        //-
+        vue-lottie(loop autoplay :data="animation_5" :width="800")
 </template>
 
 <script>
