@@ -88,7 +88,7 @@ export default {
 .Form
   color #FFF
   min-height 100vh
-  box-shadow 0 3px 3px #ccc
+  box-shadow 0px 4px 4px rgba(0, 0, 0, 0.25)
   &_wrap
     width 555px
   h2
