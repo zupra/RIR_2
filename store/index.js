@@ -67,7 +67,6 @@ export const state = () => ({
       'На портале представлены сервисы для взаимодействия жителей с властью и городскими службами. Это ещё одна возможность совместными усилиями наиболее эффективно решать актуальные вопросы жизнедеятельности нашего Лесного. Вместе меняем город к лучшему!',
     headOfCityName: 'Сергей Черепанов',
     headOfCityOccupation: 'глава городского округа «Город Лесной»',
-    contur: 'slide2-contur_lesnoi',
     slide2PositionOptions: 'slide2-position-options_lesnoi',
     howManyUsers: '5 000',
     howManyCompanies: '90',

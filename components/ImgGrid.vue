@@ -6,16 +6,16 @@ section.ImgGrid
     .center.subText
       h2.H Возможности
       p Платформа «Умный город Росатома» —  единая информационная основа для внедрения цифровых городских сервисов. «Умные» технологии повышают эффективность управления городскими процессами, облегчая жизнь и горожанам, и властям, расширяя возможности обратной связи.
-      
-      
+
+
       .center
         //- img(src='~/static/gifs/1.gif' class="animate-me no-scale")
         vue-lottie(
-          loop 
-          autoplay 
-          :data="animation_1" 
+          loop
+          autoplay
+          :data="animation_1"
           renderer="html"
-          :height="506" 
+          :height="506"
           :width="900"
         )
       h2.H Базовые модули
@@ -34,10 +34,10 @@ section.ImgGrid
         //- img(src='~/static/gifs/2.gif' class="animate-me no-scale")
         //-
           vue-lottie(
-            loop 
-            autoplay 
-            :data="animation_2" 
-            :height="482" 
+            loop
+            autoplay
+            :data="animation_2"
+            :height="482"
             :width="450"
           )
 
@@ -57,10 +57,10 @@ section.ImgGrid
       picture
         //- img(src='~/static/gifs/3.gif' class="animate-me no-scale")
         vue-lottie(
-          loop 
-          autoplay 
-          :data="animation_3" 
-          :height="600" 
+          loop
+          autoplay
+          :data="animation_3"
+          :height="600"
           :width="600"
         )
 
@@ -87,9 +87,9 @@ section.ImgGrid
       picture
         //- img(src='~/static/gifs/5.gif' class="animate-me no-scale")
         vue-lottie(
-          loop 
-          autoplay 
-          :data="animation_5" 
+          loop
+          autoplay
+          :data="animation_5"
           :width="800"
         )
 </template>
