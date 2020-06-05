@@ -31,7 +31,7 @@ section.ImgGrid
 
 
       picture
-        //- img(src='~/static/gifs/2.gif' class="animate-me no-scale")
+        img(src='~/static/gifs/2.gif' class="animate-me no-scale")
         //-
           vue-lottie(
             loop
@@ -42,11 +42,12 @@ section.ImgGrid
           )
 
         //-
-        Lottie(
-          style="width:600px"
-          renderer="canvas"
-          :animationData="animation_2"
-        )
+          Lottie(
+            style="width:600px"
+            renderer="canvas"
+            :animationData="animation_2"
+          )
+          
 
     figure
       figcaption
@@ -71,7 +72,8 @@ section.ImgGrid
         .BR
         .btn Перейти
       picture
-        //- img(src='~/static/gifs/4.gif' class="animate-me no-scale")
+        img(src='~/static/gifs/4.gif' class="animate-me no-scale")
+        //- 
         Lottie(
           style="width:800px"
           renderer="canvas"
@@ -85,17 +87,18 @@ section.ImgGrid
         .BR
         .btn Перейти
       picture
-        //- img(src='~/static/gifs/5.gif' class="animate-me no-scale")
-        vue-lottie(
-          loop
-          autoplay
-          :data="animation_5"
-          :width="800"
-        )
+        img(src='~/static/gifs/5.gif' class="animate-me no-scale")
+        //- 
+          vue-lottie(
+            loop
+            autoplay
+            :data="animation_5"
+            :width="800"
+          )
 </template>
 
 <script>
-import Lottie from 'vue-lottie-web'
+// import Lottie from 'vue-lottie-web'
 
 //
 import vueLottie from '~/components/vue-lottie.vue'
@@ -107,7 +110,7 @@ import animation_5 from '~/static/animations/JSON/5.json'
 
 export default {
   components: {
-    Lottie,
+    // Lottie,
     vueLottie
   },
   data() {
