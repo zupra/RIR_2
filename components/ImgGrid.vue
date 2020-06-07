@@ -10,12 +10,13 @@ section.ImgGrid
 
       .center
         //- img(src='~/static/gifs/1.gif' class="animate-me no-scale")
-        //- vue-lottie(
-        //-   :data="animation_2"
-        //-   renderer="svg"
-        //-   :height="506"
-        //-   :width="900"
-        //- )
+        Lottie(
+          class="animate-me no-scale"
+          renderer="canvas"
+          :data="animation_1"
+          :height="506"
+          :width="900"
+        )
       h2.H Базовые модули
       p Базовая платформа «Умный город» —  единая информационная основа для внедрения цифровых городских сервисов. Базовая версия включает в себя: модули решения городских проблем онлайн, учреждения, полиция и депутатские округа
     figure
@@ -29,27 +30,14 @@ section.ImgGrid
 
 
       picture
-        img(src='~/static/gifs/2.gif' class="animate-me no-scale")
-
-        div.svgContainer(
-          ref="Container_anim" 
+        // img(src='~/static/gifs/2.gif' class="animate-me no-scale")
+        Lottie(
+          class="animate-me no-scale"
+          renderer="canvas"
+          :data="animation_2"
+          :height="520"
+          :width="500"
         )
-        //-
-          vue-lottie(
-            loop
-            autoplay
-            :data="animation_2"
-            :height="482"
-            :width="450"
-          )
-
-        //-
-          Lottie(
-            style="width:600px"
-            renderer="canvas"
-            :animationData="animation_2"
-          )
-          
 
     figure
       figcaption
@@ -59,13 +47,13 @@ section.ImgGrid
         .btn Перейти
       picture
         //- img(src='~/static/gifs/3.gif' class="animate-me no-scale")
-        //- vue-lottie(
-        //-   loop
-        //-   autoplay
-        //-   :data="animation_3"
-        //-   :height="600"
-        //-   :width="600"
-        //- )
+        Lottie(
+          class="animate-me no-scale"
+          :data="animation_3"
+           :height="500"
+           :width="560"
+        )
+
 
     figure
       figcaption
@@ -74,13 +62,14 @@ section.ImgGrid
         .BR
         .btn Перейти
       picture
-        img(src='~/static/gifs/4.gif' class="animate-me no-scale")
-        //- 
-          Lottie(
-            style="width:800px"
-            renderer="canvas"
-            :animationData="animation_4"
-          )
+        //- img(src='~/static/gifs/4.gif' class="animate-me no-scale")
+        Lottie(
+          class="animate-me no-scale"
+          :data="animation_4"
+           :height="520"
+           :width="500"
+        )
+
 
     figure
       figcaption
@@ -88,22 +77,21 @@ section.ImgGrid
         p.subText Узнавайте, к какому депутатскому округу относится ваш дом, и обращайтесь к своему депутату для решения ваших проблем.
         .BR
         .btn Перейти
-      picture
-        img(src='~/static/gifs/5.gif' class="animate-me no-scale")
-        //- 
-          vue-lottie(
-            loop
-            autoplay
-            :data="animation_5"
-            :width="800"
-          )
+      picture.mr-5
+        //- img(src='~/static/gifs/5.gif' class="animate-me no-scale")
+        Lottie(
+          class="animate-me no-scale"
+          renderer="canvas"
+          :data="animation_5"
+          :height="460"
+          :width="460"
+        )
+
 </template>
 
 <script>
-// import Lottie from 'vue-lottie-web'
-
+import Lottie from '~/components/Lottie.vue'
 //
-// import vueLottie from '~/components/vue-lottie.vue'
 import animation_1 from '~/static/animations/JSON/1.json'
 import animation_2 from '~/static/animations/JSON/2.json'
 import animation_3 from '~/static/animations/JSON/3.json'
@@ -112,8 +100,7 @@ import animation_5 from '~/static/animations/JSON/5.json'
 
 export default {
   components: {
-    // Lottie,
-    // vueLottie
+    Lottie
   },
   data() {
     return {
@@ -125,15 +112,6 @@ export default {
     }
   },
   mounted() {
-    window.bodymovin.loadAnimation({
-      container: document.getElementById('svgContainer'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: this.animation_1
-    })
-
-    // =====================
     const images = document.querySelectorAll('.animate-me')
 
     const config = {
@@ -161,22 +139,22 @@ export default {
 <style lang="stylus" scoped>
 
 .no-scale
-  transform scale(1)
+  transform scale(.9)
   animation no-scale 0.8s ease-out forwards
 
 @keyframes no-scale
   from
-    transform scale(1.1)
-  to
     transform scale(1)
+  to
+    transform scale(.9)
 .scale
   animation scale 0.8s ease-out forwards
 
 @keyframes scale
   from
-    transform scale(1)
+    transform scale(.9)
   to
-    transform scale(1.1)
+    transform scale(1)
 
 .ImgGrid
   background #FFF
