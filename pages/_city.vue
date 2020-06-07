@@ -5,7 +5,11 @@
   )
 
   // Картиночки
-  FKNLottie(data="https://assets2.lottiefiles.com/datafiles/WFKIUGAVvLl1azi/data.json")
+  client-only
+  //-
+    Bodymovin(
+      data="https://assets2.lottiefiles.com/datafiles/WFKIUGAVvLl1azi/data.json"
+    )
   ImgGrid
   .wrap
     // Дополнительные модули
@@ -18,27 +22,29 @@
   Form(
     :cityName="$route.params.city"
   )
-  Footer(v-prlx="{ preserveInitialPosition: false, limit: { min: -600, max: 200 }}"
+  Footer(
     :cityName="$route.params.city"
+    v-prlx="{ preserveInitialPosition: false, limit: { min: -600, max: 200 }}"
   )
 </template>
 
 <script>
 import Intro from '~/components/Intro.vue'
-//
 import ImgGrid from '~/components/ImgGrid.vue'
 import AdditionalModules from '~/components/AdditionalModules.vue'
 import News from '~/components/News.vue'
 import Form from '~/components/Form.vue'
 import Footer from '~/components/Footer.vue'
-import FKNLottie from "../components/FKNLottie";
+// -
+import Bodymovin from '~/components/Bodymovin'
 
 export default {
   validate({ store, params }) {
     return Object.keys(store.state).some((city) => city === params.city)
   },
   components: {
-    FKNLottie,
+    Bodymovin,
+    //
     Intro,
     ImgGrid,
     Form,

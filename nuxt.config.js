@@ -18,12 +18,8 @@ export default {
     script: [
       {
         src:
-          'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.10/lottie_light.min.js'
+          'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.10/lottie.min.js'
       }
-      // {
-      //   src:
-      //     'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.10/lottie_svg.min.js'
-      // }
     ]
   },
   /*
