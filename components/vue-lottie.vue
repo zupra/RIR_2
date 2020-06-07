@@ -7,7 +7,9 @@ import Vue from 'vue'
 let lottieWeb
 
 if (!Vue.prototype.$isServer) {
-  lottieWeb = require('lottie-web/build/player/lottie_light.js')
+  console.log('GO lottie')
+  // lottieWeb = require('lottie-web/build/player/lottie_light.js')
+  lottieWeb = () => import('bodymovin')
 }
 
 export default {
@@ -16,7 +18,14 @@ export default {
       type: Object,
       required: true
     },
-    loop: Boolean,
+    renderer: {
+      type: String,
+      default: 'canvas'
+    },
+    loop: {
+      type: Boolean,
+      default: true
+    },
     autoplay: {
       type: Boolean,
       default: true
@@ -44,14 +53,23 @@ export default {
     }
   },
   mounted() {
+    console.log(bodymovin)
+
     if (lottieWeb) {
       this.animation = lottieWeb.loadAnimation({
+        /*
         container: this.$refs.lavContainer,
-        renderer: 'svg',
+        renderer: this.renderer,
         loop: this.loop,
         autoplay: this.autoplay,
         animationData: this.data,
         rendererSettings: this.settings
+        */
+
+        wrapper: this.$refs.lavContainer,
+        animType: 'svg',
+        loop: true,
+        path: this.data
       })
     }
   }

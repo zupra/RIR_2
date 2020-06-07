@@ -10,14 +10,12 @@ section.ImgGrid
 
       .center
         //- img(src='~/static/gifs/1.gif' class="animate-me no-scale")
-        vue-lottie(
-          loop
-          autoplay
-          :data="animation_1"
-          renderer="html"
-          :height="506"
-          :width="900"
-        )
+        //- vue-lottie(
+        //-   :data="animation_2"
+        //-   renderer="svg"
+        //-   :height="506"
+        //-   :width="900"
+        //- )
       h2.H Базовые модули
       p Базовая платформа «Умный город» —  единая информационная основа для внедрения цифровых городских сервисов. Базовая версия включает в себя: модули решения городских проблем онлайн, учреждения, полиция и депутатские округа
     figure
@@ -32,6 +30,10 @@ section.ImgGrid
 
       picture
         img(src='~/static/gifs/2.gif' class="animate-me no-scale")
+
+        div.svgContainer(
+          ref="Container_anim" 
+        )
         //-
           vue-lottie(
             loop
@@ -57,13 +59,13 @@ section.ImgGrid
         .btn Перейти
       picture
         //- img(src='~/static/gifs/3.gif' class="animate-me no-scale")
-        vue-lottie(
-          loop
-          autoplay
-          :data="animation_3"
-          :height="600"
-          :width="600"
-        )
+        //- vue-lottie(
+        //-   loop
+        //-   autoplay
+        //-   :data="animation_3"
+        //-   :height="600"
+        //-   :width="600"
+        //- )
 
     figure
       figcaption
@@ -74,11 +76,11 @@ section.ImgGrid
       picture
         img(src='~/static/gifs/4.gif' class="animate-me no-scale")
         //- 
-        Lottie(
-          style="width:800px"
-          renderer="canvas"
-          :animationData="animation_4"
-        )
+          Lottie(
+            style="width:800px"
+            renderer="canvas"
+            :animationData="animation_4"
+          )
 
     figure
       figcaption
@@ -101,7 +103,7 @@ section.ImgGrid
 // import Lottie from 'vue-lottie-web'
 
 //
-import vueLottie from '~/components/vue-lottie.vue'
+// import vueLottie from '~/components/vue-lottie.vue'
 import animation_1 from '~/static/animations/JSON/1.json'
 import animation_2 from '~/static/animations/JSON/2.json'
 import animation_3 from '~/static/animations/JSON/3.json'
@@ -111,7 +113,7 @@ import animation_5 from '~/static/animations/JSON/5.json'
 export default {
   components: {
     // Lottie,
-    vueLottie
+    // vueLottie
   },
   data() {
     return {
@@ -123,6 +125,15 @@ export default {
     }
   },
   mounted() {
+    window.bodymovin.loadAnimation({
+      container: document.getElementById('svgContainer'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: this.animation_1
+    })
+
+    // =====================
     const images = document.querySelectorAll('.animate-me')
 
     const config = {

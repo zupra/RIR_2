@@ -1892,6 +1892,11 @@ body-parser@1.19.0:
     raw-body "2.4.0"
     type-is "~1.6.17"
 
+bodymovin@^4.13.0:
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/bodymovin/-/bodymovin-4.13.0.tgz#06d97c0130e2334dccb33bea638136f88a74540b"
+  integrity sha1-Btl8ATDiM03MszvqY4E2+Ip0VAs=
+
 boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
@@ -5094,7 +5099,7 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-lottie-web@^5.1.7, lottie-web@^5.5.2:
+lottie-web@^5.6.10:
   version "5.6.10"
   resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.6.10.tgz#9c2959df12976f49637f563dcc96db2078010b4d"
   integrity sha512-ucTzaiBJOMm56/K7Wqjajyh7qXlonHKB3+b5fHvhSiz+jOrXt6QDNKAinI3qdw/zvvYHKzXvFMy5SgOXbOJ5ng==
@@ -8475,22 +8480,6 @@ vue-loader@^15.9.1:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-lottie-ssr@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/vue-lottie-ssr/-/vue-lottie-ssr-1.2.0.tgz#bdbc8333b2ed61e271ef979be684c85481ac157d"
-  integrity sha512-lAQQn8mpmU02YpL+3g8N85fbYiNFyRfGkyc8ayLPd0zKzi1vNP+1IJ89CF7ostbChp07Uq8y66XKJ8AKc/YOmA==
-  dependencies:
-    lottie-web "^5.1.7"
-    vue "^2.3.3"
-
-vue-lottie-web@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/vue-lottie-web/-/vue-lottie-web-0.0.3.tgz#635fc61aa8415a73f1759f6f5c93adc30cb3af5d"
-  integrity sha512-4c215EB+Gonb8U+trwAPRXmQapkoUMkKz1H8fBNHf+waBRVsNUkPzN3PLw7wxpmImItdvbuKVA2baufA+mOhCw==
-  dependencies:
-    lottie-web "^5.5.2"
-    vue "^2.5.11"
-
 vue-meta@^2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-meta/-/vue-meta-2.3.3.tgz#2a097f62817204b0da78be4d62aee0cb566eaee0"
@@ -8560,7 +8549,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.3.3, vue@^2.5.11, vue@^2.6.11:
+vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==

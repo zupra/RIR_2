@@ -14,7 +14,17 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src:
+          'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.10/lottie_light.min.js'
+      }
+      // {
+      //   src:
+      //     'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.10/lottie_svg.min.js'
+      // }
+    ]
   },
   /*
    ** Customize the progress-bar color
