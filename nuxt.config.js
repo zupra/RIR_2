@@ -25,7 +25,10 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: {
+    color: '#26a69a',
+    height: '5px'
+  },
   /*
    ** Global CSS
    */
@@ -34,9 +37,10 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    { src: './plugins/vue-awesome-swiper.js', mode: 'client' },
-    './plugins/vue-scrollto.js',
-    './plugins/vue-parallax.js'
+    { src: '@/plugins/vue-awesome-swiper.js', mode: 'client' },
+    '@/plugins/vue-scrollto.js',
+    '@/plugins/vue-parallax.js',
+    '@/plugins/vue-observe-visibility.client.js'
   ],
   /*
    ** Nuxt.js dev-modules

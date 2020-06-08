@@ -67,24 +67,49 @@ section.Intro(:class="city.colorThemeClasses.section")
         .swiper-pagination(
           slot="pagination"
         )
+
   footer.Intro__footer(:class="city.colorThemeClasses.footer")
     .wrap.flex.y_center.x_sb
       img(:src="require(`~/static/img/intro/${city.city}/messenger_${city.city}.gif`)")
       .flex
         .Intro__footer-achievment
-          h2.achievment-number {{ city.howManyUsers }}
+          //- h2.achievment-number {{ city.howManyUsers }}
+          animated-number.achievment-number(
+            v-observe-visibility="{callback:cb_howManyUsers, intersection:{threshold:0.7,}}"
+            :value="val_1"
+            :duration="2500"
+            :round="1"
+          )
           p.achievment-title Зарегистрированных пользователей
         .Intro__footer-achievment
-          h2.achievment-number {{ city.howManyCompanies }}
+          //- h2.achievment-number {{ city.howManyCompanies }}
+          animated-number.achievment-number(
+            v-observe-visibility="{callback:cb_howManyCompanies, intersection:{threshold:0.7,}}"
+            :value="val_2"
+            :duration="3000"
+            :delay="1000"
+            :round="1"
+          )
           p.achievment-title Организаций и учереждений
         .Intro__footer-achievment
-          h2.achievment-number {{ city.howManyCategories }}
+          //- h2.achievment-number {{ city.howManyCategories }}
+          animated-number.achievment-number(
+            v-observe-visibility="{callback:cb_howManyCategories, intersection:{threshold:0.7,}}"
+            :value="val_3"
+            :duration="3000"
+            :delay="2000"
+            :round="1"
+            easing="easeOutCirc"
+          )
           p.achievment-title Категорий обращений
 </template>
 
 <script>
+import AnimatedNumber from 'animated-number-vue'
 export default {
-  name: 'Intro2',
+  components: {
+    AnimatedNumber
+  },
   props: {
     cityName: {
       type: String,
@@ -93,7 +118,10 @@ export default {
   },
   data() {
     return {
-      // headerLinks: ['ГОРОДСКИЕ СЕРВИСЫ', 'Новости', 'Обратная связь'],
+      val_1: 1,
+      val_2: 1,
+      val_3: 1,
+      //
       swiperOption: {
         effect: 'fade',
         loop: false,
@@ -116,6 +144,20 @@ export default {
   computed: {
     city() {
       return this.$store.state[this.cityName]
+    }
+  },
+  methods: {
+    cb_howManyUsers(isVisible, entry) {
+      this.val_1 = this.city.howManyUsers
+      if (!entry.isIntersecting) this.val_1 = 1
+    },
+    cb_howManyCompanies(isVisible, entry) {
+      this.val_2 = this.city.howManyCompanies
+      if (!entry.isIntersecting) this.val_2 = 1
+    },
+    cb_howManyCategories(isVisible, entry) {
+      this.val_3 = this.city.howManyCategories
+      if (!entry.isIntersecting) this.val_3 = 1
     }
   }
 }
@@ -160,7 +202,7 @@ export default {
     & .swiper-container
       height 100%
       padding-top 70px
-    &  .swiper-slide-active
+    & .swiper-slide-active
       height 100%!important
     & .slide1
       position relative
