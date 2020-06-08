@@ -1,5 +1,6 @@
 <template lang="pug">
 .Page
+  Header(:cityName="$route.params.city")
   Intro(
     :cityName="$route.params.city"
   )
@@ -37,12 +38,14 @@ import Form from '~/components/Form.vue'
 import Footer from '~/components/Footer.vue'
 // -
 import Bodymovin from '~/components/Bodymovin'
+import Header from "../components/Header";
 
 export default {
   validate({ store, params }) {
     return Object.keys(store.state).some((city) => city === params.city)
   },
   components: {
+    Header,
     Bodymovin,
     //
     Intro,
@@ -60,7 +63,8 @@ export default {
 </script>
 
 <style lang="stylus">
-
+.Page
+  position: relative;
 h2
   margin-bottom .7em
 .BR

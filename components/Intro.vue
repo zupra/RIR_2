@@ -1,25 +1,6 @@
 <template lang="pug">
 section.Intro(:class="city.colorThemeClasses.section")
-  header.Intro__header
-    .wrap.flex.x_sb
-      .intro__header-left.flex.y_center
-        img(src="~static/icon/LOGO.png")
-        p.upper.ml-4.intro__header-title Умные города
-          br
-          | Росатома
-        img.ml-2(v-if="city.headerCityLogo"
-          :src="require(`~/static/img/intro/${city.city}/city-logo_${city.city}.png`)")
-        div(v-else).ml-4.flex.y_center.alternative-header-logo
-          p.upper {{ city.cityName }}
-      nav.intro__header-right.flex.y_center
-        template(
-          v-for="item in ['ГОРОДСКИЕ СЕРВИСЫ', 'Новости', 'Обратная связь']"
-        )
-          a.upper.nav-item(
-            v-scroll-to="'#Form'"
-            src="#"
-          ) {{ item }}
-        .registration-link Зарегистрироваться
+
   .Intro__content
     client-only
       swiper.swiper(
@@ -145,10 +126,6 @@ export default {
   opacity: 0 !important;
 }
 
-.alternative-header-logo
-  height 100%
-  border-left 1px solid #ffffff
-  padding-left: 26px
 .registration-link
   margin-left: 46px
   background #FFF
@@ -177,18 +154,12 @@ export default {
   height 100vh
   color: #ffffff
   background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg, #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%)
-  &__header
-    padding-top 18px
-    &-title
-      font-size 18px
-      font-weight 400
-    & .nav-item:not(:first-child)
-      margin-left: 41px
   &__content
     flex 1
     overflow-y hidden
     & .swiper-container
       height 100%
+      padding-top 70px
     &  .swiper-slide-active
       height 100%!important
     & .slide1

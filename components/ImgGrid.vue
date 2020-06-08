@@ -12,7 +12,6 @@ section.ImgGrid
         //- img(src='~/static/gifs/1.gif' class="animate-me no-scale")
         Lottie(
           class="animate-me no-scale"
-          renderer="canvas"
           :data="animation_1"
           :height="506"
           :width="900"
@@ -33,7 +32,6 @@ section.ImgGrid
         // img(src='~/static/gifs/2.gif' class="animate-me no-scale")
         Lottie(
           class="animate-me no-scale"
-          renderer="canvas"
           :data="animation_2"
           :height="520"
           :width="500"
@@ -81,7 +79,6 @@ section.ImgGrid
         //- img(src='~/static/gifs/5.gif' class="animate-me no-scale")
         Lottie(
           class="animate-me no-scale"
-          renderer="canvas"
           :data="animation_5"
           :height="460"
           :width="460"
@@ -92,11 +89,11 @@ section.ImgGrid
 <script>
 import Lottie from '~/components/Lottie.vue'
 //
-import animation_1 from '~/static/animations/JSON/1.json'
-import animation_2 from '~/static/animations/JSON/2.json'
-import animation_3 from '~/static/animations/JSON/3.json'
-import animation_4 from '~/static/animations/JSON/4.json'
-import animation_5 from '~/static/animations/JSON/5.json'
+import animation_1 from '~/static/animations/test/1.json'
+import animation_2 from '~/static/animations/test/2.json'
+import animation_3 from '~/static/animations/test/3.json'
+import animation_4 from '~/static/animations/test/4.json'
+import animation_5 from '~/static/animations/test/5.json'
 
 export default {
   components: {
