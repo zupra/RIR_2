@@ -6,9 +6,9 @@ header.Intro__header
       p.upper.ml-4.intro__header-title Умные города
         br
         | Росатома
-      img.ml-2(v-if="city.headerCityLogo"
+      img.header-city-logo(v-if="city.headerCityLogo"
         :src="require(`~/static/img/intro/${city.city}/city-logo_${city.city}.png`)")
-      div(v-else).ml-4.flex.y_center.alternative-header-logo
+      div(v-else).header-city-logo.flex.y_center.alternative-header-logo
         p.upper {{ city.cityName }}
     nav.intro__header-right.flex.y_center
       template(
@@ -39,6 +39,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.header-city-logo
+  margin-left 30px
 .alternative-header-logo
   height 100%
   border-left 1px solid #ffffff
