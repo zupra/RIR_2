@@ -6,7 +6,9 @@ section.ImgGrid
       h2.H Возможности
       p Платформа «Умный город Росатома» —  единая информационная основа для внедрения цифровых городских сервисов. «Умные» технологии повышают эффективность управления городскими процессами, облегчая жизнь и горожанам, и властям, расширяя возможности обратной связи.
       .center
-        img(src='~/static/static-svg/1.svg' alt="Возможности" class="static-main")
+        img(
+          src='~/static/static-svg/1.svg' alt="Возможности" class="static-main"
+        )
         Lottie(
           class="animate-me no-scale"
           :data="animation_1"
@@ -24,8 +26,15 @@ section.ImgGrid
         .BR
         .btn Перейти
       picture
-        source(srcset='~/static/modules/2.webp', type='image/webp')
-        img(src='~/static/modules/2.png', alt='решение городских проблем' class="static-section")
+        source(
+          srcset='~/static/modules/2.webp', 
+          type='image/webp'
+        )
+        img(
+          src='~/static/modules/2.png', 
+          alt='решение городских проблем' 
+          class="static-section"
+        )
       Lottie(
         class="animate-me no-scale"
         :data="animation_2"
@@ -39,7 +48,11 @@ section.ImgGrid
         p.subText Получайте информацию обо всех государственных и муниципальных организациях, образовательных и культурных учреждениях: адреса, графики работы, интернет-ресурсы. Все это есть на нашей платформе
         .BR
         .btn Перейти
-      img(src='~/static/static-svg/3.svg' alt="Учреждения" class="static-section")
+      img(
+        src='~/static/static-svg/3.svg' 
+        alt="Учреждения" 
+        class="static-section"
+      )
       Lottie(
         class="animate-me no-scale"
         :data="animation_3"
@@ -54,8 +67,15 @@ section.ImgGrid
         .BR
         .btn Перейти
       picture
-        source(srcset='~/static/modules/4.webp', type='image/webp')
-        img(src='~/static/modules/4.png', alt='Полиция' class="static-section")
+        source(
+          srcset='~/static/modules/4.webp', 
+          type='image/webp'
+        )
+        img(
+          src='~/static/modules/4.png', 
+          alt='Полиция' 
+          class="static-section"
+        )
       Lottie(
         class="animate-me no-scale"
         :data="animation_4"
@@ -71,8 +91,15 @@ section.ImgGrid
         .BR
         .btn Перейти
       picture
-        source(srcset='~/static/modules/5.webp', type='image/webp')
-        img(src='~/static/modules/5.png', alt='Депутатские округа' class="static-section")
+        source(
+          srcset='~/static/modules/5.webp', 
+          type='image/webp'
+        )
+        img(
+          src='~/static/modules/5.png', 
+          alt='Депутатские округа' 
+          class="static-section"
+        )
       Lottie(
         class="animate-me no-scale"
         :data="animation_5"
@@ -151,6 +178,7 @@ export default {
 
 .ImgGrid
   background #FFF
+  padding-bottom 1em
 
 
 .H
