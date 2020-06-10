@@ -1,40 +1,39 @@
 <template lang="pug">
 .Page
-  //Header(
-  //  :cityName="city"
-  //)
-  //Intro(
-  //  :cityName="city"
-  //)
+  Header(
+    :cityName="city"
+  )
+  Intro(
+    :cityName="city"
+  )
   // Картиночки
-  //ImgGrid
+  ImgGrid
   .wrap
     // Дополнительные модули
     AdditionalModules
     .BR
     // Новости
-    //News
+    News
     .BR
     // Форма обратной связи
-  //Form(
-  //  :cityName="$route.params.city"
-  //)
-  //Footer(
-  //  :cityName="$route.params.city"
-  //  v-prlx="{ preserveInitialPosition: false, limit: { min: -600, max: 200 }}"
-  //)
+  Form(
+    :cityName="$route.params.city"
+  )
+  Footer(
+    :cityName="$route.params.city"
+    v-prlx="{ preserveInitialPosition: false, limit: { min: -600, max: 200 }}"
+  )
 </template>
 
 <script>
-import Intro from '~/components/Intro.vue'
+import Header from '../components/Header'
+import Intro from '~/components/Intro'
 import ImgGrid from '~/components/ImgGrid.vue'
 import AdditionalModules from '~/components/AdditionalModules'
 import News from '~/components/News.vue'
 import Form from '~/components/Form.vue'
 import Footer from '~/components/Footer.vue'
 // -
-import Bodymovin from '~/components/Bodymovin'
-import Header from "../components/Header";
 
 export default {
   validate({ store, params }) {
@@ -42,7 +41,6 @@ export default {
   },
   components: {
     Header,
-    Bodymovin,
     //
     Intro,
     ImgGrid,
@@ -68,8 +66,9 @@ h2
 .Card
   shadow()
   border-radius 5px
-  transition 0.3s
   background #FFF
+  transition transform 0.3s
   &:hover
-    transform: translate(0, -6px);
+    // transform: translate(0, -6px);
+    transform: scale(1.06);
 </style>

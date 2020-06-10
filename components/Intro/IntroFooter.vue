@@ -1,7 +1,9 @@
 <template lang="pug">
 footer.Intro__footer(:class="city.colorThemeClasses.footer")
   .wrap.flex.y_center.x_sb
-    img(:src="require(`~/static/img/intro/${city.city}/messenger_${city.city}.gif`)")
+    img(
+      :src="require(`~/static/img/intro/${city.city}/messenger_${city.city}.gif`)"
+    )
     .flex
       .Intro__footer-achievment
         //- h2.achievment-number {{ city.howManyUsers }}
@@ -37,44 +39,44 @@ footer.Intro__footer(:class="city.colorThemeClasses.footer")
 
 <script>
 import AnimatedNumber from 'animated-number-vue'
-    export default {
-        name: "IntroFooter",
-      data() {
-          return {
-            val_1: 1,
-            val_2: 1,
-            val_3: 1,
-          }
-      },
-      components: {
-        AnimatedNumber
-      },
-      props: {
-        cityName: {
-          type: String,
-          required: true
-        }
-      },
-      computed: {
-        city() {
-          return this.$store.state[this.cityName]
-        }
-      },
-      methods: {
-        cb_howManyUsers(isVisible, entry) {
-          this.val_1 = this.city.howManyUsers
-          if (!entry.isIntersecting) this.val_1 = 1
-        },
-        cb_howManyCompanies(isVisible, entry) {
-          this.val_2 = this.city.howManyCompanies
-          if (!entry.isIntersecting) this.val_2 = 1
-        },
-        cb_howManyCategories(isVisible, entry) {
-          this.val_3 = this.city.howManyCategories
-          if (!entry.isIntersecting) this.val_3 = 1
-        }
-      }
+export default {
+  name: 'IntroFooter',
+  components: {
+    AnimatedNumber
+  },
+  props: {
+    cityName: {
+      type: String,
+      required: true
     }
+  },
+  data() {
+    return {
+      val_1: 1,
+      val_2: 1,
+      val_3: 1
+    }
+  },
+  computed: {
+    city() {
+      return this.$store.state[this.cityName]
+    }
+  },
+  methods: {
+    cb_howManyUsers(isVisible, entry) {
+      this.val_1 = this.city.howManyUsers
+      if (!entry.isIntersecting) this.val_1 = 1
+    },
+    cb_howManyCompanies(isVisible, entry) {
+      this.val_2 = this.city.howManyCompanies
+      if (!entry.isIntersecting) this.val_2 = 1
+    },
+    cb_howManyCategories(isVisible, entry) {
+      this.val_3 = this.city.howManyCategories
+      if (!entry.isIntersecting) this.val_3 = 1
+    }
+  }
+}
 </script>
 
 <style lang="stylus" scoped>
