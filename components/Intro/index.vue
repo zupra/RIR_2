@@ -6,23 +6,23 @@ section.Intro(:class="city.colorThemeClasses.section")
         :options="swiperOption"
       )
         swiper-slide
-          IntroSlide1(:cityName="this.$route.params.city")
+          IntroSlide1(:cityName="cityName")
         swiper-slide
-          IntroSlide2(:cityName="this.$route.params.city")
+          IntroSlide2(:cityName="cityName")
         swiper-slide
-          IntroSlide3(:cityName="this.$route.params.city")
+          IntroSlide3(:cityName="cityName")
         .swiper-pagination(
           slot="pagination"
         )
-  IntroFooter(:cityName="this.$route.params.city")
+  IntroFooter(:cityName="cityName")
 
 </template>
 
 <script>
-import IntroSlide1 from "./IntroSlide1";
-import IntroSlide2 from "./IntroSlide2";
-import IntroSlide3 from "./IntroSlide3";
-import IntroFooter from "./IntroFooter";
+import IntroSlide1 from './IntroSlide1'
+import IntroSlide2 from './IntroSlide2'
+import IntroSlide3 from './IntroSlide3'
+import IntroFooter from './IntroFooter'
 export default {
   components: {
     IntroFooter,
@@ -73,14 +73,14 @@ export default {
   display flex
   flex-direction column
   height 100vh
-  color: #ffffff
+  color: #FFF
   background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg, #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%)
   &__content
     flex 1
     overflow-y hidden
-    & .swiper-container
+    .swiper-container
       height 100%
       padding-top 70px
-    & .swiper-slide-active
+    .swiper-slide-active
       height 100%!important
 </style>

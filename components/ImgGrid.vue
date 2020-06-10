@@ -89,11 +89,11 @@ section.ImgGrid
 <script>
 import Lottie from '~/components/Lottie.vue'
 //
-import animation_1 from '~/static/animations/test/1.json'
-import animation_2 from '~/static/animations/test/2.json'
-import animation_3 from '~/static/animations/test/3.json'
-import animation_4 from '~/static/animations/test/4.json'
-import animation_5 from '~/static/animations/test/5.json'
+import animation_1 from '~/static/animations/JSON/1.json'
+import animation_2 from '~/static/animations/JSON/2.json'
+import animation_3 from '~/static/animations/JSON/3.json'
+import animation_4 from '~/static/animations/JSON/4.json'
+import animation_5 from '~/static/animations/JSON/5.json'
 
 export default {
   components: {
@@ -112,7 +112,7 @@ export default {
     const images = document.querySelectorAll('.animate-me')
 
     const config = {
-      rootMargin: '10px 20px 70px 40px',
+      // rootMargin: '10px 20px 70px 40px',
       threshold: [0, 0.25, 0.75, 1]
     }
 
