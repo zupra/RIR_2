@@ -1,28 +1,28 @@
 <template lang="pug">
 .Page
-  Header(
-    :cityName="city"
-  )
-  Intro(
-    :cityName="city"
-  )
-  // Картиночки
+  //Header(
+  //  :cityName="city"
+  //)
+  //Intro(
+  //  :cityName="city"
+  //)
+  //// Картиночки
   ImgGrid
   .wrap
     // Дополнительные модули
-    AdditionalModules
+    //AdditionalModules
     .BR
     // Новости
-    News
+    //News
     .BR
     // Форма обратной связи
-  Form(
-    :cityName="$route.params.city"
-  )
-  Footer(
-    :cityName="$route.params.city"
-    v-prlx="{ preserveInitialPosition: false, limit: { min: -600, max: 200 }}"
-  )
+  //Form(
+  //  :cityName="$route.params.city"
+  //)
+  //Footer(
+  //  :cityName="$route.params.city"
+  //  v-prlx="{ fromBottom: true, preserveInitialPosition: false, speed: 0.2}"
+  //)
 </template>
 
 <script>
