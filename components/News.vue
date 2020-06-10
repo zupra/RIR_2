@@ -128,14 +128,14 @@ export default {
             slidesPerView: 2,
             spaceBetween: 50
           },
-          640: {
+          760: {
             slidesPerView: 2,
-            spaceBetween: 10
-          }
-          // 320: {
-          //   slidesPerView: 1,
-          //   spaceBetween: 10
-          // }
+            spaceBetween: 30
+          },
+           375: {
+             slidesPerView: 1,
+             spaceBetween: 50
+           }
         }
       }
     }
@@ -211,4 +211,12 @@ export default {
     width: 1em;
     height: 1em;
     background: url('~static/icon/date.png') no-repeat center;
+@media screen and (max-width 760px)
+  .swiper-slide
+    max-width 457px!important
+@media screen and (max-width 375px)
+  .swiper-slide
+    max-width 320px!important
+  .swiper-button-prev, .swiper-button-next
+    display none
 </style>

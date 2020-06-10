@@ -19,10 +19,9 @@
         )
       br
       .flex.y_center
-        img(
+        img.rir-logo(
           v-if="city.footerCityLogo"
           src='~static/icon/footer_1.svg'
-          style="margin-right: 2em"
         )
         img(src='~static/icon/footer_2.svg')
     div.bold
@@ -85,11 +84,11 @@ export default {
 .Footer
   padding 5em 1em 2em
   color: $header;
-
+.rir-logo
+  margin-right: 2em
 .socialsIcon
   .icon
     shadow()
-    margin-right 2em
     // background-color #FFF
     background-position center
     background-repeat no-repeat
@@ -99,14 +98,23 @@ export default {
       background: #01468D url("~static/icon/socials/vk hover.png") center  no-repeat
   .fb
     background-image url("~static/icon/socials/fb base.png")
+    margin-left: 2em
     &:hover
       background: #3366FF url("~static/icon/socials/fb hover.png") center  no-repeat
   .yt
     background-image url("~static/icon/socials/yt base.png")
+    margin-left: 2em
     &:hover
       background: #FC0D1B url("~static/icon/socials/yt hover.png") center  no-repeat
   .inst
     background-image url("~static/icon/socials/inst base.png")
+    margin-left: 2em
     &:hover
       background: url("~static/icon/socials/inst hover.png") center  no-repeat, linear-gradient(211.29deg, #5058CA 19.57%, #D62C78 54.97%, #F5CB6E 89.63%)
+
+@media screen and (max-width 375px)
+  .fb, .yt, .inst
+    margin-left: 1em!important
+  .rir-logo
+    margin-right: 0.5em
 </style>

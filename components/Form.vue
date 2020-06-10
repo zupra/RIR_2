@@ -6,7 +6,7 @@ section#Form.Form.flex.y_center(:class="city.colorThemeClasses.formColor")
           h2 Обратная связь
           p.subText.mb-4 Мы рады новым идеям И предложениям по улучшению сервисов.
             | Чем больше неравнодушных жителей, тем активней будет развиваться
-            | наш «Умный город Росатома – Глазов»
+            | наш «Умный город Росатома – {{ city.cityName }}»
           label Имя и фамилия
             input
           .flex.my-3
@@ -18,7 +18,6 @@ section#Form.Form.flex.y_center(:class="city.colorThemeClasses.formColor")
           label Комментарий
             textarea
           button.mt-5 Отправить
-
       .feedbackform__image
         img.animate-me.no-show(src="~/static/img/feedback.png")
 
@@ -140,4 +139,10 @@ select
 @media screen and (max-width: 1080px)
   .feedbackform__image
     display none
+  .Form_wrap
+    margin auto
+    & h2
+      text-align center
+    & .subText
+      text-align center
 </style>

@@ -1,15 +1,12 @@
 <template lang="pug">
 section.ImgGrid
-
   .wrap
     .BR
     .center.subText
       h2.H Возможности
       p Платформа «Умный город Росатома» —  единая информационная основа для внедрения цифровых городских сервисов. «Умные» технологии повышают эффективность управления городскими процессами, облегчая жизнь и горожанам, и властям, расширяя возможности обратной связи.
-
-
       .center
-        //- img(src='~/static/gifs/1.gif' class="animate-me no-scale")
+        img(src='~/static/static-svg/1.svg' alt="Возможности" class="static-main")
         Lottie(
           class="animate-me no-scale"
           :data="animation_1"
@@ -26,16 +23,15 @@ section.ImgGrid
         p.subText Оставляйте заявки по решению городских проблем: залатать яму, отремонтировать детскую площадку, убрать свалку или пожаловаться на незаконную стройку. Отслеживайте статус обращений онлайн.
         .BR
         .btn Перейти
-
-
       picture
-        // img(src='~/static/gifs/2.gif' class="animate-me no-scale")
-        Lottie(
-          class="animate-me no-scale"
-          :data="animation_2"
-          :height="520"
-          :width="500"
-        )
+        source(srcset='~/static/modules/2.webp', type='image/webp')
+        img(src='~/static/modules/2.png', alt='решение городских проблем' class="static-section")
+      Lottie(
+        class="animate-me no-scale"
+        :data="animation_2"
+        :height="520"
+        :width="500"
+      )
 
     figure
       figcaption
@@ -43,15 +39,13 @@ section.ImgGrid
         p.subText Получайте информацию обо всех государственных и муниципальных организациях, образовательных и культурных учреждениях: адреса, графики работы, интернет-ресурсы. Все это есть на нашей платформе
         .BR
         .btn Перейти
-      picture
-        //- img(src='~/static/gifs/3.gif' class="animate-me no-scale")
-        Lottie(
-          class="animate-me no-scale"
-          :data="animation_3"
-           :height="500"
-           :width="560"
-        )
-
+      img(src='~/static/static-svg/3.svg' alt="Учреждения" class="static-section")
+      Lottie(
+        class="animate-me no-scale"
+        :data="animation_3"
+         :height="500"
+         :width="560"
+      )
 
     figure
       figcaption
@@ -60,13 +54,14 @@ section.ImgGrid
         .BR
         .btn Перейти
       picture
-        //- img(src='~/static/gifs/4.gif' class="animate-me no-scale")
-        Lottie(
-          class="animate-me no-scale"
-          :data="animation_4"
-           :height="520"
-           :width="500"
-        )
+        source(srcset='~/static/modules/4.webp', type='image/webp')
+        img(src='~/static/modules/4.png', alt='Полиция' class="static-section")
+      Lottie(
+        class="animate-me no-scale"
+        :data="animation_4"
+         :height="520"
+         :width="500"
+      )
 
 
     figure
@@ -75,14 +70,15 @@ section.ImgGrid
         p.subText Узнавайте, к какому депутатскому округу относится ваш дом, и обращайтесь к своему депутату для решения ваших проблем.
         .BR
         .btn Перейти
-      picture.mr-5
-        //- img(src='~/static/gifs/5.gif' class="animate-me no-scale")
-        Lottie(
-          class="animate-me no-scale"
-          :data="animation_5"
-          :height="460"
-          :width="460"
-        )
+      picture
+        source(srcset='~/static/modules/5.webp', type='image/webp')
+        img(src='~/static/modules/5.png', alt='Депутатские округа' class="static-section")
+      Lottie(
+        class="animate-me no-scale"
+        :data="animation_5"
+        :height="460"
+        :width="460"
+      )
 
 </template>
 
@@ -180,4 +176,40 @@ figcaption
   margin 1em
   flex 1
   min-width 300px
+.static-main
+  display none
+.static-section
+  display none
+@media screen and (max-width 1200px)
+  .static-main
+    display block
+    width 100%
+  .static-section
+    display block
+    max-width 377px
+  .animate-me
+    display none
+@media screen and (max-width 1024px)
+  .H
+    font-size 40px
+@media screen and (max-width 757px)
+  .btn
+    margin-top: 40px
+  .BR
+    display none
+  figure:nth-of-type(even)
+    flex-direction column-reverse
+  figure:nth-of-type(odd)
+    flex-direction column-reverse
+  figcaption
+    margin 0
+    min-width 100%
+//@media screen and (max-width 576px)
+//  .static-main
+//    max-width 550px
+@media screen and (max-width 375px)
+  //.static-main
+  //  max-width 300px
+  .static-section
+    max-width 280px
 </style>

@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   h2.H.text_x4 Дополнительные модули
-  p Платформа «Умный город Росатома» позволяет объединить все муниципальные сервисы.
+  p.subText.mb-4 Платформа «Умный город Росатома» позволяет объединить все муниципальные сервисы.
     | Поключайте дополнительные модули или интегрируйте ваши готовые решения с возможностью их
     | адаптации на платформе.
   .additionalModules
@@ -16,7 +16,7 @@ div
           component(
             :is="`Picture${item.id}`"
           )
-      .flex
+      .flex.Tag-container
         .Tag(
           v-if="item.audience.locals"
         ) Жителям
@@ -147,4 +147,14 @@ $purple = #CE94F8;
 
 .icon
   background #F7F7F7
+.H
+  word-break break-all
+
+@media screen and (max-width 375px)
+  .additionalModules
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
+  .Tag-container
+    margin-top: 10px
+  .Card
+    padding 1em
 </style>
