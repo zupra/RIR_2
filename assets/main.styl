@@ -5,6 +5,7 @@
 
 @import 'font_Gilroy';
 @import 'vars';
+@import '__@Utilities';
 @import 'theme';
 @import 'restyle';
 @import 'common';
@@ -37,31 +38,15 @@ html
   font-size: 18px;
   line-height: 30px;
 
-btn()
-  color: #FFF;
-  border-radius: 5px;
-  font-weight: 800;
-  display: inline-block;
-  cursor: pointer;
-  white-space: nowrap;
-
 .btn
   btn();
-  padding: 1em 2em;
+  color: #FFF;
   background: $blue_l;
+  font-weight: 800;
+  padding: 1em 2em;
 
   &:hover
     box-shadow: 0px 2px 11px rgba(45, 113, 247, 0.2), 0px 1px 10px rgba(45, 113, 247, 0.15), 0px 1px 11px rgba(45, 113, 247, 0.8);
-
-.btn_lite
-  btn();
-  padding: 1em 2em;
-  border: 1px solid #FFF;
-
-  &:hover
-    background: #FFF;
-    color: $blue_l;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 1px 10px rgba(0, 0, 0, 0.3);
 
 /*
 .link
@@ -88,5 +73,3 @@ btn()
   circle(60px);
   background-color: #FFF;
   cursor: pointer;
-
-@import '__@Utilities';

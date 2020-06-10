@@ -2,13 +2,13 @@
 .wrap.flex.x_sb.slide3
   .content.flex_col.x_center
     div
-      a.smart-cities-link(
-        href="#"
-      ) Новые сервисы
+      a.btn_blue Новые сервисы
     h1.Intro__content-develop-title Развивай город вместе с нами
     p.Intro__content-develop-text Запуск портала – первые шаги в цифровой трансформации города. Портал постоянно развивается. Голосуй за новые сервисы, и мы постараемся их подключить в первую очередь!
-    div.link
-      a(href="#").registration-link Проголосовать за сервис
+    
+    .mt-3
+      .btn_white Проголосовать за сервис
+
   .solve-problems.flex.flex_1.x_center.y_center
     .problems-container
       .solve-problems__item
@@ -43,8 +43,7 @@ export default {
 <style lang="stylus" scoped>
 .slide3
   height 100%
-  .link
-    margin-top: 16px
+
   .content
     max-width 556px
   .Intro__content-develop-title
@@ -57,8 +56,7 @@ export default {
     font-size: 18px;
     line-height: 30px;
     margin-bottom: 15px
-  .registration-link
-    margin-left: 0
+
   .problems-container
     position relative
   .solve-problems__item

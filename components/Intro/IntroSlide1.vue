@@ -2,9 +2,7 @@
 .wrap.slide1.flex
   .content.flex_col.x_center
     div
-      a.smart-cities-link(
-        href="#"
-      ) Умные города Росатома
+      .btn_blue Умные города Росатома
     h2.Intro__content-city-name {{ city.cityName }}
     p.Intro__content-hello-text {{ city.helloText }}
     p.Intro__content-hello-text {{ city.helloTextMain }}

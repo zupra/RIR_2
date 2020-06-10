@@ -51,7 +51,8 @@ export default {
   },
   asyncData({ params }) {
     return params
-  }
+  },
+  methods: {}
 }
 </script>
 

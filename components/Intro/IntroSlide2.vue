@@ -11,8 +11,10 @@
       v-else
     ) Изучай город
     p.Intro__content-explore-text Сейчас в пилотном режиме для горожан доступны следующие сервисы: решение городских проблем онлайн, учереждения, полиция и депутатские округа
-    div.flex
-      .registration-link Перейти к сервисам
+    
+    div
+      .btn_white Перейти к сервисам
+  
   .images.flex.y_end.x_sa(
     :class="city.slide2PositionOptions"
   )
@@ -70,8 +72,6 @@ export default {
     font-size 18px
     line-height 30px
     margin-bottom 22px
-  .registration-link
-    margin-left 0
   .images
     padding-left 52px
     flex 1

@@ -1,34 +1,45 @@
 .Intro .swiper-pagination-bullet-active-main
-  background-color #ffffff!important
-  height 15px!important
-  width 15px!important
+  background-color: #ffffff !important;
+  height: 15px !important;
+  width: 15px !important;
+
 .Intro .swiper-pagination-bullets
-  width 15px!important
+  width: 15px !important;
+
 .swiper-slide-active
-  position: relative!important;
-  z-index 100
+  position: relative !important;
+  z-index: 100;
+
 .swiper-slide-active .shadow-1
-  transform translate(21px, 21px)
-  transition all .8s ease-out
+  transform: translate(21px, 21px);
+  transition: all 0.8s ease-out;
+
 .swiper-slide-active .shadow-2
-  transform translate(42px, 42px)
-  transition all .8s ease-out
+  transform: translate(42px, 42px);
+  transition: all 0.8s ease-out;
+
 .swiper-slide-active .shadow-3
-  transform translate(63px, 63px)
-  transition all .8s ease-out
-.swiper-slide-active  .slide2-main-img
-  opacity: 1
+  transform: translate(63px, 63px);
+  transition: all 0.8s ease-out;
+
+.swiper-slide-active .slide2-main-img
+  opacity: 1;
   transform: translateX(10px);
-  transition all 1.2s ease-out
-  animation: showImage 1.2s ease-out
-@-webkit-keyframes showImage
+  transition: all 1.2s ease-out;
+  animation: showImage 1.2s ease-out;
+
+@keyframes showImage
   0%
-    opacity 0
+    opacity: 0;
+
   25%
-    opacity .25
+    opacity: 0.25;
+
   50%
-    opacity .5
+    opacity: 0.5;
+
   75%
-    opacity .75
+    opacity: 0.75;
+
   100%
-    opacity 1
+    opacity: 1;
