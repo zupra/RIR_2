@@ -1,7 +1,8 @@
 <template lang="pug">
 
+//- :class="{setBackground:setBackground}"
 header.topNav(
-  :class="{setBackground:setBackground}"
+  :class="setBackground && `${city.colorThemeClasses.formColor} setBackground`"
 )
   .wrap.flex.x_sb
     .flex.y_center
@@ -73,7 +74,7 @@ export default {
     window.addEventListener('scroll', (event) => {
       const scrollY = Math.round(window.scrollY)
       // console.log(scrollY)
-      scrollY > 10 ? (this.setBackground = true) : (this.setBackground = false)
+      scrollY > 6 ? (this.setBackground = true) : (this.setBackground = false)
     })
   },
   methods: {}
@@ -100,7 +101,9 @@ export default {
   color: #FFF
   &.setBackground
     // transition background .3s
-    background linear-gradient(270deg, #1DA2B1 0%, #1A9FB5 46.21%, #1280A1 100%)
+    // shadow()
+    box-shadow: 0 2px 4px -1px rgba(#000,.2), 0 4px 5px 0 rgba(#000,.14), 0 1px 10px 0 rgba(#000,.12);
+    // background linear-gradient(270deg, #1DA2B1 0%, #1A9FB5 46.21%, #1280A1 100%)
 
 .scrollTo
   text-transform uppercase
