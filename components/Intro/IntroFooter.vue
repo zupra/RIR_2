@@ -1,9 +1,12 @@
 <template lang="pug">
 footer.Intro__footer(:class="city.colorThemeClasses.footer")
   .wrap.flex.y_center.x_sb
-    img(
-      :src="require(`~/static/Intro/${city.city}/messenger_${city.city}.gif`)"
-    )
+    video(autoplay loop)
+      source(src="~/static/Intro/glazov/test.mp4")
+      source(src="~/static/Intro/glazov/test.webm")
+    //img(
+    //  :src="require(`~/static/Intro/${city.city}/messenger_${city.city}.gif`)"
+    //)
     .flex
       .Intro__footer-achievment
         //- h2.achievment-number {{ city.howManyUsers }}

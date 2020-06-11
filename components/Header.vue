@@ -12,6 +12,7 @@ header.topNav(
         )
         img(
           src='~static/Header/LOGO.png',
+          loading="lazy"
           alt='логотип РИР'
         )
       p.upper.ml-4 Умные города
@@ -28,6 +29,7 @@ header.topNav(
           img(
             :src="require(`~/static/Header/city-logo_${city.city}.png`)"
             alt='логотип Города'
+            loading="lazy"
           )
       .Alter-logo.flex.y_center(
         v-else

@@ -7,9 +7,15 @@
     p.Intro__content-hello-text {{ city.helloText }}
     p.Intro__content-hello-text {{ city.helloTextMain }}
     .Intro__content-head-of-city.flex.x_start.y_center
-      img.head-of-city__photo(
-        :src="require(`~/static/Intro/${city.city}/head-of-city_${city.city}.png`)"
-      )
+      picture
+        source(
+          :srcset="require(`~/static/Intro/${city.city}/head-of-city_${city.city}.webp`)"
+          type='image/webp'
+        )
+        img.head-of-city__photo(
+          :src="require(`~/static/Intro/${city.city}/head-of-city_${city.city}.png`)"
+          alt='фото глава МО'
+        )
       .head-of-city__name
         h3 {{ city.headOfCityName }}
         p {{ city.headOfCityOccupation }}
@@ -18,22 +24,40 @@
       div.left-image.flex.x_center.y_center(
         :class="city.colorThemeClasses.leftCircleImage"
       )
-        img(
-          :src="require(`~/static/Intro/${city.city}/slide1-left_${city.city}.png`)"
-        )
+        picture
+          source(
+            :srcset="require(`~/static/Intro/${city.city}/slide1-left_${city.city}.webp`)"
+            type='image/webp'
+          )
+          img(
+            :src="require(`~/static/Intro/${city.city}/slide1-left_${city.city}.png`)"
+            alt='шар лого'
+          )
     div.flex_col.x_sa
       div.right-image.flex.x_center.y_center(
         :class="city.colorThemeClasses.rightCircleImage"
       )
-        img(
-          :src="require(`~/static/Intro/${city.city}/slide1-upper_${city.city}.png`)"
-        )
+        picture
+          source(
+            :srcset="require(`~/static/Intro/${city.city}/slide1-upper_${city.city}.webp`)"
+            type='image/webp'
+          )
+          img(
+            :src="require(`~/static/Intro/${city.city}/slide1-upper_${city.city}.png`)"
+            alt='шар лого'
+          )
       div.bottom-image.flex.x_center.y_center(
         :class="city.colorThemeClasses.bottomCircleImage"
       )
-        img(
-          :src="require(`~/static/Intro/${city.city}/slide1-bottom_${city.city}.png`)"
-        )
+        picture
+          source(
+            :srcset="require(`~/static/Intro/${city.city}/slide1-bottom_${city.city}.webp`)"
+            type='image/webp'
+          )
+          img(
+            :src="require(`~/static/Intro/${city.city}/slide1-bottom_${city.city}.png`)"
+            alt='шар лого'
+          )
 </template>
 
 <script>

@@ -6,8 +6,10 @@ section.ImgGrid
       h2.H Возможности
       p Платформа «Умный город Росатома» —  единая информационная основа для внедрения цифровых городских сервисов. «Умные» технологии повышают эффективность управления городскими процессами, облегчая жизнь и горожанам, и властям, расширяя возможности обратной связи.
       .center
-        img(
-          src='~/static/ImgGrid/1.svg' alt="Возможности" class="static-main"
+        img.static-main(
+          src='~/static/ImgGrid/1.svg'
+          alt="Возможности"
+          loading="lazy"
         )
         Lottie(
           class="animate-me no-scale"
@@ -25,22 +27,24 @@ section.ImgGrid
         p.subText Оставляйте заявки по решению городских проблем: залатать яму, отремонтировать детскую площадку, убрать свалку или пожаловаться на незаконную стройку. Отслеживайте статус обращений онлайн.
         .BR
         .btn Перейти
-      picture
+      picture(loading="lazy")
         source(
           srcset='~/static/ImgGrid/2.webp',
+          loading="lazy"
           type='image/webp'
         )
         img(
           src='~/static/ImgGrid/2.png',
           alt='решение городских проблем'
-          class="static-section"
+          loading="lazy"
+          class="static-section animate-me no-scale"
         )
-      Lottie(
-        class="animate-me no-scale"
-        :data="animation_2"
-        :height="520"
-        :width="500"
-      )
+      //Lottie(
+      //  class="animate-me no-scale"
+      //  :data="animation_2"
+      //  :height="520"
+      //  :width="500"
+      //)
 
     figure
       figcaption
@@ -51,14 +55,15 @@ section.ImgGrid
       img(
         src='~/static/ImgGrid/3.svg'
         alt="Учреждения"
-        class="static-section"
+        loading="lazy"
+        class="static-section animate-me no-scale"
       )
-      Lottie(
-        class="animate-me no-scale"
-        :data="animation_3"
-         :height="500"
-         :width="560"
-      )
+      //Lottie(
+      //  class="animate-me no-scale"
+      //  :data="animation_3"
+      //   :height="500"
+      //   :width="560"
+      //)
 
     figure
       figcaption
@@ -74,14 +79,15 @@ section.ImgGrid
         img(
           src='~/static/ImgGrid/4.png',
           alt='Полиция'
-          class="static-section"
+          loading="lazy"
+          class="static-section animate-me no-scale"
         )
-      Lottie(
-        class="animate-me no-scale"
-        :data="animation_4"
-         :height="520"
-         :width="500"
-      )
+      //Lottie(
+      //  class="animate-me no-scale"
+      //  :data="animation_4"
+      //   :height="520"
+      //   :width="500"
+      //)
 
 
     figure
@@ -98,14 +104,15 @@ section.ImgGrid
         img(
           src='~/static/ImgGrid/5.png',
           alt='Депутатские округа'
-          class="static-section"
+          loading="lazy"
+          class="static-section animate-me no-scale"
         )
-      Lottie(
-        class="animate-me no-scale"
-        :data="animation_5"
-        :height="460"
-        :width="460"
-      )
+      //Lottie(
+      //  class="animate-me no-scale"
+      //  :data="animation_5"
+      //  :height="460"
+      //  :width="460"
+      //)
 
 </template>
 
@@ -204,9 +211,9 @@ figcaption
   margin 1em
   flex 1
   min-width 300px
-.static-main
-  display none
 .static-section
+  max-width 452px
+.static-main
   display none
 @media screen and (max-width 1200px)
   .static-main
