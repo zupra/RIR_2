@@ -7,11 +7,11 @@
       // TODO !!!
       .my-3.flex.y_center
         img(
-          :src="require(`~/static/Intro/${city.city}/footer-gerb_${city.city}.png`)"
+          :src="require(`~/static/Footer/${city.city}/footer-gerb_${city.city}.png`)"
         )
         img.ml-4(
           v-if="city.footerCityLogo"
-          :src="require(`~/static/Intro/${city.city}/footer-city-logo_${city.city}.png`)"
+          :src="require(`~/static/Footer/${city.city}/footer-city-logo_${city.city}.png`)"
         )
         img.ml-4(
           v-else

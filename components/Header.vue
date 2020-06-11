@@ -75,9 +75,7 @@ export default {
   mounted() {
     window.addEventListener('scroll', (event) => {
       const scrollY = Math.round(window.scrollY)
-      // console.log(scrollY)
-      // scrollY > 6 ? (this.setBackground = true) : (this.setBackground = false)
-      this.setBackground = !!scrollY
+      scrollY > 10 ? (this.setBackground = true) : (this.setBackground = false)
     })
   },
   methods: {}
@@ -103,7 +101,7 @@ export default {
   width 100%
   color: #FFF
   &.setBackground
-    // transition background .3s
+    transition background .3s
     // shadow()
     box-shadow: 0 2px 4px -1px rgba(#000,.2), 0 4px 5px 0 rgba(#000,.14), 0 1px 10px 0 rgba(#000,.12);
     // background linear-gradient(270deg, #1DA2B1 0%, #1A9FB5 46.21%, #1280A1 100%)
