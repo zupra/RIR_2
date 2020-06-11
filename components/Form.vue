@@ -27,6 +27,7 @@ section#Form.Form.flex.y_center(:class="city.colorThemeClasses.formColor")
           img(
             src='~/static/Form/feedback.png',
             alt='форма обратной связи'
+            loading="lazy"
             class="animate-me no-show"
           )
 

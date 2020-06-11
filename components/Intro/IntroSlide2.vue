@@ -18,26 +18,50 @@
   .images.flex.y_end.x_sa(
     :class="city.slide2PositionOptions"
   )
-    img.slide2-main-img(
-      :src="require(`~/static/Intro/${city.city}/slide2_${city.city}.png`)"
-      :class="city.contur"
-    )
+    picture
+      source(
+        :srcset="require(`~/static/Intro/${city.city}/slide2_${city.city}.webp`)"
+        type='image/webp'
+      )
+      img.slide2-main-img(
+        :src="require(`~/static/Intro/${city.city}/slide2_${city.city}.png`)"
+        :class="city.contur"
+        alt='слайд 2'
+      )
     div.images__group.flex(
       v-if="city.secondSlideGraphicBalls"
     )
-      img.images-group__item(
-        :src="require(`~/static/Intro/${city.city}/tool.png`)"
+      picture
+        source(
+          :srcset="require(`~/static/Intro/${city.city}/tool.webp`)"
+          type='image/webp'
+        )
+        img.images-group__item(
+          :src="require(`~/static/Intro/${city.city}/tool.png`)"
+          alt='слайд 2'
       )
-      img.images-group__item(
-        :src="require(`~/static/Intro/${city.city}/swimmer.png`)"
-      )
+      picture
+        source(
+          :srcset="require(`~/static/Intro/${city.city}/swimmer.webp`)"
+          type='image/webp'
+        )
+        img.images-group__item(
+          :src="require(`~/static/Intro/${city.city}/swimmer.png`)"
+          alt='слайд 2'
+        )
     div.images__interesting-place.flex.y_center.x_center(
       v-if="city.slide2InterestingPlace"
       :class="city.slide2InterestingPlaceStyle"
     )
-      img(
-        :src="require(`~/static/Intro/${city.city}/slide2-1_${city.city}.png`)"
-      )
+      picture
+        source(
+          :srcset="require(`~/static/Intro/${city.city}/slide2-1_${city.city}.webp`)"
+          type='image/webp'
+        )
+        img(
+          :src="require(`~/static/Intro/${city.city}/slide2-1_${city.city}.png`)"
+          alt='слайд 2 интересное место'
+        )
 </template>
 
 <script>
