@@ -7,23 +7,23 @@
       // TODO !!!
       .my-3.flex.y_center
         img(
-          :src="require(`~/static/img/intro/${city.city}/footer-gerb_${city.city}.png`)"
+          :src="require(`~/static/Intro/${city.city}/footer-gerb_${city.city}.png`)"
         )
         img.ml-4(
           v-if="city.footerCityLogo"
-          :src="require(`~/static/img/intro/${city.city}/footer-city-logo_${city.city}.png`)"
+          :src="require(`~/static/Intro/${city.city}/footer-city-logo_${city.city}.png`)"
         )
         img.ml-4(
           v-else
-          src='~static/icon/footer_1.svg'
+          src='~static/Footer/footer_1.svg'
         )
       br
       .flex.y_center
         img.rir-logo(
           v-if="city.footerCityLogo"
-          src='~static/icon/footer_1.svg'
+          src='~static/Footer/footer_1.svg'
         )
-        img(src='~static/icon/footer_2.svg')
+        img(src='~static/Footer/footer_2.svg')
     div.bold
 
       .text_x2 О проекте
@@ -93,24 +93,25 @@ export default {
     background-position center
     background-repeat no-repeat
   .vk
-    background-image url("~static/icon/socials/vk base.png")
+    background-image url("~static/Footer/socials/vk base.png")
     &:hover
-      background: #01468D url("~static/icon/socials/vk hover.png") center  no-repeat
+      background: #01468D url("~static/Footer/socials/vk hover.png") center  no-repeat
   .fb
-    background-image url("~static/icon/socials/fb base.png")
+    background-image url("~static/Footer/socials/fb base.png")
     margin-left: 2em
     &:hover
-      background: #3366FF url("~static/icon/socials/fb hover.png") center  no-repeat
+      background: #3366FF url("~static/Footer/socials/fb hover.png") center  no-repeat
   .yt
-    background-image url("~static/icon/socials/yt base.png")
+    background-image url("~static/Footer/socials/yt base.png")
     margin-left: 2em
     &:hover
-      background: #FC0D1B url("~static/icon/socials/yt hover.png") center  no-repeat
+      background: #FC0D1B url("~static/Footer/socials/yt hover.png") center  no-repeat
   .inst
-    background-image url("~static/icon/socials/inst base.png")
+    background-image url("~static/Footer/socials/inst base.png")
     margin-left: 2em
     &:hover
-      background: url("~static/icon/socials/inst hover.png") center  no-repeat, linear-gradient(211.29deg, #5058CA 19.57%, #D62C78 54.97%, #F5CB6E 89.63%)
+      background: url("~static/Footer/socials/inst hover.png") center  no-repeat,
+        linear-gradient(211.29deg, #5058CA 19.57%, #D62C78 54.97%, #F5CB6E 89.63%)
 
 @media screen and (max-width 375px)
   .fb, .yt, .inst

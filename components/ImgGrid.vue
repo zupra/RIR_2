@@ -7,7 +7,7 @@ section.ImgGrid
       p Платформа «Умный город Росатома» —  единая информационная основа для внедрения цифровых городских сервисов. «Умные» технологии повышают эффективность управления городскими процессами, облегчая жизнь и горожанам, и властям, расширяя возможности обратной связи.
       .center
         img(
-          src='~/static/static-svg/1.svg' alt="Возможности" class="static-main"
+          src='~/static/ImgGrid/1.svg' alt="Возможности" class="static-main"
         )
         Lottie(
           class="animate-me no-scale"
@@ -27,12 +27,12 @@ section.ImgGrid
         .btn Перейти
       picture
         source(
-          srcset='~/static/modules/2.webp', 
+          srcset='~/static/ImgGrid/2.webp',
           type='image/webp'
         )
         img(
-          src='~/static/modules/2.png', 
-          alt='решение городских проблем' 
+          src='~/static/ImgGrid/2.png',
+          alt='решение городских проблем'
           class="static-section"
         )
       Lottie(
@@ -49,8 +49,8 @@ section.ImgGrid
         .BR
         .btn Перейти
       img(
-        src='~/static/static-svg/3.svg' 
-        alt="Учреждения" 
+        src='~/static/ImgGrid/3.svg'
+        alt="Учреждения"
         class="static-section"
       )
       Lottie(
@@ -68,12 +68,12 @@ section.ImgGrid
         .btn Перейти
       picture
         source(
-          srcset='~/static/modules/4.webp', 
+          srcset='~/static/ImgGrid/4.webp',
           type='image/webp'
         )
         img(
-          src='~/static/modules/4.png', 
-          alt='Полиция' 
+          src='~/static/ImgGrid/4.png',
+          alt='Полиция'
           class="static-section"
         )
       Lottie(
@@ -92,12 +92,12 @@ section.ImgGrid
         .btn Перейти
       picture
         source(
-          srcset='~/static/modules/5.webp', 
+          srcset='~/static/ImgGrid/5.webp',
           type='image/webp'
         )
         img(
-          src='~/static/modules/5.png', 
-          alt='Депутатские округа' 
+          src='~/static/ImgGrid/5.png',
+          alt='Депутатские округа'
           class="static-section"
         )
       Lottie(
@@ -112,11 +112,11 @@ section.ImgGrid
 <script>
 import Lottie from '~/components/Lottie.vue'
 //
-import animation_1 from '~/static/animations/JSON/1.json'
-import animation_2 from '~/static/animations/JSON/2.json'
-import animation_3 from '~/static/animations/JSON/3.json'
-import animation_4 from '~/static/animations/JSON/4.json'
-import animation_5 from '~/static/animations/JSON/5.json'
+import animation_1 from '~/static/ImgGrid/animations-JSON/1.json'
+import animation_2 from '~/static/ImgGrid/animations-JSON/2.json'
+import animation_3 from '~/static/ImgGrid/animations-JSON/3.json'
+import animation_4 from '~/static/ImgGrid/animations-JSON/4.json'
+import animation_5 from '~/static/ImgGrid/animations-JSON/5.json'
 
 export default {
   components: {

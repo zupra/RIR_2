@@ -195,12 +195,12 @@ export default {
     left 0
     background: linear-gradient(90deg, rgba(#FFF, 0.5) 0%, rgba(#FFF, 0.0001) 99%);
     &:after
-      background: #FFF url('~static/icon/L.png') no-repeat center;
+      background: #FFF url('~static/News/L.png') no-repeat center;
   &-button-next
     right: 0
     background: linear-gradient(90deg, rgba(#FFF, 0.0001) 0%, rgba(#FFF, 0.5) 99%);
     &:after
-      background: #FFF url('~static/icon/R.png') no-repeat center;
+      background: #FFF url('~static/News/R.png') no-repeat center;
 
 
 .date
@@ -210,7 +210,7 @@ export default {
     margin-right: .5em;
     width: 1em;
     height: 1em;
-    background: url('~static/icon/date.png') no-repeat center;
+    background: url('~static/News/date.png') no-repeat center;
 @media screen and (max-width 760px)
   .swiper-slide
     max-width 457px!important

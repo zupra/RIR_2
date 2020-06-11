@@ -19,7 +19,16 @@ section#Form.Form.flex.y_center(:class="city.colorThemeClasses.formColor")
             textarea
           button.mt-5 Отправить
       .feedbackform__image
-        img.animate-me.no-show(src="~/static/img/feedback.png")
+        picture
+          source(
+            srcset='~/static/Form/feedback.webp',
+            type='image/webp'
+          )
+          img(
+            src='~/static/Form/feedback.png',
+            alt='форма обратной связи'
+            class="animate-me no-show"
+          )
 
 </template>
 

@@ -74,7 +74,8 @@ export default {
   flex-direction column
   height 100vh
   color: #FFF
-  background: url("~static/img/intro/react.png") 0 center no-repeat, linear-gradient(156.35deg, #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%)
+  background: url("~static/Intro/react.png") 0 center no-repeat, linear-gradient(156.35deg,
+  #107B9E 0%, #1A9FB5 46.21%, #3EC180 100%)
   &__content
     flex 1
     overflow-y hidden

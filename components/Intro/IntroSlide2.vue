@@ -11,32 +11,32 @@
       v-else
     ) Изучай город
     p.Intro__content-explore-text Сейчас в пилотном режиме для горожан доступны следующие сервисы: решение городских проблем онлайн, учереждения, полиция и депутатские округа
-    
+
     div
       .btn_white Перейти к сервисам
-  
+
   .images.flex.y_end.x_sa(
     :class="city.slide2PositionOptions"
   )
     img.slide2-main-img(
-      :src="require(`~/static/img/intro/${city.city}/slide2_${city.city}.png`)"
+      :src="require(`~/static/Intro/${city.city}/slide2_${city.city}.png`)"
       :class="city.contur"
     )
     div.images__group.flex(
       v-if="city.secondSlideGraphicBalls"
     )
       img.images-group__item(
-        src="~/static/img/intro/tool.png"
+        :src="require(`~/static/Intro/${city.city}/tool.png`)"
       )
       img.images-group__item(
-        src="~/static/img/intro/swimmer.png"
+        :src="require(`~/static/Intro/${city.city}/swimmer.png`)"
       )
     div.images__interesting-place.flex.y_center.x_center(
-      v-if="city.slide2InterestingPlace" 
+      v-if="city.slide2InterestingPlace"
       :class="city.slide2InterestingPlaceStyle"
     )
       img(
-        :src="require(`~/static/img/intro/${city.city}/slide2-1_${city.city}.png`)"
+        :src="require(`~/static/Intro/${city.city}/slide2-1_${city.city}.png`)"
       )
 </template>
 

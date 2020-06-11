@@ -8,7 +8,7 @@
     p.Intro__content-hello-text {{ city.helloTextMain }}
     .Intro__content-head-of-city.flex.x_start.y_center
       img.head-of-city__photo(
-        :src="require(`~/static/img/intro/${city.city}/head-of-city_${city.city}.png`)"
+        :src="require(`~/static/Intro/${city.city}/head-of-city_${city.city}.png`)"
       )
       .head-of-city__name
         h3 {{ city.headOfCityName }}
@@ -19,20 +19,20 @@
         :class="city.colorThemeClasses.leftCircleImage"
       )
         img(
-          :src="require(`~/static/img/intro/${city.city}/slide1-left_${city.city}.png`)"
+          :src="require(`~/static/Intro/${city.city}/slide1-left_${city.city}.png`)"
         )
     div.flex_col.x_sa
       div.right-image.flex.x_center.y_center(
         :class="city.colorThemeClasses.rightCircleImage"
       )
         img(
-          :src="require(`~/static/img/intro/${city.city}/slide1-upper_${city.city}.png`)"
+          :src="require(`~/static/Intro/${city.city}/slide1-upper_${city.city}.png`)"
         )
       div.bottom-image.flex.x_center.y_center(
         :class="city.colorThemeClasses.bottomCircleImage"
       )
         img(
-          :src="require(`~/static/img/intro/${city.city}/slide1-bottom_${city.city}.png`)"
+          :src="require(`~/static/Intro/${city.city}/slide1-bottom_${city.city}.png`)"
         )
 </template>
 

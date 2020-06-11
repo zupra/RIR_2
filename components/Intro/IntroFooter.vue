@@ -2,7 +2,7 @@
 footer.Intro__footer(:class="city.colorThemeClasses.footer")
   .wrap.flex.y_center.x_sb
     img(
-      :src="require(`~/static/img/intro/${city.city}/messenger_${city.city}.gif`)"
+      :src="require(`~/static/Intro/${city.city}/messenger_${city.city}.gif`)"
     )
     .flex
       .Intro__footer-achievment

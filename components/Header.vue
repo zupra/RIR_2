@@ -5,23 +5,35 @@ header.topNav(
 )
   .wrap.flex.x_sb
     .flex.y_center
-      img(
-        src="~static/icon/LOGO.png"
-      )
+      picture
+        source(
+          srcset='~static/Header/LOGO.webp',
+          type='image/webp'
+        )
+        img(
+          src='~static/Header/LOGO.png',
+          alt='логотип РИР'
+        )
       p.upper.ml-4 Умные города
         br
         | Росатома
-      
-      // cityLogo || cityName 
-      img.ml-4(
-        v-if="city.headerCityLogo"
-        :src="require(`~/static/img/intro/${city.city}/city-logo_${city.city}.png`)"
-      )
+
+      // cityLogo || cityName
+      div.ml-4(v-if="city.headerCityLogo")
+        picture
+          source(
+            :srcset="require(`~/static/Header/city-logo_${city.city}.webp`)"
+            type='image/webp'
+          )
+          img(
+            :src="require(`~/static/Header/city-logo_${city.city}.png`)"
+            alt='логотип Города'
+          )
       .Alter-logo.flex.y_center(
         v-else
       ) {{ city.cityName }}
-    
-    
+
+
     .flex.y_center
 
       template(
