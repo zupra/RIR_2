@@ -1,3 +1,9 @@
+function randomInt(min, max) {
+  let rand = min - 0.5 + Math.random() * (max - min + 1)
+  rand = Math.round(rand)
+  return rand
+}
+
 export const state = () => ({
   zarechnii: {
     city: 'zarechnii',
@@ -20,9 +26,9 @@ export const state = () => ({
     slogan2: 'для себя',
     secondSlideGraphicBalls: true,
     contur: 'los-contur',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
-    howManyCategories: '30',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
+    howManyCategories: randomInt(1, 50),
     footerCityLogo: true
   },
   sarov: {
@@ -43,9 +49,9 @@ export const state = () => ({
       ' с властью и городскими службами. Сейчас портал работает в пилотном режиме, и нам важно ваше мнение. С вашей помощью количество и качество сервисов будет расти, а их возможности – расширяться!',
     headOfCityName: 'Алексей Голубев',
     headOfCityOccupation: 'глава администрации г. Саров',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
-    howManyCategories: '30',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
+    howManyCategories: randomInt(1, 50),
     footerCityLogo: true
   },
   lesnoi: {
@@ -68,9 +74,9 @@ export const state = () => ({
     headOfCityName: 'Сергей Черепанов',
     headOfCityOccupation: 'глава городского округа «Город Лесной»',
     slide2PositionOptions: 'slide2-position-options_lesnoi',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
-    howManyCategories: '30',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
+    howManyCategories: randomInt(1, 50),
     footerCityLogo: true
   },
   glazov: {
@@ -91,9 +97,9 @@ export const state = () => ({
     headOfCityName: 'Сергей Коновалов',
     headOfCityOccupation: 'глава города Глазова',
     slide2PositionOptions: 'slide2-position-options_glazov',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
-    howManyCategories: '30',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
+    howManyCategories: randomInt(1, 50),
     footerCityLogo: true
   },
   zelenogorsk: {
@@ -116,9 +122,9 @@ export const state = () => ({
     contur: 'slide2-contur_zelenogorsk',
     slide2InterestingPlace: true,
     slide2InterestingPlaceStyle: 'slide2-interesting-place',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
-    howManyCategories: '30',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
+    howManyCategories: randomInt(1, 50),
     footerCityLogo: true
   },
   novouralsk: {
@@ -140,9 +146,9 @@ export const state = () => ({
     headOfCityName: 'Владимир Цветов',
     headOfCityOccupation: 'Глава Новоуральского городского округа',
     slide2PositionOptions: 'slide2-position-options_novouralsk',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
-    howManyCategories: '30',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
+    howManyCategories: randomInt(1, 50),
     footerCityLogo: true
   },
   ozersk: {
@@ -159,14 +165,14 @@ export const state = () => ({
     cityName: 'Озерск',
     helloText: 'Уважаемые жители города Озерска!',
     helloTextMain:
-      'Перед вами портал «Умный город Росатома - Озерск».  Здесь представлен комплекс цифровых инструментов, которые помогут упростить взаимодействие горожан с Администрацией ЗАТО г. Озерска и городскими службами. Сейчас портал работает в пилотном режиме, и для нас важно узнать ваше мнение о нем. С вашей помощью количество и качество сервисов будет расти, а их возможности - расширяться. ',
+      'Перед вами портал «Умный город Росатома - Озерск». Здесь представлен комплекс цифровых инструментов, которые помогут упростить взаимодействие горожан с Администрацией ЗАТО г. Озерска и городскими службами. Сейчас портал работает в пилотном режиме, и для нас важно узнать ваше мнение о нем. С вашей помощью количество и качество сервисов будет расти, а их возможности - расширяться. ',
     headOfCityName: 'Евгений Щербаков',
     headOfCityOccupation: 'Глава Озерского городского округа',
     slide2InterestingPlace: true,
     slide2InterestingPlaceStyle: 'slide2-interesting-place',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
-    howManyCategories: '30',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
+    howManyCategories: randomInt(1, 50),
     footerCityLogo: false
   },
   seversk: {
@@ -183,14 +189,14 @@ export const state = () => ({
     cityName: 'Северск',
     helloText: 'Уважаемые жители города Северска!',
     helloTextMain:
-      'Перед вами портал «Умный город Росатома - Северск».  Здесь представлен комплекс цифровых инструментов, которые помогут упростить взаимодействие горожан с Администрацией ЗАТО г. Северск и городскими службами. Сейчас портал работает в пилотном режиме, и для нас важно узнать ваше мнение о нем. С вашей помощью количество и качество сервисов будет расти, а их возможности - расширяться.',
+      'Перед вами портал «Умный город Росатома - Северск». Здесь представлен комплекс цифровых инструментов, которые помогут упростить взаимодействие горожан с Администрацией ЗАТО г. Северск и городскими службами. Сейчас портал работает в пилотном режиме, и для нас важно узнать ваше мнение о нем. С вашей помощью количество и качество сервисов будет расти, а их возможности - расширяться.',
     headOfCityName: 'Николай Диденко',
     headOfCityOccupation: 'Глава Администрации ЗАТО Северск',
     slide2InterestingPlace: true,
     slide2InterestingPlaceStyle: 'slide2-interesting-place',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
-    howManyCategories: '30',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
+    howManyCategories: randomInt(1, 50),
     footerCityLogo: false
   },
   zarechniiSverdl: {
@@ -212,8 +218,8 @@ export const state = () => ({
       ' Администрацией городского округа Заречный и городскими службами. Сейчас портал работает в пилотном режиме, и для нас важно узнать ваше мнение о нем. С вашей помощью количество и качество сервисов будет расти, а их возможности - расширяться.',
     headOfCityName: 'Андрей Захарцев',
     headOfCityOccupation: 'Глава городского округа Заречный',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
     howManyCategories: '30'
   },
   snezhinsk: {
@@ -235,9 +241,9 @@ export const state = () => ({
     headOfCityOccupation: 'Глава Снежинского городского округа',
     slide2InterestingPlace: true,
     slide2InterestingPlaceStyle: 'slide2-interesting-place',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
-    howManyCategories: '30',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
+    howManyCategories: randomInt(1, 50),
     footerCityLogo: false
   },
   zheleznogorsk: {
@@ -259,9 +265,9 @@ export const state = () => ({
     headOfCityOccupation: 'Глава ЗАТО г.Железногорск',
     slide2InterestingPlace: true,
     slide2InterestingPlaceStyle: 'slide2-interesting-place',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
-    howManyCategories: '30',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
+    howManyCategories: randomInt(1, 50),
     footerCityLogo: false
   },
   trehgornii: {
@@ -284,9 +290,9 @@ export const state = () => ({
     headOfCityOccupation: 'глава города Трехгорного',
     slide2InterestingPlace: true,
     slide2InterestingPlaceStyle: 'slide2-interesting-place',
-    howManyUsers: '5 000',
-    howManyCompanies: '90',
-    howManyCategories: '30',
+    howManyUsers: randomInt(1200, 20000),
+    howManyCompanies: randomInt(10, 200),
+    howManyCategories: randomInt(1, 50),
     footerCityLogo: true
   }
 })

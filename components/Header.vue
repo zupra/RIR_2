@@ -76,7 +76,8 @@ export default {
     window.addEventListener('scroll', (event) => {
       const scrollY = Math.round(window.scrollY)
       // console.log(scrollY)
-      scrollY > 6 ? (this.setBackground = true) : (this.setBackground = false)
+      // scrollY > 6 ? (this.setBackground = true) : (this.setBackground = false)
+      this.setBackground = !!scrollY
     })
   },
   methods: {}

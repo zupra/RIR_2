@@ -6,11 +6,12 @@ section.ImgGrid
       h2.H Возможности
       p Платформа «Умный город Росатома» —  единая информационная основа для внедрения цифровых городских сервисов. «Умные» технологии повышают эффективность управления городскими процессами, облегчая жизнь и горожанам, и властям, расширяя возможности обратной связи.
       .center
-        img.static-main(
-          src='~/static/ImgGrid/1.svg'
-          alt="Возможности"
-          loading="lazy"
-        )
+        //-
+          img.static-main(
+            src='~/static/ImgGrid/1.svg'
+            alt="Возможности"
+            loading="lazy"
+          )
         Lottie(
           class="animate-me no-scale"
           :data="animation_1"
@@ -39,12 +40,13 @@ section.ImgGrid
           loading="lazy"
           class="static-section animate-me no-scale"
         )
-      //Lottie(
-      //  class="animate-me no-scale"
-      //  :data="animation_2"
-      //  :height="520"
-      //  :width="500"
-      //)
+        //- 
+          Lottie(
+            class="animate-me no-scale"
+            :data="animation_2"
+            :height="520"
+            :width="500"
+          )
 
     figure
       figcaption
@@ -52,18 +54,22 @@ section.ImgGrid
         p.subText Получайте информацию обо всех государственных и муниципальных организациях, образовательных и культурных учреждениях: адреса, графики работы, интернет-ресурсы. Все это есть на нашей платформе
         .BR
         .btn Перейти
-      img(
-        src='~/static/ImgGrid/3.svg'
-        alt="Учреждения"
-        loading="lazy"
-        class="static-section animate-me no-scale"
-      )
-      //Lottie(
-      //  class="animate-me no-scale"
-      //  :data="animation_3"
-      //   :height="500"
-      //   :width="560"
-      //)
+
+      picture
+        img(
+          src='~/static/ImgGrid/3.svg'
+          alt="Учреждения"
+          loading="lazy"
+          class="static-section animate-me no-scale"
+        )
+        //-
+          Lottie(
+            class="animate-me no-scale"
+            :data="animation_3"
+            :height="500"
+            :width="560"
+          )
+
 
     figure
       figcaption
@@ -82,12 +88,15 @@ section.ImgGrid
           loading="lazy"
           class="static-section animate-me no-scale"
         )
-      //Lottie(
-      //  class="animate-me no-scale"
-      //  :data="animation_4"
-      //   :height="520"
-      //   :width="500"
-      //)
+
+        //-
+          Lottie(
+            class="animate-me no-scale"
+            :data="animation_4"
+            :height="520"
+            :width="500"
+          )
+
 
 
     figure
@@ -107,12 +116,14 @@ section.ImgGrid
           loading="lazy"
           class="static-section animate-me no-scale"
         )
-      //Lottie(
-      //  class="animate-me no-scale"
-      //  :data="animation_5"
-      //  :height="460"
-      //  :width="460"
-      //)
+
+        //-
+          Lottie(
+            class="animate-me no-scale"
+            :data="animation_5"
+            :height="460"
+            :width="460"
+          )
 
 </template>
 
@@ -199,22 +210,36 @@ figure
   margin 4vh 0
   display flex
   flex-wrap wrap
-  justify-content center
+  justify-content space-evenly //center
   align-items center
 
   @media (min-width: 600px)
     &:nth-of-type(even)
       flex-direction row-reverse
 
-figcaption
+figcaption,
   //align-self center
   margin 1em
-  flex 1
-  min-width 300px
+  //flex 1
+  // max-width 360px
+figcaption, picture
+  max-width 400px
+
+img
+  width 100%
+  display inline-block
+
+.btn
+  padding 1em 4em
+  // max-width 360px
+/*
 .static-section
   max-width 452px
+
 .static-main
   display none
+
+
 @media screen and (max-width 1200px)
   .static-main
     display block
@@ -247,4 +272,6 @@ figcaption
   //  max-width 300px
   .static-section
     max-width 280px
+
+*/
 </style>
