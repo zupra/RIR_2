@@ -54,10 +54,49 @@
             :srcset="require(`~/static/Intro/${city.city}/slide1-bottom_${city.city}.webp`)"
             type='image/webp'
           )
-          img(
+          img.bottom(
             :src="require(`~/static/Intro/${city.city}/slide1-bottom_${city.city}.png`)"
             alt='шар лого'
           )
+  .images-adaptive.flex_col
+    .left-image.flex.x_center.y_center(
+      :class="city.colorThemeClasses.leftCircleImage"
+    )
+      picture
+        source(
+          :srcset="require(`~/static/Intro/${city.city}/slide1-left_${city.city}.webp`)"
+          type='image/webp'
+        )
+        img(
+          :src="require(`~/static/Intro/${city.city}/slide1-left_${city.city}.png`)"
+          alt='шар лого'
+        )
+    .flex_col.x_sa.other-images
+      .right-image.flex.x_center.y_center(
+        :class="city.colorThemeClasses.rightCircleImage"
+      )
+        picture
+          source(
+            :srcset="require(`~/static/Intro/${city.city}/slide1-upper_${city.city}.webp`)"
+            type='image/webp'
+          )
+          img(
+            :src="require(`~/static/Intro/${city.city}/slide1-upper_${city.city}.png`)"
+            alt='шар лого'
+          )
+      .bottom-image.flex.x_center.y_center(
+        :class="city.colorThemeClasses.bottomCircleImage"
+      )
+        picture
+          source(
+            :srcset="require(`~/static/Intro/${city.city}/slide1-bottom_${city.city}.webp`)"
+            type='image/webp'
+          )
+          img.bottom(
+            :src="require(`~/static/Intro/${city.city}/slide1-bottom_${city.city}.png`)"
+            alt='шар лого'
+          )
+
 </template>
 
 <script>
@@ -112,6 +151,8 @@ export default {
     height 100%
     position absolute
     right -75px
+  .images-adaptive
+    display none
   .right-side-images
     position: relative;
     margin-right: -17px
@@ -136,4 +177,74 @@ export default {
 @keyframes shakeBottom
   100%
     transform translateY(4px)
+
+@media screen and (max-width 1450px)
+  .slide1
+    justify-content space-between
+    .images
+      position relative
+      right 10px
+    .left-image
+      circle(268px)
+      padding: 20px;
+    .right-image
+      circle(210px)
+      padding: 20px;
+    .bottom-image
+      circle(193px)
+      padding: 20px;
+      .bottom
+        display block
+        width 100%
+        height 100%
+@media screen and (max-width 1024px)
+  .slide1
+    .content
+      max-width 397px
+    .Intro__content-city-name
+      font-size 40px
+      line-height 50px
+    .Intro__content-hello-text
+      font-size 16px
+      line-height 22px
+    .images
+      display none
+    .images-adaptive
+      display flex
+      align-items center
+      justify-content center
+      align-items flex-start
+      .left-image
+        circle(268px)
+        padding: 30px
+        & img
+          width 100%
+      .other-images
+        flex-direction row-reverse
+        .right-image
+          circle(210px)
+          margin-right 12px
+        .bottom-image
+          circle(190px)
+          margin-top: 130px
+@media screen and (max-width 768px)
+  .slide1
+    .images-adaptive
+      .left-image
+        circle(200px)
+        padding: 30px
+        & img
+          width 100%
+      .other-images
+        flex-direction row-reverse
+        .right-image
+          circle(160px)
+          margin-right 12px
+        .bottom-image
+          circle(145px)
+          margin-top: 130px
+@media screen and (max-width 680px)
+  .slide1
+    .images-adaptive
+      display none
 </style>

@@ -6,17 +6,16 @@ section.ImgGrid
       h2.H Возможности
       p Платформа «Умный город Росатома» —  единая информационная основа для внедрения цифровых городских сервисов. «Умные» технологии повышают эффективность управления городскими процессами, облегчая жизнь и горожанам, и властям, расширяя возможности обратной связи.
       .center
-        //-
-          img.static-main(
-            src='~/static/ImgGrid/1.svg'
-            alt="Возможности"
-            loading="lazy"
-          )
+
+        img.static-main(
+          src='~/static/ImgGrid/1.svg'
+          alt="Возможности"
+          loading="lazy"
+        )
         Lottie(
-          class="animate-me no-scale"
+          class="animate-me static-main-animation no-scale"
           :data="animation_1"
           :height="506"
-          :width="900"
         )
       h2.H Базовые модули
       p Базовая платформа «Умный город» —  единая информационная основа для внедрения цифровых городских сервисов. Базовая версия включает в себя: модули решения городских проблем онлайн, учреждения, полиция и депутатские округа
@@ -40,7 +39,7 @@ section.ImgGrid
           loading="lazy"
           class="static-section animate-me no-scale"
         )
-        //- 
+        //-
           Lottie(
             class="animate-me no-scale"
             :data="animation_2"
@@ -175,7 +174,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
+  .static-main
+    display none
 .no-scale
   transform scale(.9)
   animation no-scale 0.8s ease-out forwards
@@ -232,27 +232,26 @@ img
 .btn
   padding 1em 4em
   // max-width 360px
-/*
+
 .static-section
   max-width 452px
 
-.static-main
-  display none
-
 
 @media screen and (max-width 1200px)
+  .static-main-animation
+    display none
   .static-main
     display block
     width 100%
   .static-section
     display block
     max-width 377px
-  .animate-me
-    display none
 @media screen and (max-width 1024px)
   .H
     font-size 40px
 @media screen and (max-width 757px)
+  .ImgGrid
+    padding-top: 40px
   .btn
     margin-top: 40px
   .BR
@@ -272,6 +271,4 @@ img
   //  max-width 300px
   .static-section
     max-width 280px
-
-*/
 </style>

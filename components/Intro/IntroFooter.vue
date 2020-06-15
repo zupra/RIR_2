@@ -7,7 +7,7 @@ footer.Intro__footer(:class="city.colorThemeClasses.footer")
     //img(
     //  :src="require(`~/static/Intro/${city.city}/messenger_${city.city}.gif`)"
     //)
-    .flex
+    .flex.achievment
       .Intro__footer-achievment
         //- h2.achievment-number {{ city.howManyUsers }}
         animated-number.achievment-number(
@@ -26,7 +26,8 @@ footer.Intro__footer(:class="city.colorThemeClasses.footer")
           :delay="1000"
           :round="1"
         )
-        p.achievment-title Организаций и учереждений
+        p.achievment-title Организаций
+        p.achievment-title и учереждений
       .Intro__footer-achievment
         //- h2.achievment-number {{ city.howManyCategories }}
         animated-number.achievment-number(
@@ -37,7 +38,8 @@ footer.Intro__footer(:class="city.colorThemeClasses.footer")
           :round="1"
           easing="easeOutCirc"
         )
-        p.achievment-title Категорий обращений
+        p.achievment-title Категорий
+        p.achievment-title обращений
 </template>
 
 <script>
@@ -83,10 +85,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+video
+  border-radius 5px
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
 .Intro__footer
   padding 23px 0 14px 0
 .Intro__footer-achievment
-  max-width 250px
+  width 250px
 .achievment-number
   font-weight 800
   font-size 60px
@@ -96,4 +101,41 @@ export default {
   font-weight bold
   font-size 20px
   line-height 24px
+@media screen and (max-width: 1200px)
+  .achievment-number
+    font-size: 50px
+@media screen and (max-width: 1100px)
+  video
+    max-width 293px
+  .Intro__footer-achievment
+    width 200px
+  .achievment-title
+    font-size: 16px
+@media screen and (max-width: 1000px)
+  video
+    max-width 220px
+    margin-right: 20px
+@media screen and (max-width: 860px)
+  .Intro__footer-achievment
+    width 170px
+@media screen and (max-width: 768px)
+  .Intro__footer
+    overflow-x hidden
+  video
+    width 152px
+    margin-right: 31px
+  .achievment
+    flex 1
+    justify-content space-between
+  .Intro__footer-achievment
+    width 153px
+  .achievment-number
+    font-size: 40px;
+    line-height: 49px;
+  .achievment-title
+    font-size: 14px
+    line-height: 17px
+@media screen and (max-width 550px)
+  video
+    display none
 </style>
