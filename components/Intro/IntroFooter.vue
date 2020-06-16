@@ -1,12 +1,13 @@
 <template lang="pug">
 footer.Intro__footer(:class="city.colorThemeClasses.footer")
   .wrap.flex.y_center.x_sb
-    video(autoplay loop)
-      source(src="~/static/Intro/glazov/test.mp4")
-      source(src="~/static/Intro/glazov/test.webm")
-    //img(
-    //  :src="require(`~/static/Intro/${city.city}/messenger_${city.city}.gif`)"
-    //)
+    //-
+      video(autoplay loop)
+        source(src="~/static/Intro/glazov/test.mp4")
+        source(src="~/static/Intro/glazov/test.webm")
+    img.messenger(
+      :src="require(`~/static/Intro/${city.city}/messenger_${city.city}.gif`)"
+    )
     .flex.achievment
       .Intro__footer-achievment
         //- h2.achievment-number {{ city.howManyUsers }}
@@ -85,9 +86,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-video
-  border-radius 5px
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
 .Intro__footer
   padding 23px 0 14px 0
 .Intro__footer-achievment
@@ -105,14 +103,14 @@ video
   .achievment-number
     font-size: 50px
 @media screen and (max-width: 1100px)
-  video
+  .messenger
     max-width 293px
   .Intro__footer-achievment
     width 200px
   .achievment-title
     font-size: 16px
 @media screen and (max-width: 1000px)
-  video
+  .messenger
     max-width 220px
     margin-right: 20px
 @media screen and (max-width: 860px)
@@ -121,7 +119,7 @@ video
 @media screen and (max-width: 768px)
   .Intro__footer
     overflow-x hidden
-  video
+  .messenger
     width 152px
     margin-right: 31px
   .achievment
@@ -135,7 +133,7 @@ video
   .achievment-title
     font-size: 14px
     line-height: 17px
-@media screen and (max-width 550px)
-  video
+@media screen and (max-width 680px)
+  .messenger
     display none
 </style>

@@ -20,6 +20,24 @@
   )
     picture
       source(
+        media="(max-width: 1000px)"
+        :srcset="require(`~/static/Intro/${city.city}/slide2-1000_${city.city}.webp`)"
+        type='image/webp'
+      )
+      source(
+        media="(max-width: 1000px)"
+        :srcset="require(`~/static/Intro/${city.city}/slide2-1000_${city.city}.png`)"
+      )
+      source(
+        media="(max-width: 1200px)"
+        :srcset="require(`~/static/Intro/${city.city}/slide2-1200_${city.city}.webp`)"
+        type='image/webp'
+      )
+      source(
+        media="(max-width: 1200px)"
+        :srcset="require(`~/static/Intro/${city.city}/slide2-1200_${city.city}.png`)"
+      )
+      source(
         :srcset="require(`~/static/Intro/${city.city}/slide2_${city.city}.webp`)"
         type='image/webp'
       )
@@ -53,15 +71,16 @@
       v-if="city.slide2InterestingPlace"
       :class="city.slide2InterestingPlaceStyle"
     )
-      picture
-        source(
-          :srcset="require(`~/static/Intro/${city.city}/slide2-1_${city.city}.webp`)"
-          type='image/webp'
-        )
-        img(
-          :src="require(`~/static/Intro/${city.city}/slide2-1_${city.city}.png`)"
-          alt='слайд 2 интересное место'
-        )
+      div
+        picture
+          source(
+            :srcset="require(`~/static/Intro/${city.city}/slide2-1_${city.city}.webp`)"
+            type='image/webp'
+          )
+          img(
+            :src="require(`~/static/Intro/${city.city}/slide2-1_${city.city}.png`)"
+            alt='слайд 2 интересное место'
+          )
 </template>
 
 <script>
@@ -100,6 +119,8 @@ export default {
     padding-left 52px
     flex 1
     position: relative
+  .slide2-main-img
+    display flex
   .images__group
     position absolute
     bottom: 80px
@@ -117,4 +138,33 @@ export default {
     background-color #E6EDFF
     top 46px
     right 35px
+@media screen and (max-width 1200px)
+  .images__group
+    display none
+  .slide2
+    .images
+      margin-right 20px
+      padding-left 32px
+    .Intro__content-explore-title
+      line-height 67px
+    .images__interesting-place
+      circle(189px)
+      top 20px
+      right 70px
+@media screen and (max-width 820px)
+  .slide2
+    .Intro__content-explore-title
+      font-size: 40px
+      line-height: 95.4%
+    .Intro__content-explore-text
+      font-size: 16px
+      line-height: 22px
+    .images__interesting-place
+      circle(137px)
+      top 100px
+      right 20px
+@media screen and (max-width 680px)
+  .slide2
+    .images
+      display none
 </style>

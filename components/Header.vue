@@ -196,9 +196,17 @@ export default {
     transform-origin: 5%
     transform: rotate(-45deg)
     width: 41px
-@media screen and (max-width 650px)
+@media screen and (max-width 768px)
+  .header__mobile-menu
+    margin-left: 5px
+@media screen and (max-width 700px)
   .btn_white
     display none
+@media screen and (max-width 650px)
+  .Alter-logo
+    font-size: 14px
+    margin-left: .3em
+    padding-left: .3em
   .header__mobile-menu
     margin-left: 0
   .header-logo
@@ -209,4 +217,9 @@ export default {
   .city-logo
     width 45px
     height 45px
+@media screen and (max-width 400px)
+  .header__mobile-menu
+    circle(50px)
+  .rosatom-name
+    margin-left: 5px
 </style>

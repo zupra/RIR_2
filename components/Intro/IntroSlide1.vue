@@ -244,6 +244,20 @@ export default {
           circle(145px)
           margin-top: 130px
 @media screen and (max-width 680px)
+  .btn_blue
+    background: #005CA9;
+    padding: 8px 19px
+    font-size: 14px;
+    line-height: 16px;
+  .Intro__content-city-name
+    font-size: 34px;
+    line-height: 40px;
+  .head-of-city__name
+    & h3
+      font-size: 18px;
+      line-height: 30px;
+    & p
+      font-size: 16px;
   .slide1
     .images-adaptive
       display none

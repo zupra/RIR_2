@@ -100,4 +100,20 @@ export default {
     margin-top: 18px
     font-size: 14px;
     line-height: 20px;
+@media screen and (max-width 1200px)
+  .slide3
+    .solve-problems
+      margin-right: 63px
+@media screen and (max-width: 900px)
+  .slide3
+    .Intro__content-develop-text
+      max-width 267px
+    .Intro__content-develop-title
+      max-width 365px
+      font-size: 40px
+      line-height 95.4%
+@media screen and (max-width: 680px)
+  .slide3
+    .solve-problems
+      display none
 </style>
