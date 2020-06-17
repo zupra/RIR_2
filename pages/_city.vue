@@ -6,7 +6,7 @@
   Intro(
     :cityName="city"
   )
-  
+
   // Картиночки
   ImgGrid
   .wrap

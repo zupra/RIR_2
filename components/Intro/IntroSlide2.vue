@@ -20,13 +20,13 @@
   )
     picture
       source(
-        media="(max-width: 1000px)"
-        :srcset="require(`~/static/Intro/${city.city}/slide2-1000_${city.city}.webp`)"
+        media="(max-width: 870px)"
+        :srcset="require(`~/static/Intro/${city.city}/slide2-870_${city.city}.webp`)"
         type='image/webp'
       )
       source(
-        media="(max-width: 1000px)"
-        :srcset="require(`~/static/Intro/${city.city}/slide2-1000_${city.city}.png`)"
+        media="(max-width: 870px)"
+        :srcset="require(`~/static/Intro/${city.city}/slide2-870_${city.city}.png`)"
       )
       source(
         media="(max-width: 1200px)"
@@ -71,8 +71,25 @@
       v-if="city.slide2InterestingPlace"
       :class="city.slide2InterestingPlaceStyle"
     )
-      div
-        picture
+      picture
+          source(
+            media="(max-width: 870px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide2-1-870_${city.city}.webp`)"
+            type='image/webp'
+          )
+          source(
+            media="(max-width: 870px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide2-1-870_${city.city}.png`)"
+          )
+          source(
+            media="(max-width: 1200px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide2-1-1200_${city.city}.webp`)"
+            type='image/webp'
+          )
+          source(
+            media="(max-width: 1200px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide2-1-1200_${city.city}.png`)"
+          )
           source(
             :srcset="require(`~/static/Intro/${city.city}/slide2-1_${city.city}.webp`)"
             type='image/webp'
@@ -150,8 +167,8 @@ export default {
     .images__interesting-place
       circle(189px)
       top 20px
-      right 70px
-@media screen and (max-width 820px)
+      right 50px
+@media screen and (max-width 870px)
   .slide2
     .Intro__content-explore-title
       font-size: 40px

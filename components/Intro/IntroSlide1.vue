@@ -64,8 +64,22 @@
     )
       picture
         source(
-          :srcset="require(`~/static/Intro/${city.city}/slide1-left_${city.city}.webp`)"
+          media="(max-width: 768px)"
+          :srcset="require(`~/static/Intro/${city.city}/slide1-left-768_${city.city}.webp`)"
           type='image/webp'
+        )
+        source(
+          media="(max-width: 768px)"
+          :srcset="require(`~/static/Intro/${city.city}/slide1-left-768_${city.city}.png`)"
+        )
+        source(
+          media="(max-width: 1024px)"
+          :srcset="require(`~/static/Intro/${city.city}/slide1-left-1024_${city.city}.webp`)"
+          type='image/webp'
+        )
+        source(
+          media="(max-width: 1024px)"
+          :srcset="require(`~/static/Intro/${city.city}/slide1-left-1024_${city.city}.png`)"
         )
         img(
           :src="require(`~/static/Intro/${city.city}/slide1-left_${city.city}.png`)"
@@ -77,8 +91,22 @@
       )
         picture
           source(
-            :srcset="require(`~/static/Intro/${city.city}/slide1-upper_${city.city}.webp`)"
+            media="(max-width: 768px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide1-upper-768_${city.city}.webp`)"
             type='image/webp'
+          )
+          source(
+            media="(max-width: 768px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide1-upper-768_${city.city}.png`)"
+          )
+          source(
+            media="(max-width: 1024px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide1-upper-1024_${city.city}.webp`)"
+            type='image/webp'
+          )
+          source(
+            media="(max-width: 1024px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide1-upper-1024_${city.city}.png`)"
           )
           img(
             :src="require(`~/static/Intro/${city.city}/slide1-upper_${city.city}.png`)"
@@ -89,8 +117,22 @@
       )
         picture
           source(
-            :srcset="require(`~/static/Intro/${city.city}/slide1-bottom_${city.city}.webp`)"
+            media="(max-width: 768px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide1-bottom-768_${city.city}.webp`)"
             type='image/webp'
+          )
+          source(
+            media="(max-width: 768px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide1-bottom-768_${city.city}.png`)"
+          )
+          source(
+            media="(max-width: 1024px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide1-bottom-1024_${city.city}.webp`)"
+            type='image/webp'
+          )
+          source(
+            media="(max-width: 1024px)"
+            :srcset="require(`~/static/Intro/${city.city}/slide1-bottom-1024_${city.city}.png`)"
           )
           img.bottom(
             :src="require(`~/static/Intro/${city.city}/slide1-bottom_${city.city}.png`)"
@@ -233,8 +275,8 @@ export default {
       .left-image
         circle(200px)
         padding: 30px
-        & img
-          width 100%
+      & img
+        max-width 100%
       .other-images
         flex-direction row-reverse
         .right-image

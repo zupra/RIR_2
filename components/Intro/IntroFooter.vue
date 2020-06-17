@@ -8,6 +8,10 @@ footer.Intro__footer(:class="city.colorThemeClasses.footer")
     img.messenger(
       :src="require(`~/static/Intro/${city.city}/messenger_${city.city}.gif`)"
     )
+    //Lottie.messenger(
+    //  :data="require(`~/static/Intro/${city.city}/messenger_${city.city}.json`)"
+    //  :width="320"
+    //)
     .flex.achievment
       .Intro__footer-achievment
         //- h2.achievment-number {{ city.howManyUsers }}
@@ -45,10 +49,12 @@ footer.Intro__footer(:class="city.colorThemeClasses.footer")
 
 <script>
 import AnimatedNumber from 'animated-number-vue'
+import Lottie from '~/components/Lottie.vue'
 export default {
   name: 'IntroFooter',
   components: {
-    AnimatedNumber
+    AnimatedNumber,
+    Lottie
   },
   props: {
     cityName: {
@@ -99,19 +105,21 @@ export default {
   font-weight bold
   font-size 20px
   line-height 24px
+.messenger
+  width 320px
 @media screen and (max-width: 1200px)
   .achievment-number
     font-size: 50px
 @media screen and (max-width: 1100px)
   .messenger
-    max-width 293px
+    width 293px
   .Intro__footer-achievment
     width 200px
   .achievment-title
     font-size: 16px
 @media screen and (max-width: 1000px)
   .messenger
-    max-width 220px
+    width 220px
     margin-right: 20px
 @media screen and (max-width: 860px)
   .Intro__footer-achievment

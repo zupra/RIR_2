@@ -1,9 +1,12 @@
 <template lang="pug">
 
 //- :class="{setBackground:setBackground}"
-header.topNav(
-  :class="setBackground && `${city.colorThemeClasses.formColor} setBackground`"
+div.topNav(
+  :class="{mobile: isMobile}"
 )
+  header.topNav(
+    :class="setBackground && `${city.colorThemeClasses.formColor} setBackground`"
+  )
   .wrap.flex.x_sb
     .flex.y_center
       picture
@@ -56,6 +59,7 @@ header.topNav(
         )
         label(
           for="mobile-menu-btn"
+          @click="isMobile = !isMobile"
         )
           .hamburger.hamburger1
             span.bar.bar1
@@ -65,6 +69,7 @@ header.topNav(
 </template>
 
 <script>
+
 export default {
   name: 'Header',
   props: {
@@ -75,7 +80,8 @@ export default {
   },
   data() {
     return {
-      setBackground: false
+      setBackground: false,
+      isMobile: false
     }
   },
   computed: {
@@ -88,12 +94,17 @@ export default {
       const scrollY = Math.round(window.scrollY)
       scrollY > 10 ? (this.setBackground = true) : (this.setBackground = false)
     })
-  },
-  methods: {}
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
+  .header__mobile-menu
+    display none
+  .mobile-menu
+    width 100vw
+    height 100vh
+    background: #E5E5E5;
 
 .Alter-logo
   height 2.5em
@@ -101,7 +112,9 @@ export default {
   text-transform uppercase
   margin-left 1.5em;
   padding-left 1.5em;
-
+.mobile
+  height 100vh
+  background #E5E5E5
 
 .topNav
   padding 18px 0 18px 0
@@ -122,8 +135,6 @@ export default {
   font-weight bold
   cursor pointer
   margin-right : 41px
-.header__mobile-menu
-  display none
 @media screen and (max-width 1200px)
   .scrollTo
     font-size 14px
@@ -131,7 +142,6 @@ export default {
 @media screen and (max-width 1000px)
   .header-nav
     display none
-
   .header__mobile-menu
     display flex
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18), 0px 1px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);
@@ -207,19 +217,16 @@ export default {
     font-size: 14px
     margin-left: .3em
     padding-left: .3em
-  .header__mobile-menu
-    margin-left: 0
   .header-logo
     width 45px
     height 45px
   .rosatom-name
     font-size 11px
-  .city-logo
-    width 45px
-    height 45px
-@media screen and (max-width 400px)
   .header__mobile-menu
-    circle(50px)
+    margin-left: 0
+@media screen and (max-width 400px)
   .rosatom-name
     margin-left: 5px
+  .header__mobile-menu
+    circle(50px)
 </style>
