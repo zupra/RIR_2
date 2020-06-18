@@ -147,10 +147,17 @@ $purple = #CE94F8;
 
 .icon
   background #F7F7F7
-.H
-  word-break break-all
-
+@media screen and (max-width 768px)
+  .H
+    font-size: 16px
+    line-height: 22px
+    align-self center
+  .Tag-container
+    margin-top: 5px
 @media screen and (max-width 375px)
+  .subText
+    font-size: 16px
+    line-height: 22px
   .additionalModules
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
   .Tag-container

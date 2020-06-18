@@ -20,10 +20,11 @@
   // Форма обратной связи
   Form(
     :cityName="$route.params.city"
+    v-prlx="{ reverse: true}"
   )
   Footer(
     :cityName="$route.params.city"
-    v-prlx="{ fromBottom: true, preserveInitialPosition: false, speed: 0.2}"
+    v-prlx="{ fromBottom: true, speed: 0.2}"
   )
 </template>
 

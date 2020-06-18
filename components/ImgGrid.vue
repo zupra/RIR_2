@@ -20,7 +20,7 @@ section.ImgGrid
       h2.H Базовые модули
       p Базовая платформа «Умный город» —  единая информационная основа для внедрения цифровых городских сервисов. Базовая версия включает в себя: модули решения городских проблем онлайн, учреждения, полиция и депутатские округа
     figure
-      figcaption
+      figcaption.figcaption
         h2.text_x3.mb-3 Решение городских
           br
           | проблем онлайн
@@ -39,21 +39,13 @@ section.ImgGrid
           loading="lazy"
           class="static-section animate-me no-scale"
         )
-        //-
-          Lottie(
-            class="animate-me no-scale"
-            :data="animation_2"
-            :height="520"
-            :width="500"
-          )
 
     figure
-      figcaption
-        h2.text_x3.mb-3  Учреждения
+      figcaption.figcaption
+        h2.text_x3.mb-3.img-grid-figure-title  Учреждения
         p.subText Получайте информацию обо всех государственных и муниципальных организациях, образовательных и культурных учреждениях: адреса, графики работы, интернет-ресурсы. Все это есть на нашей платформе
         .BR
         .btn Перейти
-
       picture
         img(
           src='~/static/ImgGrid/3.svg'
@@ -61,17 +53,9 @@ section.ImgGrid
           loading="lazy"
           class="static-section animate-me no-scale"
         )
-        //-
-          Lottie(
-            class="animate-me no-scale"
-            :data="animation_3"
-            :height="500"
-            :width="560"
-          )
-
 
     figure
-      figcaption
+      figcaption.figcaption
         h2.text_x3.mb-3 Полиция
         p.subText Узнайте, за каким полицейским участком закреплен ваш дом, и обращайтесь к своему участковому. В системе удобно видеть границы полицейских участков и находить контакты участковых.
         .BR
@@ -88,18 +72,8 @@ section.ImgGrid
           class="static-section animate-me no-scale"
         )
 
-        //-
-          Lottie(
-            class="animate-me no-scale"
-            :data="animation_4"
-            :height="520"
-            :width="500"
-          )
-
-
-
     figure
-      figcaption
+      figcaption.figcaption
         h2.text_x3.mb-3 Депутатские округа
         p.subText Узнавайте, к какому депутатскому округу относится ваш дом, и обращайтесь к своему депутату для решения ваших проблем.
         .BR
@@ -115,15 +89,6 @@ section.ImgGrid
           loading="lazy"
           class="static-section animate-me no-scale"
         )
-
-        //-
-          Lottie(
-            class="animate-me no-scale"
-            :data="animation_5"
-            :height="460"
-            :width="460"
-          )
-
 </template>
 
 <script>
@@ -174,8 +139,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  .static-main
-    display none
+.figcaption
+  max-width: 400px;
+.static-main
+  display none
 .no-scale
   transform scale(.9)
   animation no-scale 0.8s ease-out forwards
@@ -198,13 +165,11 @@ export default {
   background #FFF
   padding-bottom 1em
 
-
 .H
   font-size 60px
 .center
   max-width: 750px;
   margin: 0 auto;
-
 
 figure
   margin 4vh 0
@@ -212,18 +177,13 @@ figure
   flex-wrap wrap
   justify-content space-evenly //center
   align-items center
+figure:nth-of-type(even)
+  flex-direction row
+figure:nth-of-type(odd)
+  flex-direction row-reverse
 
-  @media (min-width: 600px)
-    &:nth-of-type(even)
-      flex-direction row-reverse
-
-figcaption,
-  //align-self center
+figcaption
   margin 1em
-  //flex 1
-  // max-width 360px
-figcaption, picture
-  max-width 400px
 
 img
   width 100%
@@ -231,13 +191,13 @@ img
 
 .btn
   padding 1em 4em
-  // max-width 360px
 
 .static-section
   max-width 452px
-
-
-@media screen and (max-width 1200px)
+@media screen and (max-width 1024px)
+  .H
+    font-size 40px
+@media screen and (max-width 900px)
   .static-main-animation
     display none
   .static-main
@@ -246,9 +206,6 @@ img
   .static-section
     display block
     max-width 377px
-@media screen and (max-width 1024px)
-  .H
-    font-size 40px
 @media screen and (max-width 757px)
   .ImgGrid
     padding-top: 40px
@@ -263,12 +220,17 @@ img
   figcaption
     margin 0
     min-width 100%
-//@media screen and (max-width 576px)
-//  .static-main
-//    max-width 550px
 @media screen and (max-width 375px)
-  //.static-main
-  //  max-width 300px
+  .img-grid-figure-title
+    margin-bottom: 12px
+  .btn
+    width 100%
+    text-align center
+    margin-top: 12px
   .static-section
     max-width 280px
+  .H
+    font-size: 30px
+    line-height: 36px
+    margin-bottom: 12px
 </style>

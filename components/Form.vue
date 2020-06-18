@@ -9,11 +9,11 @@ section#Form.Form.flex.y_center(:class="city.colorThemeClasses.formColor")
             | наш «Умный город Росатома – {{ city.cityName }}»
           label Имя и фамилия
             input
-          .flex.my-3
-            label.flex_1 Место работы
+          .flex.my-3.flex_wr
+            label.form-field Место работы
               input
             | &emsp; &nbsp;
-            label.flex_1 Эл. почта или телефон
+            label.form-field Эл. почта или телефон
               input
           label Комментарий
             textarea
@@ -35,35 +35,6 @@ section#Form.Form.flex.y_center(:class="city.colorThemeClasses.formColor")
 
 <script>
 export default {
-  mounted() {
-    const images = document.querySelectorAll('.animate-me');
-
-    const config = {
-      rootMargin: '10px 20px 70px 40px',
-      threshold: [0, 0.25, 0.5, 0.75, 1]
-    };
-
-    let observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio > 0.25) {
-          entry.target.classList.replace('no-show', 'first-show');
-        }
-        if (entry.intersectionRatio > 0.5) {
-          entry.target.classList.replace('first-show', 'second-show');
-        }
-        if (entry.intersectionRatio > 0.75) {
-          entry.target.classList.replace('second-show', 'show');
-        }
-        else {
-          entry.target.classList.replace('show' || 'second-show' || 'first-show', 'no-show');
-        }
-      });
-    }, config);
-
-    images.forEach(image => {
-      observer.observe(image);
-    });
-  },
   props: {
     cityName: {
       type: String,
@@ -74,6 +45,37 @@ export default {
     city() {
       return this.$store.state[this.cityName]
     }
+  },
+  mounted() {
+    const images = document.querySelectorAll('.animate-me')
+
+    const config = {
+      rootMargin: '10px 20px 70px 40px',
+      threshold: [0, 0.25, 0.5, 0.75, 1]
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0.25) {
+          entry.target.classList.replace('no-show', 'first-show')
+        }
+        if (entry.intersectionRatio > 0.5) {
+          entry.target.classList.replace('first-show', 'second-show')
+        }
+        if (entry.intersectionRatio > 0.75) {
+          entry.target.classList.replace('second-show', 'show')
+        } else {
+          entry.target.classList.replace(
+            'show' || 'second-show' || 'first-show',
+            'no-show'
+          )
+        }
+      })
+    }, config)
+
+    images.forEach((image) => {
+      observer.observe(image)
+    })
   }
 }
 </script>
@@ -121,9 +123,7 @@ button
   color $blue_l
   font-weight bold
   padding  .7rem 2rem
-
   border 0
-
 
 input, textarea, select
   width 100%
@@ -140,12 +140,14 @@ textarea
 label
   display block
   font-weight bold
-
+button
+  background-color: #fff
 select
   background #FFF url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='12'><polygon points='0,0 12,0 6,12' fill='gainsboro'/></svg>") right no-repeat
 .form-wrap
   widht 100%!important
-
+.form-field
+  flex 1
 @media screen and (max-width: 1080px)
   .feedbackform__image
     display none
@@ -155,4 +157,17 @@ select
       text-align center
     & .subText
       text-align center
+@media screen and (max-width: 400px)
+  .form-field
+    width 100%
+    flex auto
+  .Form
+    padding-bottom: 40px;
+    h2
+      font-size: 30px
+      line-height: 36px
+      margin-top: 40px
+      margin-bottom: 12px
+  button
+    width 100%
 </style>

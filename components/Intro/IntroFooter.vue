@@ -1,17 +1,14 @@
 <template lang="pug">
 footer.Intro__footer(:class="city.colorThemeClasses.footer")
   .wrap.flex.y_center.x_sb
-    //-
-      video(autoplay loop)
-        source(src="~/static/Intro/glazov/test.mp4")
-        source(src="~/static/Intro/glazov/test.webm")
-    img.messenger(
-      :src="require(`~/static/Intro/${city.city}/messenger_${city.city}.gif`)"
-    )
-    //Lottie.messenger(
-    //  :data="require(`~/static/Intro/${city.city}/messenger_${city.city}.json`)"
-    //  :width="320"
+    // не удалять сюда будем вставлять картинку пнг на заглушку при небольших экранах!
+    //img.messenger(
+    //  :src="require(`~/static/Intro/${city.city}/messenger_${city.city}.gif`)"
     //)
+    Lottie.messenger(
+      :data="require(`~/static/Intro/${city.city}/messenger_${city.city}.json`)"
+      :width="320"
+    )
     .flex.achievment
       .Intro__footer-achievment
         //- h2.achievment-number {{ city.howManyUsers }}

@@ -99,26 +99,19 @@ export default {
     return {
       newsList: DATA,
       swiperOption: {
-        // slidesPerView: 4,
-        // spaceBetween: 80,
-        // effect: 'fade',
-
-        //
         loop: true,
-        autoplay: {
-          delay: 2500
-          // disableOnInteraction: false
-        },
+        // autoplay: {
+        //   delay: 2500
+        // },
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         },
         pagination: {
           el: '.swiper-pagination',
-          clickable: true
-          // dynamicBullets: true
+          clickable: true,
+          dynamicBullets: true
         },
-
         breakpoints: {
           1200: {
             slidesPerView: 3,
@@ -132,10 +125,9 @@ export default {
             slidesPerView: 2,
             spaceBetween: 30
           },
-           375: {
-             slidesPerView: 1,
-             spaceBetween: 50
-           }
+          375: {
+            slidesPerView: 1
+          }
         }
       }
     }
@@ -214,9 +206,13 @@ export default {
 @media screen and (max-width 760px)
   .swiper-slide
     max-width 457px!important
+  h2.H
+    font-size: 42px
+    line-height: 50px
 @media screen and (max-width 375px)
   .swiper-slide
-    max-width 320px!important
+    img
+      max-width 320px!important
   .swiper-button-prev, .swiper-button-next
     display none
 </style>

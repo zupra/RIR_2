@@ -1,71 +1,78 @@
 <template lang="pug">
-
-//- :class="{setBackground:setBackground}"
-div.topNav(
-  :class="{mobile: isMobile}"
-)
+  //:class="{mobile: isMobile}"
+    //:class="setBackground && `${city.colorThemeClasses.formColor} setBackground`"
   header.topNav(
-    :class="setBackground && `${city.colorThemeClasses.formColor} setBackground`"
+    :class="[{mobile: isMobile}, setBackground && `${city.colorThemeClasses.formColor} setBackground`]"
   )
-  .wrap.flex.x_sb
-    .flex.y_center
-      picture
-        source(
-          srcset='~static/Header/LOGO.webp',
-          type='image/webp'
+    .wrap.flex.x_sb
+      .flex.y_center
+        picture(
+          v-if="!isMobile"
         )
-        img.header-logo(
-          src='~static/Header/LOGO.png',
-          loading="lazy"
-          alt='логотип РИР'
-        )
-      p.upper.ml-4.rosatom-name Умные города
-        br
-        | Росатома
-
-      // cityLogo || cityName
-      div.ml-4(v-if="city.headerCityLogo")
-        picture
           source(
-            :srcset="require(`~/static/Header/city-logo_${city.city}.webp`)"
+            srcset='~static/Header/LOGO.webp',
             type='image/webp'
           )
-          img.city-logo(
-            :src="require(`~/static/Header/city-logo_${city.city}.png`)"
-            alt='логотип Города'
+          img.header-logo(
+            src='~static/Header/LOGO.png',
             loading="lazy"
+            alt='логотип РИР'
           )
-      .Alter-logo.flex.y_center(
-        v-else
-      ) {{ city.cityName }}
+        picture(
+          v-if="isMobile"
+        )
+          source(
+            srcset='~static/Header/LOGO_mobile-menu.webp',
+            type='image/webp'
+          )
+          img.header-logo(
+            src='~static/Header/LOGO_mobile-menu.png',
+            loading="lazy"
+            alt='логотип РИР'
+          )
+        p.upper.ml-4.rosatom-name Умные города
+          br
+          | Росатома
+        div.ml-4(v-if="city.headerCityLogo")
+          picture
+            source(
+              :srcset="require(`~/static/Header/city-logo_${city.city}.webp`)"
+              type='image/webp'
+            )
+            img.city-logo(
+              :src="require(`~/static/Header/city-logo_${city.city}.png`)"
+              alt='логотип Города'
+              loading="lazy"
+            )
+        .Alter-logo.flex.y_center(
+          v-else
+        ) {{ city.cityName }}
+      .flex.y_center
 
+        template(
+          v-for="item in ['Городские сервисы', 'Новости', 'Обратная связь']"
+        )
+          .scrollTo.header-nav(
+            v-scroll-to="'#Form'"
+          ) {{ item }}
 
-    .flex.y_center
-
-      template(
-        v-for="item in ['Городские сервисы', 'Новости', 'Обратная связь']"
-      )
-        .scrollTo.header-nav(
+        .btn_white(
           v-scroll-to="'#Form'"
-        ) {{ item }}
-
-      .btn_white(
-        v-scroll-to="'#Form'"
-      ) Зарегистрироваться
-      .header__mobile-menu.flex.x_center.y_center
-        input.checkbox1.visuallyHidden(
-          type="checkbox"
-          id="mobile-menu-btn"
-        )
-        label(
-          for="mobile-menu-btn"
-          @click="isMobile = !isMobile"
-        )
-          .hamburger.hamburger1
-            span.bar.bar1
-            span.bar.bar2
-            span.bar.bar3
-            span.bar.bar4
+        ) Зарегистрироваться
+        .header__mobile-menu.flex.x_center.y_center
+          input.checkbox1.visuallyHidden(
+            type="checkbox"
+            id="mobile-menu-btn"
+          )
+          label(
+            for="mobile-menu-btn"
+            @click="isMobile = !isMobile"
+          )
+            .hamburger.hamburger1
+              span.bar.bar1
+              span.bar.bar2
+              span.bar.bar3
+              span.bar.bar4
 </template>
 
 <script>
