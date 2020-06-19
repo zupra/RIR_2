@@ -286,14 +286,20 @@ export default {
           circle(145px)
           margin-top: 130px
 @media screen and (max-width 680px)
+  .slide1
+    .Intro__content-city-name
+      margin-top: 0
+    .Intro__content-hello-text
+      font-size: 14px
+      line-height: 19px
   .btn_blue
     background: #005CA9;
     padding: 8px 19px
     font-size: 14px;
     line-height: 16px;
   .Intro__content-city-name
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 34px!important;
+    line-height: 40px!important;
   .head-of-city__name
     & h3
       font-size: 18px;

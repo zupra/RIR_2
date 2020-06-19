@@ -184,4 +184,12 @@ export default {
   .slide2
     .images
       display none
+    .Intro__content-explore-title
+      font-size: 34px
+      line-height: 40px
+    .Intro__content-explore-text
+      margin-top: 0
+    .Intro__content-hello-text
+      font-size: 14px
+      line-height: 19px
 </style>

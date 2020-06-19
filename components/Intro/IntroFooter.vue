@@ -1,14 +1,18 @@
 <template lang="pug">
 footer.Intro__footer(:class="city.colorThemeClasses.footer")
   .wrap.flex.y_center.x_sb
-    // не удалять сюда будем вставлять картинку пнг на заглушку при небольших экранах!
-    //img.messenger(
-    //  :src="require(`~/static/Intro/${city.city}/messenger_${city.city}.gif`)"
-    //)
     Lottie.messenger(
       :data="require(`~/static/Intro/${city.city}/messenger_${city.city}.json`)"
       :width="320"
     )
+    picture
+      source(
+        :srcset="require(`~/static/Intro/${city.city}/messenger_${city.city}.webp`)"
+        type='image/webp'
+      )
+      img.messenger-adaptive(
+        :srcset="require(`~/static/Intro/${city.city}/messenger_${city.city}.png`)"
+      )
     .flex.achievment
       .Intro__footer-achievment
         //- h2.achievment-number {{ city.howManyUsers }}
@@ -104,6 +108,8 @@ export default {
   line-height 24px
 .messenger
   width 320px
+.messenger-adaptive
+  display none
 @media screen and (max-width: 1200px)
   .achievment-number
     font-size: 50px
@@ -118,13 +124,19 @@ export default {
   .messenger
     width 220px
     margin-right: 20px
+@media screen and (max-width: 900px)
+  .messenger
+    display none
+  .messenger-adaptive
+    display block
+    width 220px
 @media screen and (max-width: 860px)
   .Intro__footer-achievment
     width 170px
 @media screen and (max-width: 768px)
   .Intro__footer
     overflow-x hidden
-  .messenger
+  .messenger-adaptive
     width 152px
     margin-right: 31px
   .achievment
@@ -139,6 +151,6 @@ export default {
     font-size: 14px
     line-height: 17px
 @media screen and (max-width 680px)
-  .messenger
+  .messenger-adaptive
     display none
 </style>

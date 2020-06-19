@@ -30,11 +30,17 @@
             loading="lazy"
             alt='логотип РИР'
           )
-        p.upper.ml-4.rosatom-name Умные города
+        p.upper.ml-4.rosatom-name(
+          :class="{'mobile-menu-rosatom_black': isMobile}"
+        ) Умные города
           br
-          | Росатома
+          span(
+            :class="{'mobile-menu-rosatom_blue': isMobile}"
+          ) Росатома
         div.ml-4(v-if="city.headerCityLogo")
-          picture
+          picture(
+            v-if="!isMobile"
+          )
             source(
               :srcset="require(`~/static/Header/city-logo_${city.city}.webp`)"
               type='image/webp'
@@ -44,8 +50,30 @@
               alt='логотип Города'
               loading="lazy"
             )
+          picture(
+            v-if="isMobile"
+          )
+            source(
+              media="(max-width: 650px)"
+              :srcset="require(`~/static/Header/city-logo-colored-650_${city.city}.webp`)"
+              type='image/webp'
+            )
+            source(
+              media="(max-width: 650px)"
+              :srcset="require(`~/static/Header/city-logo-colored-650_${city.city}.png`)"
+            )
+            source(
+              :srcset="require(`~/static/Header/city-logo-colored-big_${city.city}.webp`)"
+              type='image/webp'
+            )
+            img.city-logo(
+              :src="require(`~/static/Header/city-logo-colored-big_${city.city}.png`)"
+              alt='логотип Города'
+              loading="lazy"
+            )
         .Alter-logo.flex.y_center(
           v-else
+          :class="{'mobile-menu-rosatom_black': isMobile, 'mobile-menu-alter-logo-border': isMobile}"
         ) {{ city.cityName }}
       .flex.y_center
 
@@ -58,21 +86,70 @@
 
         .btn_white(
           v-scroll-to="'#Form'"
+          :class="{'mobile-menu-hide-this':isMobile}"
         ) Зарегистрироваться
-        .header__mobile-menu.flex.x_center.y_center
-          input.checkbox1.visuallyHidden(
-            type="checkbox"
-            id="mobile-menu-btn"
+        .header__mobile-menu.flex.x_center.y_center(
+          @click="isMobile = !isMobile"
+        )
+          img(
+            v-if="!isMobile"
+            src="~/static/header/mobile-menu-burger.svg"
           )
-          label(
-            for="mobile-menu-btn"
-            @click="isMobile = !isMobile"
+          img(
+            v-if="isMobile"
+            src="~/static/header/mobile-menu-close.svg"
           )
-            .hamburger.hamburger1
-              span.bar.bar1
-              span.bar.bar2
-              span.bar.bar3
-              span.bar.bar4
+          //input.checkbox1.visuallyHidden(
+          //  type="checkbox"
+          //  id="mobile-menu-btn"
+          //  :checked="isMobile"
+          //)
+          //label(
+          //  for="mobile-menu-btn"
+          //  @click="isMobile = !isMobile"
+          //)
+          //  .hamburger.hamburger1
+          //    span.bar.bar1
+          //    span.bar.bar2
+          //    span.bar.bar3
+          //    span.bar.bar4
+    div.wrap.mobile-menu-hide-this(
+      :class="{'mobile-menu-nav':isMobile, 'mobile-menu-show-this': isMobile}"
+    )
+      div(
+        v-for="item in ['Городские сервисы', 'Новости', 'Обратная связь']"
+        @click="isMobile = !isMobile"
+      )
+        .scrollTo.mobile-menu-nav-item.upper(
+          v-scroll-to="'#Form'"
+        ) {{ item }}
+      .btn_white(
+        v-scroll-to="'#Form'"
+        @click="isMobile = !isMobile"
+      ) Зарегистрироваться
+      .flex.socialsIcon
+        ShareNetwork(
+          network="vk"
+          url="https://news.vuejs.org/issues/180"
+          title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+          description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+          quote="The hot reload is so fast it\'s near instant. - Evan You"
+        hashtags="vuejs,vite"
+        )
+          .icon.vk
+        ShareNetwork(
+          network="facebook"
+          url="https://news.vuejs.org/issues/180"
+          title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+          description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+          quote="The hot reload is so fast it\'s near instant. - Evan You"
+        hashtags="vuejs,vite"
+        )
+          .icon.fb
+        .icon.yt
+        .icon.inst
+
+
 </template>
 
 <script>
@@ -106,22 +183,67 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  .mobile
+    height 100vh
+    background #E5E5E5
   .header__mobile-menu
     display none
   .mobile-menu
     width 100vw
     height 100vh
     background: #E5E5E5;
+  .mobile-menu-alter-logo-border
+    border-left 1px solid #323232!important
+  .mobile-menu-rosatom_black
+    color: #323232
+  .mobile-menu-rosatom_blue
+    color: #005FA6
+  .mobile-menu-nav
+    margin-top: 47px
+  .mobile-menu-nav-item
+    margin: 0 auto;
+    margin-bottom: 30px
+    font-size: 14px;
+    line-height: 17px;
+    color: #393D3F;
+  .mobile-menu-hide-this
+    display none
+  .mobile-menu-show-this
+    display inherit
+  .socialsIcon
+    position absolute
+    bottom 40px
+    .icon
+      shadow()
+      background-position center
+      background-repeat no-repeat
+    .vk
+      background-image url("~static/Footer/socials/vk base.png")
+      &:hover
+        background: #01468D url("~static/Footer/socials/vk hover.png") center  no-repeat
+    .fb
+      background-image url("~static/Footer/socials/fb base.png")
+      margin-left: 2em
+      &:hover
+        background: #3366FF url("~static/Footer/socials/fb hover.png") center  no-repeat
+    .yt
+      background-image url("~static/Footer/socials/yt base.png")
+      margin-left: 2em
+      &:hover
+        background: #FC0D1B url("~static/Footer/socials/yt hover.png") center  no-repeat
+    .inst
+      background-image url("~static/Footer/socials/inst base.png")
+      margin-left: 2em
+      &:hover
+        background: url("~static/Footer/socials/inst hover.png") center  no-repeat,
+          linear-gradient(211.29deg, #5058CA 19.57%, #D62C78 54.97%, #F5CB6E 89.63%)
 
-.Alter-logo
-  height 2.5em
-  border-left 1px solid rgba(#FFF, .7)
-  text-transform uppercase
-  margin-left 1.5em;
-  padding-left 1.5em;
-.mobile
-  height 100vh
-  background #E5E5E5
+  .Alter-logo
+    height 2.5em
+    border-left 1px solid rgba(#FFF, .7)
+    text-transform uppercase
+    margin-left 1.5em;
+    padding-left 1.5em;
 
 .topNav
   padding 18px 0 18px 0
@@ -145,7 +267,7 @@ export default {
 @media screen and (max-width 1200px)
   .scrollTo
     font-size 14px
-    margin-right: 26px
+    margin-right: 15px
 @media screen and (max-width 1000px)
   .header-nav
     display none

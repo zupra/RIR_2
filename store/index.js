@@ -81,7 +81,7 @@ export const state = () => ({
   },
   glazov: {
     city: 'glazov',
-    headerCityLogo: true,
+    headerCityLogo: false,
     colorThemeClasses: {
       section: 'section-color-theme_glazov',
       leftCircleImage: 'left-circle-image-color-theme_glazov',
@@ -104,7 +104,7 @@ export const state = () => ({
   },
   zelenogorsk: {
     city: 'zelenogorsk',
-    headerCityLogo: true,
+    headerCityLogo: false,
     colorThemeClasses: {
       section: 'section-color-theme_zelenogorsk',
       leftCircleImage: 'left-circle-image-color-theme_zelenogorsk',

@@ -116,4 +116,12 @@ export default {
   .slide3
     .solve-problems
       display none
+    .Intro__content-develop-title
+      font-size: 34px
+      line-height: 40px
+      margin-top: 0
+    .Intro__content-develop-text
+      margin-top: 0
+      font-size: 14px
+      line-height: 19px
 </style>
