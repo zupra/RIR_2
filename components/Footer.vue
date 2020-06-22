@@ -26,9 +26,13 @@
         img(src='~static/Footer/footer_2.svg')
     div.bold
 
-      .text_x2 О проекте
-      .text_x2.my-4 Регламент сервиса
-      .text_x2 Пользовательское
+      .text_x2(
+        @click="showModal_1 = true"
+      ) О проекте
+      //- .text_x2.my-4 Регламент сервиса
+      .text_x2.my-3(
+        @click="showModal_2 = true"
+      ) Пользовательское
         br
         | соглашение
 
@@ -62,14 +66,35 @@
 
 
 
+  Modal(:show.sync="showModal_1", mod="XL")
+    TXT_about_project
+
+  Modal(:show.sync="showModal_2", mod="XL")
+    TXT_user_agreement
+
 </template>
 
 <script>
+import Modal from '~/components/Modal/Modal.vue'
+import TXT_about_project from '~/components/Modal/TXT_about_project.vue'
+import TXT_user_agreement from '~/components/Modal/TXT_user_agreement.vue'
+
 export default {
+  components: {
+    Modal,
+    TXT_about_project,
+    TXT_user_agreement
+  },
   props: {
     cityName: {
       type: String,
       required: true
+    }
+  },
+  data() {
+    return {
+      showModal_1: false,
+      showModal_2: false
     }
   },
   computed: {

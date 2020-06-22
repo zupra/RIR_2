@@ -22,9 +22,9 @@
     :cityName="$route.params.city"
     v-prlx="{ reverse: true}"
   )
+  //- v-prlx="{ fromBottom: true, speed: 0.2}"
   Footer(
     :cityName="$route.params.city"
-    v-prlx="{ fromBottom: true, speed: 0.2}"
   )
   .BR
   .BR
