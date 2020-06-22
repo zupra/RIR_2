@@ -28,7 +28,7 @@ export default {
     IntroFooter,
     IntroSlide3,
     IntroSlide2,
-    IntroSlide1
+    IntroSlide1,
   },
   props: {
     cityName: {
@@ -49,7 +49,7 @@ export default {
           el: '.swiper-pagination',
           clickable: true,
           dynamicBullets: true
-        }
+        },
       }
     }
   },

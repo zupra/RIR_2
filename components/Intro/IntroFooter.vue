@@ -135,7 +135,7 @@ export default {
     width 170px
 @media screen and (max-width: 768px)
   .Intro__footer
-    overflow-x hidden
+    overflow-x scroll
   .messenger-adaptive
     width 152px
     margin-right: 31px
