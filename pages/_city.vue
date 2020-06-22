@@ -27,6 +27,7 @@
     v-prlx="{ fromBottom: true, speed: 0.2}"
   )
   .BR
+  .BR
 </template>
 
 <script>
