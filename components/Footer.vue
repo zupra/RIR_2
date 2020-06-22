@@ -82,7 +82,7 @@ export default {
 
 <style lang="stylus">
 .Footer
-  padding 5em 1em 2em
+  padding 4em 1em 2em
   color: $header;
 .rir-logo
   margin-right: 2em
