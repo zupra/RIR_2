@@ -93,11 +93,11 @@
         )
           img(
             v-if="!isMobile"
-            src="~/static/header/mobile-menu-burger.svg"
+            src="~/static/Header/mobile-menu-burger.svg"
           )
           img(
             v-if="isMobile"
-            src="~/static/header/mobile-menu-close.svg"
+            src="~/static/Header/mobile-menu-close.svg"
           )
           //input.checkbox1.visuallyHidden(
           //  type="checkbox"
