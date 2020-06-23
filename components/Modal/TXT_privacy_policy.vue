@@ -104,25 +104,6 @@ article#TXT_privacy_policy
   p.mb-3 Адрес:
   p.mb-3 Телефон:
   p.mb-3 Эл. адрес:
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
-  p.mb-3
 </template>
 
 <script>
