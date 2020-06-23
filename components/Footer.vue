@@ -27,14 +27,18 @@
     div.bold
 
       .text_x2(
-        @click="showModal_1 = true"
+        @click="showModal_aboutProject = true"
       ) О проекте
-      //- .text_x2.my-4 Регламент сервиса
       .text_x2.my-3(
-        @click="showModal_2 = true"
+        @click="showModal_userAgreement = true"
       ) Пользовательское
         br
         | соглашение
+      .text_x2.mb-3(
+        @click="showModal_privacyPolicy = true"
+      ) Политика
+        br
+        |  конфиденциальности
 
 
     div
@@ -66,11 +70,27 @@
 
 
 
-  Modal(:show.sync="showModal_1", mod="XL")
+  Modal(:show.sync="showModal_aboutProject", mod="XL")
     TXT_about_project
 
-  Modal(:show.sync="showModal_2", mod="XL")
-    TXT_user_agreement
+  Modal(:show.sync="showModal_userAgreement", mod="XL")
+    h2(
+      slot='title'
+      v-text="`Соглашение о пользовании информационными системами и ресурсами города (наименование ${city.city})`"
+    ) 
+    TXT_user_agreement(
+      :cityName="cityName"
+    )
+
+
+  Modal(:show.sync="showModal_privacyPolicy", mod="XL")
+    h2(
+      slot='title'
+    ) Политика конфиденциальности персональных данных
+    TXT_privacy_policy(
+      :cityName="cityName"
+    )
+
 
 </template>
 
@@ -78,12 +98,14 @@
 import Modal from '~/components/Modal/Modal.vue'
 import TXT_about_project from '~/components/Modal/TXT_about_project.vue'
 import TXT_user_agreement from '~/components/Modal/TXT_user_agreement.vue'
+import TXT_privacy_policy from '~/components/Modal/TXT_privacy_policy.vue'
 
 export default {
   components: {
     Modal,
     TXT_about_project,
-    TXT_user_agreement
+    TXT_user_agreement,
+    TXT_privacy_policy
   },
   props: {
     cityName: {
@@ -93,8 +115,9 @@ export default {
   },
   data() {
     return {
-      showModal_1: false,
-      showModal_2: false
+      showModal_aboutProject: false,
+      showModal_userAgreement: false,
+      showModal_privacyPolicy: false
     }
   },
   computed: {

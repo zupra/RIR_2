@@ -1,7 +1,12 @@
-<template lang="pug" functional>
+<template lang="pug">
 
-article
-  h2.mb-3 Соглашение о пользовании информационными системами и ресурсами города (наименование)
+article#TXT_user_agreement
+  //- h2.mb-3 Соглашение о пользовании информационными системами и ресурсами города (наименование)
+
+  h1.mb-3.center(
+    v-text="`${city.city}`"
+  )
+
 
   h3.mb-3 Термины и определения
   p.mb-3 Оператор – (наименование ОМСУ или организации, которая ведет взаимодействие с гражданами посредством портала «Умный город»), осуществляющее свою деятельность в соответствии с законодательством Российской Федерации, нормативными правовыми актами (наименование региона) и (наименование города).
@@ -79,7 +84,23 @@ article
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    cityName: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    city() {
+      return this.$store.state[this.cityName]
+    }
+  }
+}
 </script>
 
-<style></style>
+<style lang="stylus">
+#TXT_user_agreement
+  height 60vh
+  overflow-y scroll
+</style>
