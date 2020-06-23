@@ -1,6 +1,4 @@
 <template lang="pug">
-  //:class="{mobile: isMobile}"
-    //:class="setBackground && `${city.colorThemeClasses.formColor} setBackground`"
   header.topNav(
     :class="[{mobile: isMobile}, setBackground && `${city.colorThemeClasses.formColor} setBackground`]"
   )
@@ -78,11 +76,11 @@
       .flex.y_center
 
         template(
-          v-for="item in ['Городские сервисы', 'Новости', 'Обратная связь']"
+          v-for="item in scrollLinks"
         )
           .scrollTo.header-nav(
-            v-scroll-to="'#Form'"
-          ) {{ item }}
+            v-scroll-to="item.to"
+          ) {{ item.name }}
 
         .btn_white(
           v-scroll-to="'#Form'"
@@ -99,20 +97,6 @@
             v-if="isMobile"
             src="~/static/Header/mobile-menu-close.svg"
           )
-          //input.checkbox1.visuallyHidden(
-          //  type="checkbox"
-          //  id="mobile-menu-btn"
-          //  :checked="isMobile"
-          //)
-          //label(
-          //  for="mobile-menu-btn"
-          //  @click="isMobile = !isMobile"
-          //)
-          //  .hamburger.hamburger1
-          //    span.bar.bar1
-          //    span.bar.bar2
-          //    span.bar.bar3
-          //    span.bar.bar4
     div.wrap.mobile-menu-hide-this(
       :class="{'mobile-menu-nav':isMobile, 'mobile-menu-show-this': isMobile}"
     )
@@ -162,6 +146,23 @@ export default {
   },
   data() {
     return {
+      scrollLinks: [
+        {
+          id: 1,
+          name: 'Городские сервисы',
+          to: '#CityServices'
+        },
+        {
+          id: 2,
+          name: 'Новости',
+          to: '#News'
+        },
+        {
+          id: 3,
+          name: 'Обратная связь',
+          to: '#Form'
+        }
+      ],
       setBackground: false,
       isMobile: false
     }

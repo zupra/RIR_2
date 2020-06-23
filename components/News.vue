@@ -1,5 +1,5 @@
 <template lang="pug">
-section
+section#News
   h2.H.text_x5.mb-3 Новости проекта
 
   client-only
@@ -11,13 +11,7 @@ section
         v-for="It in newsList"
         :key="It.id"
       )
-        //-
-          img(
-            src="https://via.placeholder.com/360x170"
-          )
 
-        //- :src="`https://picsum.photos/id/${idx+10}/280/160`"
-        //- :src="require(`~/static/img/сities/${It.id}.jpg`)"
 
         img(
           :src="It.img"

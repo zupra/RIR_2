@@ -2,8 +2,8 @@
 .Modal-rootOverlay(v-show='show', @click.self='close')
   .Modal-Card(:class='[mod, position]')
     .title(v-if='title') {{ title }}
-    .slot_Title(v-if='$slots.title')
-      slot(name='title')
+    //.slot_Title(v-if='$slots.title')
+    //  slot(name='title')
     .body
       slot
     .actions
