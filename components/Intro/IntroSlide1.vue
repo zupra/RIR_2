@@ -160,6 +160,7 @@ export default {
 
 <style lang="stylus" scoped>
 .slide1
+  min-height 520px
   position relative
   height 100%
   .Intro__content-city-name
@@ -172,7 +173,7 @@ export default {
     max-width 556px
   .Intro__content-hello-text
     font-size: 18px;
-    line-height: 30px;
+    // line-height: 30px;
     &:first-child
       margin-top: 13px
   .Intro__content-head-of-city
@@ -241,6 +242,7 @@ export default {
         height 100%
 @media screen and (max-width 1024px)
   .slide1
+    min-height auto
     .content
       max-width 397px
     .Intro__content-city-name
@@ -271,6 +273,7 @@ export default {
           margin-top: 130px
 @media screen and (max-width 768px)
   .slide1
+
     .images-adaptive
       .left-image
         circle(200px)

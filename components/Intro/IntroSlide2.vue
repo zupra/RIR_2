@@ -125,7 +125,8 @@ export default {
   .Intro__content-explore-title
     font-weight bold
     font-size 70px
-    line-height 85px
+    line-height 1
+    // line-height 85px
     margin-bottom 0
   .Intro__content-explore-text
     margin-top 27px
@@ -163,7 +164,7 @@ export default {
       margin-right 20px
       padding-left 32px
     .Intro__content-explore-title
-      line-height 67px
+      // line-height 67px
     .images__interesting-place
       circle(189px)
       top 20px

@@ -343,8 +343,8 @@ export default {
 @media screen and (max-width 650px)
   .Alter-logo
     font-size: 14px
-    margin-left: .3em
-    padding-left: .3em
+    // margin-left: .3em
+    // padding-left: .3em
   .header-logo
     width 45px
     height 45px

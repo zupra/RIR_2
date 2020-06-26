@@ -7,6 +7,8 @@
       :to="city"
       :key="city.index"
     ) {{city}}
+
+  //- pre {{ARR}}
 </template>
 
 <script>
