@@ -76,12 +76,10 @@
   Modal(:show.sync="showModal_userAgreement", mod="XL")
     h2(
       slot='title'
-      v-text="`Соглашение о пользовании информационными системами и ресурсами города (наименование ${city.city})`"
-    ) 
+    ) Соглашение о пользовании информационными системами и ресурсами города {{city.cityName}}
     TXT_user_agreement(
       :cityName="cityName"
     )
-
 
   Modal(:show.sync="showModal_privacyPolicy", mod="XL")
     h2(
