@@ -18,7 +18,7 @@
     "bodymovin": "^4.13.0",
     "lottie-web": "^5.6.10",
     "nuxt": "^2.0.0",
-    "swiper": "^5.4.1",
+    "swiper": "^6.5.1",
     "vue-awesome-swiper": "^4.1.1",
     "vue-clamp": "^0.3.0",
     "vue-observe-visibility": "^0.4.6",
